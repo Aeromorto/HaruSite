@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>HARU — O que a escova de nylon deixa no corpo</title>
+    <link rel="icon" href="../images/logo-olive.png" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/logo-olive.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/logo-olive.png" />
+    <link rel="apple-touch-icon" href="../images/logo-olive.png" />
+    <meta
+      name="description"
+      content="Como as escovas de nylon soltam microplásticos no corpo e no planeta — e por que a crina de cavalo é matéria, não polímero."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&text=%E3%81%BB&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css?v=8" />
+    <link rel="stylesheet" href="css/web.css" />
+    <script>
+      (function () {
+        var root = document.documentElement;
+        root.setAttribute(
+          "data-theme",
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "kraft"
+            : "clara"
+        );
+
+        var lang = null;
+        try {
+          lang = localStorage.getItem("haru-lang");
+        } catch (e) {}
+        if (lang !== "en" && lang !== "pt") {
+          lang = "pt";
+          var list =
+            navigator.languages && navigator.languages.length
+              ? navigator.languages
+              : [navigator.language || navigator.userLanguage || "pt"];
+          for (var i = 0; i < list.length; i++) {
+            var code = String(list[i] || "").toLowerCase();
+            if (code === "pt" || code.indexOf("pt-") === 0) {
+              lang = "pt";
+              break;
+            }
+            if (code === "en" || code.indexOf("en-") === 0) {
+              lang = "en";
+              break;
+            }
+          }
+        }
+        root.setAttribute("data-lang", lang);
+        root.lang = lang === "en" ? "en" : "pt-BR";
+        if (lang === "en") {
+          document.title =
+            "HARU — What a nylon toothbrush leaves in the body";
+        }
+      })();
+    </script>
+  </head>
+  <body class="is-essay" data-page="essay">
+    <a class="skip" href="#conteudo" data-i18n="skip">Ir para o conteúdo</a>
+
+    <header class="nav" id="topo">
+      <a class="nav__mark" href="index.html">HARU</a>
+      <div class="nav__right">
+        <button
+          class="theme-toggle"
+          type="button"
+          id="themeToggle"
+          aria-pressed="false"
+          data-i18n-aria="theme.toKraft"
+          aria-label="Ativar modo anti-luz azul"
+        >
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M16.5 12.5A6.5 6.5 0 0 1 11 5.1 7 7 0 1 0 18.9 13a6.5 6.5 0 0 1-2.4-.5Z" />
+          </svg>
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 3v1.6M12 19.4V21M4.9 4.9l1.1 1.1M18 18l1.1 1.1M3 12h1.6M19.4 12H21M4.9 19.1 6 18M18 6l1.1-1.1" />
+          </svg>
+        </button>
+        <ul class="nav__links">
+          <li><a href="index.html#loja" data-i18n="nav.shop">Loja</a></li>
+          <li><a href="index.html#marca" data-i18n="nav.brand">A Marca</a></li>
+          <li><a href="microplasticos.html" data-i18n="nav.matter">Matéria</a></li>
+          <li><a href="uso.html" data-i18n="nav.use">O uso</a></li>
+          <li><a href="index.html#contato" data-i18n="nav.contact">Contato</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <header class="page-head">
+        <p class="kicker reveal" data-i18n="essay.kicker">Matéria</p>
+        <h1 class="page-head__title reveal" data-i18n="essay.h1">
+          O que a escova de nylon deixa no corpo.
+        </h1>
+        <p class="page-head__lead reveal" data-i18n="essay.lead">
+          Duas vezes ao dia, um polímero entra na boca. A HARU existe para que
+          o hábito não precise disso.
+        </p>
+      </header>
+
+      <article>
+        <section class="essay-block">
+          <figure class="essay-block__media reveal">
+            <img
+              src="../images/essay-corpo.jpg"
+              width="1600"
+              height="900"
+              loading="eager"
+              decoding="async"
+              data-i18n-alt="essay.01.alt"
+              alt="Copo d’água ao lado de uma escova de nylon, com fios plásticos visíveis na água"
+            />
+          </figure>
+          <div class="essay-block__body">
+            <p class="kicker reveal" data-i18n="essay.01.kicker">01 — O corpo</p>
+            <h2 class="reveal" data-i18n="essay.01.title">
+              Microplásticos. O hábito invisível.
+            </h2>
+            <p class="reveal" data-i18n="essay.01.p1">
+              A cerda de uma escova comum não é fibra natural. É nylon —
+              poliamida, um plástico derivado de petróleo — ou um primo
+              sintético como o PBT. Duas vezes ao dia, esse filamento é
+              atritado contra o esmalte, a gengiva e o creme. O desgaste não é
+              só da boca: é da própria cerda.
+            </p>
+            <p class="reveal" data-i18n="essay.01.p2">
+              Estudos de escovação simulada, com espectroscopia Raman,
+              encontraram microplásticos soltos em todas as marcas testadas.
+              Em um trabalho de 2025, a média chegou a cerca de 39 partículas
+              por dia, entre 8 e 1995 micrômetros — fragmentos, fibras,
+              filmes. Outra leitura, de 2023, estimou milhares de detritos
+              plásticos no uso cotidiano. A boca é mucosa. Partículas pequenas
+              não precisam ser engolidas para entrar.
+            </p>
+            <p class="reveal" data-i18n="essay.01.p3">
+              Micro e nanoplásticos já foram medidos no sangue e, em 2024, no
+              New England Journal of Medicine, dentro de placas de artéria
+              carótida — associados a mais infarto, AVC e morte no
+              acompanhamento. A escova não é a única fonte. É, porém, uma via
+              oral, repetida, por décadas. Nylon também retém químicos do
+              creme, como o triclosan, e os devolve depois. O hábito que
+              deveria limpar deixa matéria que o corpo não pede.
+            </p>
+          </div>
+        </section>
+
+        <section class="essay-block essay-block--alt essay-block--cream">
+          <figure class="essay-block__media reveal">
+            <img
+              src="../images/essay-planeta.jpg"
+              width="1600"
+              height="900"
+              loading="lazy"
+              decoding="async"
+              data-i18n-alt="essay.02.alt"
+              alt="Escova de plástico abandonada na areia molhada, na linha da maré"
+            />
+          </figure>
+          <div class="essay-block__body">
+            <p class="kicker reveal" data-i18n="essay.02.kicker">02 — A Terra</p>
+            <h2 class="reveal" data-i18n="essay.02.title">
+              Depois do corpo, o planeta.
+            </h2>
+            <p class="reveal" data-i18n="essay.02.p1">
+              Quando a escova sai da pia, o problema não acaba. Nylon e
+              polipropileno não voltam para o solo. Fragmentam. Uma escova de
+              plástico leva da ordem de 500 anos para se partir em pedaços
+              menores — e esses pedaços continuam sendo plástico. Não há
+              desaparecimento. Há redução de escala.
+            </p>
+            <p class="reveal" data-i18n="essay.02.p2">
+              A recomendação odontológica é trocar o objeto a cada três ou
+              quatro meses. Só nos Estados Unidos, isso passa de um bilhão de
+              escovas por ano. No mundo, se o mesmo ritmo valesse para todos,
+              seriam cerca de 23 bilhões. Uma vida inteira deixa algumas
+              centenas de unidades. Quase nenhuma se recicla de verdade: cabo,
+              borracha e cerda são plásticos misturados, difíceis de separar.
+            </p>
+            <p class="reveal" data-i18n="essay.02.p3">
+              O que não vai para o aterro vai para o rio, o mar, o peixe, o
+              sal. O mesmo tipo de partícula que se solta na boca é o que
+              permanece na Terra. O hábito pessoal e o rastro planetário são
+              o mesmo material.
+            </p>
+          </div>
+        </section>
+
+        <section class="essay-block">
+          <figure class="essay-block__media reveal">
+            <img
+              src="../images/essay-crina.jpg"
+              width="1600"
+              height="900"
+              loading="lazy"
+              decoding="async"
+              data-i18n-alt="essay.03.alt"
+              alt="Close da crina de um cavalo, fios de queratina à luz"
+            />
+          </figure>
+          <div class="essay-block__body">
+            <p class="kicker reveal" data-i18n="essay.03.kicker">03 — A crina</p>
+            <h2 class="reveal" data-i18n="essay.03.title">
+              Por que crina, e não plástico.
+            </h2>
+            <p class="reveal" data-i18n="essay.03.p1">
+              A cerda HARU é crina de cavalo: cabelo de crina e cauda,
+              selecionado. A composição é queratina — a mesma proteína
+              fibrosa do cabelo e das unhas humanas, um polímero natural de
+              aminoácidos, não de petróleo. O diâmetro típico fica entre 50 e
+              80 micrômetros, mais fino que as cerdas de javali, macio o
+              bastante para a gengiva.
+            </p>
+            <p class="reveal" data-i18n="essay.03.p2">
+              Antes de entrar no cabo de bambu, a crina é esterilizada a
+              vapor. Não há nylon, PBT, “nylon de planta” nem bioplástico
+              disfarçado. Quando o fio se desgasta, o que se solta é proteína
+              orgânica — não um microplástico. O corpo já convive com
+              queratina. O solo também: a crina se decompõe; o cabo de bambu,
+              em meses, se o destino for o composto certo.
+            </p>
+            <p class="reveal" data-i18n="essay.03.p3">
+              Nylon foi a substituição industrial das cerdas naturais, a
+              partir do fim dos anos 1930, porque era barato, uniforme e
+              eterno. Eterno é exatamente o problema. A crina não promete
+              durar séculos. Promete cumprir o hábito e desaparecer da forma
+              certa.
+            </p>
+            <p class="reveal" data-i18n="essay.03.p4">
+              Trocar plástico por crina não é nostalgia. É recusar uma via
+              cotidiana de polímero na mucosa — e um objeto que, depois de
+              usado, continua no planeta. Matéria no lugar de resina. Esse é
+              o essencial.
+            </p>
+          </div>
+        </section>
+      </article>
+
+      <aside class="essay-notes">
+        <p data-i18n="essay.notes">
+          Notas. Escovação simulada e Raman (2023–2025) mediram soltura de
+          microplásticos em escovas comerciais, inclusive nylon e PBT.
+          Microplásticos no sangue (Leslie et al., 2022) e em placa carotídea
+          (Marfella et al., NEJM, 2024) documentam a presença no corpo; a
+          escova é uma via oral cotidiana, não a única. Uma escova de
+          plástico fragmenta em séculos, não se biodegrada. A crina é
+          queratina; o cabo HARU é bambu.
+        </p>
+      </aside>
+
+      <p class="essay-close">
+        <a class="matter__cta reveal" href="index.html#loja" data-i18n="essay.cta"
+          >Ver a coleção</a
+        >
+      </p>
+    </main>
+
+    <footer class="footer">
+      <a class="footer__brand" href="index.html">
+        <span class="footer__mark" aria-hidden="true">
+          <img src="../images/logo-olive.png" alt="" width="52" height="62" />
+        </span>
+        HARU
+      </a>
+      <nav data-i18n-aria="footer.nav" aria-label="Rodapé">
+        <a href="index.html#loja" data-i18n="nav.shop">Loja</a>
+        <a href="index.html#marca" data-i18n="nav.brand">A Marca</a>
+        <a href="microplasticos.html" data-i18n="nav.matter">Matéria</a>
+        <a href="uso.html" data-i18n="nav.use">O uso</a>
+        <a href="index.html#contato" data-i18n="nav.contact">Contato</a>
+        <a href="https://instagram.com" rel="noopener noreferrer" target="_blank"
+          >Instagram</a
+        >
+      </nav>
+      <div class="footer__end">
+        <button
+          class="lang-toggle"
+          type="button"
+          id="langToggle"
+          data-i18n-aria="lang.toEn"
+          aria-label="Ver o site em inglês"
+        >
+          <svg class="lang-toggle__mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="25.4" y="15.2" width="28.6" height="35.2" rx="5.2" fill="var(--white)"/>
+            <text x="37.4" y="45.6" fill="var(--olive-deep)" font-family="Noto Sans JP, Yu Gothic, Hiragino Sans, sans-serif" font-size="18.5" font-weight="500">ほ</text>
+            <path fill="var(--olive)" d="M16.5 8.9h20.4c3.5 0 6.3 2.8 6.3 6.3L28.1 52.2H16.5c-3.5 0-6.3-2.8-6.3-6.3V15.2c0-3.5 2.8-6.3 6.3-6.3z"/>
+            <path fill="var(--forest)" d="M32.1 43.2 28.1 52.2 38.6 56.4 41.4 47.1z"/>
+            <path fill="var(--ivory)" d="M16.9 21.5h4.1v7.5h7.3v-7.5h4.1V41.2h-4.1v-8.1h-7.3v8.1h-4.1z"/>
+          </svg>
+        </button>
+        <span class="footer__rule" aria-hidden="true"></span>
+        <p data-i18n="footer.copy">HARU. Higiene feita de matéria.</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js?v=9"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script>
+      window.haruStartMotion && window.haruStartMotion();
+    </script>
+  </body>
+</html>
