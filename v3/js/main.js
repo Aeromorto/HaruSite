@@ -238,107 +238,131 @@
     }
     motionStarted = true;
 
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const hero = document.querySelector(".hero");
-    const imgA = document.querySelector(".hero__img--a");
-    const imgB = document.querySelector(".hero__img--b");
-    const brand = document.querySelector(".hero__brand");
-    const hint = document.querySelector(".hero__hint");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const hero = document.querySelector(".hero");
+  const imgA = document.querySelector(".hero__img--a");
+  const imgB = document.querySelector(".hero__img--b");
+  const brand = document.querySelector(".hero__brand");
+  const hint = document.querySelector(".hero__hint");
 
-    const isTouch =
-      "ontouchend" in window ||
-      (navigator.maxTouchPoints && navigator.maxTouchPoints > 0);
-    const isIOS =
-      /iP(hone|ad|od)/.test(navigator.userAgent) ||
-      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-    const isAndroid = /Android/i.test(navigator.userAgent);
+  const isTouch =
+    "ontouchend" in window ||
+    (navigator.maxTouchPoints && navigator.maxTouchPoints > 0);
+  const isIOS =
+    /iP(hone|ad|od)/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  const isAndroid = /Android/i.test(navigator.userAgent);
 
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.config({ force3D: true });
-    gsap.ticker.lagSmoothing(0);
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.config({ force3D: true });
+  gsap.ticker.lagSmoothing(0);
+  gsap.ticker.fps(0);
 
-    ScrollTrigger.config({
-      ignoreMobileResize: true,
-      autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
+  ScrollTrigger.config({
+    ignoreMobileResize: true,
+    autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
+  });
+
+  if (isIOS && !reduce) {
+    ScrollTrigger.normalizeScroll(true);
+  }
+
+  if (!reduce && !isTouch && typeof Lenis !== "undefined") {
+    const lenis = new Lenis({
+      lerp: 0.1,
+      smoothWheel: true,
+      anchors: true,
+      wheelMultiplier: 1,
+      overscroll: false,
+      autoRaf: false,
     });
 
-    if (isIOS && !reduce) {
-      ScrollTrigger.normalizeScroll(true);
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+  }
+
+  gsap.set([imgA, imgB, brand], { force3D: true });
+
+  const mm = gsap.matchMedia();
+
+  const buildHero = (scaleA, scaleB, distance) => {
+    gsap.set(imgA, { opacity: 1, scale: 1, force3D: true });
+    gsap.set(imgB, { opacity: 0, scale: 1, force3D: true });
+
+    const tl = gsap.timeline({
+      defaults: { ease: "none", force3D: true },
+      scrollTrigger: {
+        trigger: hero,
+        start: "top top",
+        end: () => `+=${Math.round(window.innerHeight * distance)}`,
+        pin: true,
+        pinType: isIOS || isAndroid || isTouch ? "transform" : "fixed",
+        scrub: true,
+        anticipatePin: 1,
+        fastScrollEnd: true,
+        invalidateOnRefresh: true,
+      },
+    });
+
+    tl.fromTo(
+      imgA,
+      { scale: 1, opacity: 1 },
+      { scale: scaleA, opacity: 1, duration: 0.58 },
+      0
+    )
+      .to(brand, { opacity: 0, y: -40, duration: 0.22 }, 0.1)
+      .to(hint, { opacity: 0, duration: 0.12 }, 0.06)
+      .fromTo(
+        imgB,
+        { opacity: 0, scale: 1 },
+        { opacity: 1, scale: scaleB, duration: 0.3 },
+        0.55
+      )
+      .to(imgA, { opacity: 0, duration: 0.3 }, 0.55);
+
+    return () => {
+      tl.scrollTrigger?.kill();
+      tl.kill();
+      gsap.set([imgA, imgB, brand, hint], { clearProps: "all" });
+    };
+  };
+
+  const waitDecode = (img) => {
+    if (!img) return Promise.resolve();
+    if (typeof img.decode === "function") {
+      return img.decode().catch(() => {});
     }
+    if (img.complete) return Promise.resolve();
+    return new Promise((resolve) => {
+      img.addEventListener("load", resolve, { once: true });
+      img.addEventListener("error", resolve, { once: true });
+    });
+  };
 
-    if (!reduce && !isTouch && typeof Lenis !== "undefined") {
-      const lenis = new Lenis({
-        lerp: 0.07,
-        smoothWheel: true,
-        anchors: true,
-        wheelMultiplier: 0.92,
-        overscroll: false,
-        autoRaf: false,
-      });
+  const runMotion = () => {
+    if (reduce) return;
 
-      lenis.on("scroll", ScrollTrigger.update);
-      gsap.ticker.add((time) => lenis.raf(time * 1000));
-    }
+    mm.add("(min-width: 768px)", () => buildHero(2.05, 1.16, 0.8));
+    mm.add("(max-width: 767px)", () => buildHero(1.45, 1.1, 0.57));
 
-    const mm = gsap.matchMedia();
-
-    const buildHero = (scaleA, scaleB, distance) => {
-      gsap.set(imgB, { opacity: 0, scale: 1 });
-
-      const tl = gsap.timeline({
+    gsap.utils.toArray(".reveal").forEach((el) => {
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: isTouch ? 0.55 : 0.8,
+        ease: "power2.out",
+        force3D: true,
         scrollTrigger: {
-          trigger: hero,
-          start: "top top",
-          end: () => `+=${Math.round(window.innerHeight * distance)}`,
-          pin: true,
-          pinType: isIOS || isAndroid || isTouch ? "transform" : "fixed",
-          scrub: isTouch ? true : 0.3,
-          anticipatePin: 1,
-          fastScrollEnd: true,
-          invalidateOnRefresh: true,
+          trigger: el,
+          start: "top 88%",
         },
       });
+    });
 
-      tl.fromTo(
-        imgA,
-        { scale: 1, opacity: 1 },
-        { scale: scaleA, opacity: 1, duration: 0.58, ease: "none" },
-        0
-      )
-        .to(brand, { opacity: 0, y: -40, duration: 0.22, ease: "none" }, 0.1)
-        .to(hint, { opacity: 0, duration: 0.12, ease: "none" }, 0.06)
-        .fromTo(
-          imgB,
-          { opacity: 0, scale: 1 },
-          { opacity: 1, scale: scaleB, duration: 0.3, ease: "none" },
-          0.55
-        )
-        .to(imgA, { opacity: 0, duration: 0.3, ease: "none" }, 0.55);
+    ScrollTrigger.refresh();
+  };
 
-      return () => {
-        tl.scrollTrigger?.kill();
-        tl.kill();
-        gsap.set([imgA, imgB, brand, hint], { clearProps: "all" });
-      };
-    };
-
-    if (!reduce) {
-      mm.add("(min-width: 768px)", () => buildHero(2.05, 1.16, 0.8));
-      mm.add("(max-width: 767px)", () => buildHero(1.45, 1.1, 0.57));
-
-      gsap.utils.toArray(".reveal").forEach((el) => {
-        gsap.to(el, {
-          opacity: 1,
-          y: 0,
-          duration: isTouch ? 0.55 : 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 88%",
-          },
-        });
-      });
-    }
+  Promise.all([waitDecode(imgA), waitDecode(imgB)]).then(runMotion);
   };
 
   window.haruStartMotion = startMotion;
