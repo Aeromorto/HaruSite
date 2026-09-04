@@ -78,7 +78,7 @@
       "p3.alt": "Cubic stone stand for brushes",
       "product.view": "View product",
       "brand.kicker": "The brand",
-      "brand.quote": "HARU is natural matter.",
+      "brand.quote": "HARU is made from natural materials.",
       "brand.lead":
         "Materials that return to the earth. Bamboo brushes with horsehair bristles — made to be used, not thrown away.",
       "brand.alt": "Horsehair being braided, the material of the bristles",
@@ -89,9 +89,9 @@
         "Bamboo handle and horsehair bristles. No nylon. No disguised bioplastic.",
       "why2.name": "Plastic-free",
       "why2.text":
-        "Made to disappear properly — from the object to the packaging.",
+        "Designed to break down the right way — from product to packaging.",
       "why3.name": "Made for the sink",
-      "why3.text": "Beautiful enough to leave in view.",
+      "why3.text": "Beautiful enough to be left in full display.",
       "contact.title": "Write to HARU",
       "contact.text":
         "The shop is just beginning. For the collection, a partnership, or a conversation — write.",
@@ -108,7 +108,6 @@
   };
 
   const root = document.documentElement;
-  const langToggle = document.getElementById("langToggle");
   const themeToggle = document.getElementById("themeToggle");
   const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
   let manualTheme = false;
@@ -172,12 +171,12 @@
       if (value != null) el.setAttribute("aria-label", value);
     });
 
-    if (langToggle) {
-      langToggle.setAttribute(
+    document.querySelectorAll(".lang-toggle").forEach((btn) => {
+      btn.setAttribute(
         "aria-label",
         lang === "en" ? pack["lang.toPt"] : pack["lang.toEn"]
       );
-    }
+    });
 
     syncThemeLabel();
   };
@@ -203,14 +202,16 @@
   setTheme(themeFromDevice());
   applyLang();
 
-  langToggle?.addEventListener("click", () => {
-    lang = lang === "pt" ? "en" : "pt";
-    try {
-      localStorage.setItem("haru-lang", lang);
-    } catch (_) {
-      /* ignore */
-    }
-    applyLang();
+  document.querySelectorAll(".lang-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      lang = lang === "pt" ? "en" : "pt";
+      try {
+        localStorage.setItem("haru-lang", lang);
+      } catch (_) {
+        /* ignore */
+      }
+      applyLang();
+    });
   });
 
   themeToggle?.addEventListener("click", () => {
@@ -250,6 +251,7 @@
     const isIOS =
       /iP(hone|ad|od)/.test(navigator.userAgent) ||
       (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    const isAndroid = /Android/i.test(navigator.userAgent);
 
     gsap.registerPlugin(ScrollTrigger);
     gsap.config({ force3D: true });
@@ -289,7 +291,7 @@
           start: "top top",
           end: () => `+=${Math.round(window.innerHeight * distance)}`,
           pin: true,
-          pinType: isIOS ? "transform" : "fixed",
+          pinType: isIOS || isAndroid || isTouch ? "transform" : "fixed",
           scrub: isTouch ? true : 0.3,
           anticipatePin: 1,
           fastScrollEnd: true,
