@@ -1,4 +1,5 @@
 @import url("./v2-layout.css");
+@import url("./v2-sections.css");
 
 @property --ivory {
   syntax: "<color>";
