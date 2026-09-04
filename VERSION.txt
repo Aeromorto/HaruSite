@@ -1,0 +1,3 @@
+HARU site — Versão 2
+Branch GitHub: v2
+V1 permanece em main e na branch v1.
