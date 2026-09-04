@@ -1,0 +1,108 @@
+@import url("./v2-layout.css");
+@import url("./v2-sections.css");
+
+@property --ivory {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #f6f1e8;
+}
+
+@property --cream {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #e8dfd0;
+}
+
+@property --olive {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #5c6b47;
+}
+
+@property --olive-deep {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #2f3b28;
+}
+
+@property --forest {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #1a2418;
+}
+
+@property --text {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #2c3328;
+}
+
+@property --muted {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #6b7264;
+}
+
+@property --white {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #f6f1e8;
+}
+
+@property --kraft {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #eee0c4;
+}
+
+:root {
+  --ivory: #f6f1e8;
+  --cream: #e8dfd0;
+  --olive: #5c6b47;
+  --olive-deep: #2f3b28;
+  --forest: #1a2418;
+  --text: #2c3328;
+  --muted: #6b7264;
+  --white: #f6f1e8;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --theme-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --theme-time: 0.85s;
+  --nav-h: 4.5rem;
+  --hero-ledge: 3rem;
+  --kraft: #eee0c4;
+}
+
+html[data-theme="kraft"] {
+  --ivory: #eee0c4;
+  --cream: #decca8;
+  --olive: #6a5736;
+  --olive-deep: #3c3122;
+  --forest: #2a2318;
+  --text: #3a3122;
+  --muted: #6e5e45;
+  --white: #f5ecd8;
+}
+
+html[data-theme="clara"] {
+  --ivory: #f6f1e8;
+  --cream: #e8dfd0;
+  --olive: #5c6b47;
+  --olive-deep: #2f3b28;
+  --forest: #1a2418;
+  --text: #2c3328;
+  --muted: #6b7264;
+  --white: #f6f1e8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="clara"]) {
+    --ivory: #eee0c4;
+    --cream: #decca8;
+    --olive: #6a5736;
+    --olive-deep: #3c3122;
+    --forest: #2a2318;
+    --text: #3a3122;
+    --muted: #6e5e45;
+    --white: #f5ecd8;
+  }
+}
