@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
     <title>HARU — Produtos Naturais</title>
+    <link rel="icon" href="favicon.ico?v=3" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=3" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3" />
     <meta
       name="description"
       content="HARU Produtos Naturais. Cuidado diário sem plástico — bambu e crina de cavalo."
@@ -16,17 +21,42 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="preload" as="image" href="images/hero-bamboo.jpg" />
+    <script>
+      document.documentElement.setAttribute(
+        "data-theme",
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "kraft"
+          : "clara"
+      );
+    </script>
   </head>
   <body>
     <a class="skip" href="#conteudo">Ir para o conteúdo</a>
 
     <header class="nav" id="topo">
       <a class="nav__mark" href="#topo">HARU</a>
-      <ul class="nav__links">
-        <li><a href="#loja">Loja</a></li>
-        <li><a href="#marca">A Marca</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+      <div class="nav__right">
+        <button
+          class="theme-toggle"
+          type="button"
+          id="themeToggle"
+          aria-pressed="false"
+          aria-label="Ativar modo anti-luz azul"
+        >
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M16.5 12.5A6.5 6.5 0 0 1 11 5.1 7 7 0 1 0 18.9 13a6.5 6.5 0 0 1-2.4-.5Z" />
+          </svg>
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 3v1.6M12 19.4V21M4.9 4.9l1.1 1.1M18 18l1.1 1.1M3 12h1.6M19.4 12H21M4.9 19.1 6 18M18 6l1.1-1.1" />
+          </svg>
+        </button>
+        <ul class="nav__links">
+          <li><a href="#loja">Loja</a></li>
+          <li><a href="#marca">A Marca</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
     </header>
 
     <section class="hero" aria-label="Apresentação da marca">
@@ -45,36 +75,32 @@
       </div>
 
       <div class="hero__brand">
-        <img
-          class="hero__logo"
-          src="images/logo-light.png"
-          alt="Símbolo HARU: cavalo e bambu"
-        />
+        <div class="hero__logo-wrap">
+          <img
+            class="hero__logo hero__logo--clara"
+            src="images/logo-light.png"
+            alt=""
+          />
+          <img
+            class="hero__logo hero__logo--kraft"
+            src="images/logo-kraft.png"
+            alt="Símbolo HARU: cavalo e bambu"
+          />
+        </div>
         <h1 class="hero__title">HARU</h1>
         <p class="hero__tag">Produtos Naturais</p>
       </div>
 
-      <p class="hero__hint" aria-hidden="true">Scroll<span></span></p>
+      <p class="hero__hint" aria-hidden="true">
+        Scroll
+        <svg class="hero__hint-arrow" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </p>
+      <div class="hero__ledge" aria-hidden="true"></div>
     </section>
 
     <main id="conteudo">
-      <section class="section manifesto" id="inicio">
-        <p class="kicker reveal">A marca</p>
-        <h2 class="manifesto__quote reveal">
-          O cuidado de todo dia, sem plástico.
-        </h2>
-        <p class="manifesto__lead reveal">
-          Materiais que voltam para a terra. Escovas de bambu com cerdas de
-          crina de cavalo — feitas para o hábito, não para o descarte.
-        </p>
-        <figure class="manifesto__photo reveal">
-          <img
-            src="images/marca-crina.jpg"
-            alt="Crina de cavalo sendo trançada, matéria-prima das cerdas"
-          />
-        </figure>
-      </section>
-
       <section class="section products" id="loja">
         <div class="products__head">
           <div>
@@ -137,7 +163,24 @@
         </div>
       </section>
 
-      <section class="section values" id="marca">
+      <section class="section manifesto" id="marca">
+        <p class="kicker reveal">A marca</p>
+        <h2 class="manifesto__quote reveal">
+          O cuidado de todo dia, sem plástico.
+        </h2>
+        <p class="manifesto__lead reveal">
+          Materiais que voltam para a terra. Escovas de bambu com cerdas de
+          crina de cavalo — feitas para o hábito, não para o descarte.
+        </p>
+        <figure class="manifesto__photo reveal">
+          <img
+            src="images/marca-crina.jpg"
+            alt="Crina de cavalo sendo trançada, matéria-prima das cerdas"
+          />
+        </figure>
+      </section>
+
+      <section class="section values" id="porque">
         <p class="kicker reveal">Por que HARU</p>
         <h2 class="values__title reveal">Natural de verdade.</h2>
         <div class="values__grid">
@@ -180,7 +223,15 @@
     </main>
 
     <footer class="footer">
-      <p class="footer__brand">HARU</p>
+      <a class="footer__brand" href="#topo">
+        <img
+          src="images/logo-circle.png"
+          alt=""
+          width="40"
+          height="40"
+        />
+        HARU
+      </a>
       <nav aria-label="Rodapé">
         <a href="#loja">Loja</a>
         <a href="#marca">A Marca</a>
