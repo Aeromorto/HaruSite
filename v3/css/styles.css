@@ -747,7 +747,7 @@ html[data-theme="kraft"] .hero__logo--kraft {
   align-items: center;
   column-gap: 1.5rem;
   min-height: var(--nav-h);
-  padding: 0 var(--page-pad);
+  padding: 0.55rem var(--page-pad);
   border-top: 1px solid color-mix(in srgb, var(--olive-deep) 10%, transparent);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
@@ -760,43 +760,28 @@ html[data-theme="kraft"] .hero__logo--kraft {
 .footer__brand {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.7rem;
   justify-self: start;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.05rem;
+  font-size: 1.12rem;
   letter-spacing: 0.24em;
   line-height: 1;
   color: var(--olive-deep);
 }
 
 .footer__mark {
-  position: relative;
   display: block;
-  width: 2.7rem;
-  height: 2.7rem;
+  width: 2.85rem;
+  height: 3.4rem;
   flex-shrink: 0;
 }
 
 .footer__mark img {
-  position: absolute;
-  inset: 17%;
-  width: 66%;
-  height: 66%;
-  margin: auto;
-  object-fit: contain;
-}
-
-.footer__moon {
-  position: absolute;
-  inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
-  overflow: visible;
-  fill: none;
-  stroke: var(--olive-deep);
-  stroke-width: 2.4;
-  stroke-linecap: round;
-  pointer-events: none;
+  object-fit: contain;
+  object-position: center;
 }
 
 .footer nav {
