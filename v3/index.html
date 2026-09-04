@@ -101,12 +101,15 @@
         <img
           class="hero__img hero__img--a"
           src="../images/hero-bamboo.jpg"
+          fetchpriority="high"
+          decoding="async"
           data-i18n-alt="hero.imgA"
           alt="Floresta de bambu vista de baixo, troncos subindo em direção ao céu"
         />
         <img
           class="hero__img hero__img--b"
           src="../images/hero-2.jpg"
+          decoding="async"
           data-i18n-alt="hero.imgB"
           alt="Troncos de bambu mais próximos, com luz filtrando pela copa"
         />
@@ -158,6 +161,8 @@
             <div class="card__media">
               <img
                 src="../images/product-escova.jpg"
+                loading="lazy"
+                decoding="async"
                 data-i18n-alt="p1.alt"
                 alt="Escova de dentes de bambu com cerdas naturais"
               />
@@ -180,6 +185,8 @@
             <div class="card__media">
               <img
                 src="../images/product-kit.jpg"
+                loading="lazy"
+                decoding="async"
                 data-i18n-alt="p2.alt"
                 alt="Duas escovas de bambu lado a lado"
               />
@@ -202,6 +209,8 @@
             <div class="card__media">
               <img
                 src="../images/product-suporte.jpg"
+                loading="lazy"
+                decoding="async"
                 data-i18n-alt="p3.alt"
                 alt="Suporte cúbico de pedra para escovas"
               />
@@ -232,6 +241,8 @@
         <figure class="manifesto__photo reveal">
           <img
             src="../images/marca-crina.jpg"
+            loading="lazy"
+            decoding="async"
             data-i18n-alt="brand.alt"
             alt="Crina de cavalo sendo trançada, matéria-prima das cerdas"
           />
@@ -285,7 +296,13 @@
 
     <footer class="footer">
       <a class="footer__brand" href="#topo">
-        <img src="../images/logo-olive.png" alt="" width="40" height="40" />
+        <span class="footer__mark" aria-hidden="true">
+          <img src="../images/logo-olive.png" alt="" width="40" height="48" />
+          <svg class="footer__moon" viewBox="0 0 100 100">
+            <path d="M11.2 29.3 A 44 44 0 0 1 88.8 29.3" />
+            <path d="M11.2 70.7 A 44 44 0 0 0 88.8 70.7" />
+          </svg>
+        </span>
         HARU
       </a>
       <nav data-i18n-aria="footer.nav" aria-label="Rodapé">
@@ -312,6 +329,7 @@
             <path fill="var(--ivory)" d="M16.9 21.5h4.1v7.5h7.3v-7.5h4.1V41.2h-4.1v-8.1h-7.3v8.1h-4.1z"/>
           </svg>
         </button>
+        <span class="footer__rule" aria-hidden="true"></span>
         <p data-i18n="footer.copy">HARU. Higiene feita de matéria.</p>
       </div>
     </footer>
