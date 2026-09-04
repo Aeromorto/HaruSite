@@ -630,7 +630,7 @@
         end: () => `+=${Math.round(window.innerHeight * distance)}`,
         pin: true,
         pinType: isIOS || isAndroid || isTouch ? "transform" : "fixed",
-        scrub: isAndroid ? 0.55 : true,
+        scrub: isAndroid ? 0.38 : true,
         anticipatePin: isAndroid ? 0 : 1,
         fastScrollEnd: !isAndroid,
         invalidateOnRefresh: true,
@@ -679,9 +679,9 @@
       mm.add("(min-width: 768px)", () => buildHero(2.05, 1.16, 0.8));
       mm.add("(max-width: 767px)", () =>
         buildHero(
-          isAndroid ? 1.28 : 1.45,
-          isAndroid ? 1.08 : 1.1,
-          isAndroid ? 0.78 : 0.57
+          isAndroid ? 1.22 : 1.45,
+          isAndroid ? 1.06 : 1.1,
+          isAndroid ? 0.7 : 0.57
         )
       );
     }
