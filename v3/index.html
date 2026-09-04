@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>HARU — Higiene feita de matéria, não de plástico</title>
+    <link rel="icon" href="../images/logo-olive.png" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/logo-olive.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/logo-olive.png" />
+    <link rel="apple-touch-icon" href="../images/logo-olive.png" />
+    <meta
+      name="description"
+      content="HARU. Higiene feita de matéria, não de plástico — bambu e crina de cavalo."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&text=%E3%81%BB&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/web.css" />
+    <link rel="preload" as="image" href="../images/hero-bamboo.jpg" />
+    <script>
+      (function () {
+        var root = document.documentElement;
+        root.setAttribute(
+          "data-theme",
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "kraft"
+            : "clara"
+        );
+
+        var lang = null;
+        try {
+          lang = localStorage.getItem("haru-lang");
+        } catch (e) {}
+        if (lang !== "en" && lang !== "pt") {
+          lang = "pt";
+          var list =
+            navigator.languages && navigator.languages.length
+              ? navigator.languages
+              : [navigator.language || navigator.userLanguage || "pt"];
+          for (var i = 0; i < list.length; i++) {
+            var code = String(list[i] || "").toLowerCase();
+            if (code === "pt" || code.indexOf("pt-") === 0) {
+              lang = "pt";
+              break;
+            }
+            if (code === "en" || code.indexOf("en-") === 0) {
+              lang = "en";
+              break;
+            }
+          }
+        }
+        root.setAttribute("data-lang", lang);
+        root.lang = lang === "en" ? "en" : "pt-BR";
+        if (lang === "en") {
+          document.title = "HARU — Hygiene made from matter, not plastic";
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#conteudo" data-i18n="skip">Ir para o conteúdo</a>
+
+    <header class="nav" id="topo">
+      <a class="nav__mark" href="#topo">HARU</a>
+      <div class="nav__right">
+        <button
+          class="theme-toggle"
+          type="button"
+          id="themeToggle"
+          aria-pressed="false"
+          data-i18n-aria="theme.toKraft"
+          aria-label="Ativar modo anti-luz azul"
+        >
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M16.5 12.5A6.5 6.5 0 0 1 11 5.1 7 7 0 1 0 18.9 13a6.5 6.5 0 0 1-2.4-.5Z" />
+          </svg>
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 3v1.6M12 19.4V21M4.9 4.9l1.1 1.1M18 18l1.1 1.1M3 12h1.6M19.4 12H21M4.9 19.1 6 18M18 6l1.1-1.1" />
+          </svg>
+        </button>
+        <ul class="nav__links">
+          <li><a href="#loja" data-i18n="nav.shop">Loja</a></li>
+          <li><a href="#marca" data-i18n="nav.brand">A Marca</a></li>
+          <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="hero" aria-label="Apresentação da marca" data-i18n-aria="hero.aria">
+      <div class="hero__media">
+        <img
+          class="hero__img hero__img--a"
+          src="../images/hero-bamboo.jpg"
+          data-i18n-alt="hero.imgA"
+          alt="Floresta de bambu vista de baixo, troncos subindo em direção ao céu"
+        />
+        <img
+          class="hero__img hero__img--b"
+          src="../images/hero-2.jpg"
+          data-i18n-alt="hero.imgB"
+          alt="Troncos de bambu mais próximos, com luz filtrando pela copa"
+        />
+        <div class="hero__veil" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero__brand">
+        <div class="hero__logo-wrap">
+          <img
+            class="hero__logo hero__logo--clara"
+            src="../images/logo-light.png"
+            alt=""
+          />
+          <img
+            class="hero__logo hero__logo--kraft"
+            src="../images/logo-light.png"
+            data-i18n-alt="hero.logo"
+            alt="Símbolo HARU: cavalo e bambu"
+          />
+        </div>
+        <h1 class="hero__title">HARU</h1>
+        <p class="hero__tag" data-i18n="hero.tag">
+          Higiene feita de matéria, não de plástico.
+        </p>
+      </div>
+
+      <p class="hero__hint" aria-hidden="true">
+        <span data-i18n="hero.hint">Desça</span>
+        <svg class="hero__hint-arrow" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </p>
+      <div class="hero__ledge" aria-hidden="true"></div>
+    </section>
+
+    <main id="conteudo">
+      <section class="section products" id="loja">
+        <div class="products__head">
+          <div>
+            <p class="kicker reveal" data-i18n="shop.kicker">Coleção</p>
+            <h2 class="products__title reveal" data-i18n="shop.title">
+              O essencial.
+            </h2>
+          </div>
+        </div>
+
+        <div class="products__grid">
+          <article class="card reveal">
+            <div class="card__media">
+              <img
+                src="../images/product-escova.jpg"
+                data-i18n-alt="p1.alt"
+                alt="Escova de dentes de bambu com cerdas naturais"
+              />
+            </div>
+            <div class="card__body">
+              <h3 class="card__name" data-i18n="p1.name">Escova de bambu</h3>
+              <p class="card__meta" data-i18n="p1.meta">
+                Cerdas de crina selecionada. Esterilizadas a vapor.
+              </p>
+              <div class="card__row">
+                <span class="card__price">R$ 48</span>
+                <a class="card__link" href="#loja" data-i18n="product.view"
+                  >Ver produto</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__media">
+              <img
+                src="../images/product-kit.jpg"
+                data-i18n-alt="p2.alt"
+                alt="Duas escovas de bambu lado a lado"
+              />
+            </div>
+            <div class="card__body">
+              <h3 class="card__name" data-i18n="p2.name">Kit de duas</h3>
+              <p class="card__meta" data-i18n="p2.meta">
+                O mesmo cuidado para dividir o hábito.
+              </p>
+              <div class="card__row">
+                <span class="card__price">R$ 86</span>
+                <a class="card__link" href="#loja" data-i18n="product.view"
+                  >Ver produto</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__media">
+              <img
+                src="../images/product-suporte.jpg"
+                data-i18n-alt="p3.alt"
+                alt="Suporte cúbico de pedra para escovas"
+              />
+            </div>
+            <div class="card__body">
+              <h3 class="card__name" data-i18n="p3.name">Suporte de pedra</h3>
+              <p class="card__meta" data-i18n="p3.meta">Diatomito. Seca ao ar.</p>
+              <div class="card__row">
+                <span class="card__price">R$ 62</span>
+                <a class="card__link" href="#loja" data-i18n="product.view"
+                  >Ver produto</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section manifesto" id="marca">
+        <p class="kicker reveal" data-i18n="brand.kicker">A marca</p>
+        <h2 class="manifesto__quote reveal" data-i18n="brand.quote">
+          HARU é matéria natural.
+        </h2>
+        <p class="manifesto__lead reveal" data-i18n="brand.lead">
+          Materiais que voltam para a terra. Escovas de bambu com cerdas de
+          crina de cavalo — feitas para o hábito, não para o descarte.
+        </p>
+        <figure class="manifesto__photo reveal">
+          <img
+            src="../images/marca-crina.jpg"
+            data-i18n-alt="brand.alt"
+            alt="Crina de cavalo sendo trançada, matéria-prima das cerdas"
+          />
+        </figure>
+      </section>
+
+      <section class="section values" id="porque">
+        <p class="kicker reveal" data-i18n="why.kicker">Por que HARU</p>
+        <h2 class="values__title reveal" data-i18n="why.title">
+          Natural de verdade.
+        </h2>
+        <div class="values__grid">
+          <article class="value reveal">
+            <p class="value__index">01</p>
+            <h3 class="value__name" data-i18n="why1.name">100% natural</h3>
+            <p class="value__text" data-i18n="why1.text">
+              Cabo de bambu e cerdas de crina de cavalo. Sem nylon, sem
+              bioplástico disfarçado.
+            </p>
+          </article>
+          <article class="value reveal">
+            <p class="value__index">02</p>
+            <h3 class="value__name" data-i18n="why2.name">Sem plástico</h3>
+            <p class="value__text" data-i18n="why2.text">
+              Pensado para desaparecer da forma certa — do objeto à embalagem.
+            </p>
+          </article>
+          <article class="value reveal">
+            <p class="value__index">03</p>
+            <h3 class="value__name" data-i18n="why3.name">Presença na pia</h3>
+            <p class="value__text" data-i18n="why3.text">
+              Bonito o suficiente para ficar à vista.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--tight contact" id="contato">
+        <h2 class="contact__title reveal" data-i18n="contact.title">
+          Fale com a HARU
+        </h2>
+        <p class="contact__text reveal" data-i18n="contact.text">
+          A loja ainda está nascendo. Se quiser a coleção, uma parceria ou só
+          conversar sobre o hábito — escreva.
+        </p>
+        <a class="contact__cta reveal" href="mailto:contato@haru.natural"
+          >contato@haru.natural</a
+        >
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a class="footer__brand" href="#topo">
+        <img src="../images/logo-olive.png" alt="" width="40" height="40" />
+        HARU
+      </a>
+      <nav data-i18n-aria="footer.nav" aria-label="Rodapé">
+        <a href="#loja" data-i18n="nav.shop">Loja</a>
+        <a href="#marca" data-i18n="nav.brand">A Marca</a>
+        <a href="#contato" data-i18n="nav.contact">Contato</a>
+        <a href="https://instagram.com" rel="noopener noreferrer" target="_blank"
+          >Instagram</a
+        >
+      </nav>
+      <div class="footer__end">
+        <button
+          class="lang-toggle"
+          type="button"
+          id="langToggle"
+          data-i18n-aria="lang.toEn"
+          aria-label="Ver o site em inglês"
+        >
+          <svg class="lang-toggle__mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="25.4" y="15.2" width="28.6" height="35.2" rx="5.2" fill="var(--white)"/>
+            <text x="37.4" y="45.6" fill="var(--olive-deep)" font-family="Noto Sans JP, Yu Gothic, Hiragino Sans, sans-serif" font-size="18.5" font-weight="500">ほ</text>
+            <path fill="var(--olive)" d="M16.5 8.9h20.4c3.5 0 6.3 2.8 6.3 6.3L28.1 52.2H16.5c-3.5 0-6.3-2.8-6.3-6.3V15.2c0-3.5 2.8-6.3 6.3-6.3z"/>
+            <path fill="var(--forest)" d="M32.1 43.2 28.1 52.2 38.6 56.4 41.4 47.1z"/>
+            <path fill="var(--ivory)" d="M16.9 21.5h4.1v7.5h7.3v-7.5h4.1V41.2h-4.1v-8.1h-7.3v8.1h-4.1z"/>
+          </svg>
+        </button>
+        <p data-i18n="footer.copy">HARU. Higiene feita de matéria.</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script>
+      window.haruStartMotion && window.haruStartMotion();
+    </script>
+  </body>
+</html>
