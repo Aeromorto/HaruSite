@@ -27,13 +27,15 @@ are not separate maintained storefronts.
 
 ## Validation
 
-`npm test` runs 13 regression tests using the actual page HTML and application
+`npm test` runs 14 regression tests using the actual page HTML and application
 scripts in jsdom. Tests cover malformed and duplicate carts, inherited IDs,
 quantity limits, defensive copies, migration/privacy cleanup, blocked/full
 storage, keyboard interactions, payment unavailability, tab synchronization,
 translations, newsletter failure, CEP response ordering, invalid responses,
 network failures and timeout recovery. Every maintained page initializes in both
 languages. Requests are mocked; no email, payment or customer order is sent.
+Forms stay disabled until their JavaScript handlers are installed, preventing
+native GET submissions from leaking email/postal data into URLs when scripts fail.
 
 `npm run build` checks duplicate HTML IDs and every static local `href`/`src`,
 including cross-page fragments, then produces only public files and historical

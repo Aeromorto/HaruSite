@@ -21,6 +21,16 @@ function setup(options = {}) {
   return w;
 }
 const items = (w) => JSON.parse(JSON.stringify(w.HaruCart.getItems()));
+test('forms cannot submit visitor data in URLs when JavaScript is unavailable', () => {
+  for (const page of ['index.html', 'escova.html', 'kit.html', 'suporte.html']) {
+    const dom = new JSDOM(source(page));
+    for (const control of dom.window.document.querySelectorAll('#letterForm input, #letterForm button, #cepForm input, #cepForm button')) assert.equal(control.disabled, true);
+    dom.window.close();
+    const w = setup({ page });
+    for (const control of w.document.querySelectorAll('#letterForm input, #letterForm button, #cepForm input, #cepForm button')) assert.equal(control.disabled, false);
+    w.close();
+  }
+});
 test('cart rejects inherited IDs, invalid and fractional quantities; merges duplicates', () => {
   const w = setup({ cart: [{ id:'p1', qty:2.9 }, { id:'p1', qty:'8' }, { id:'constructor', qty:1 }, { id:'__proto__', qty:3 }, { id:'p2', qty:'Infinity' }, { id:'p3', qty:-1 }, null] });
   assert.deepEqual(items(w), [{ id:'p1', qty:9 }]);

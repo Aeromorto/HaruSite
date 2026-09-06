@@ -1372,4 +1372,8 @@
       .finally(() => { if (request === cepRequest) cepForm.removeAttribute("aria-busy"); });
   });
   }
+  // Forms become usable only after their local submit handlers are installed.
+  // Without JS, native GET submission must not put visitor data in URLs.
+  document.querySelectorAll("#letterForm input, #letterForm button, #cepForm input, #cepForm button")
+    .forEach((el) => { el.disabled = false; });
 })();

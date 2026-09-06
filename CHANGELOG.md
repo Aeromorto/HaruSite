@@ -20,6 +20,8 @@
 - Clear obsolete shipping results when input changes; label rates as illustrative.
 - Make the newsletter's device-only behavior explicit and report storage errors
   instead of falsely reporting a successful save.
+- Keep forms disabled until their local JavaScript handlers are ready, preventing
+  accidental GET submissions with visitor data when JavaScript is unavailable.
 - Align privacy/order descriptions with actual data handling, remove unconfigured
   social links, add no-JavaScript guidance and strengthen hidden/focus/motion CSS.
 - Add repeatable tests, asset/page/fragment validation, a clean static build,
