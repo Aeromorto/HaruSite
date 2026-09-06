@@ -1,14 +1,19 @@
 # Changelog
 
-## 6.0.0 — 2026-09-06
+- **v5:** Original commit `80591dc`, restored at `/HaruSite/`.
+- **v5.5:** Reviewed version, hosted separately at `/HaruSite/v5.5/`.
+- [Human-readable issue list](https://aeromorto.github.io/HaruSite/v5.5/changes/)
+
+## 5.5.0 — 2026-09-06
 
 - Replace simulated email verification/payment completion with an explicit
   unavailable-checkout notice; keep the visitor's bag intact.
-- Remove persistent checkout/address/order drafts and expire legacy cart and
-  checkout cookies when storage access allows it.
+- Stop collecting checkout/address/order drafts in v5.5. Preserve v5 data and
+  cookies now that the original version is hosted alongside v5.5.
 - Validate cart IDs and finite integer quantities, merge duplicate rows, cap
   quantities at nine and return defensive copies from the public cart API.
-- Scope cart storage to the site's path; migrate valid legacy localStorage bags.
+- Scope cart and device-only email storage to the version path, without reading
+  or deleting the original v5 data.
 - Keep the bag usable in memory when browser storage is blocked or full, with
   an explicit persistence warning. Synchronize ordinary edits across tabs.
 - Add dialog semantics, background isolation, focus trapping/restoration,

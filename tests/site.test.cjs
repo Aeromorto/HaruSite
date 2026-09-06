@@ -3,12 +3,12 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { JSDOM } = require('jsdom');
-const root = path.resolve(__dirname, '..');
+const root = path.resolve(__dirname, '../v5.5');
 const source = (name) => fs.readFileSync(path.join(root, name), 'utf8');
-const KEY = 'haru-cart:/HaruSite/';
+const KEY = 'haru-cart:/HaruSite/v5.5/';
 const tick = () => new Promise((resolve) => setImmediate(resolve));
 function setup(options = {}) {
-  const dom = new JSDOM(source(options.page || 'index.html'), { url: 'https://example.test/HaruSite/' + (options.page || 'index.html') + '?lang=pt', runScripts: 'outside-only' });
+  const dom = new JSDOM(source(options.page || 'index.html'), { url: 'https://example.test/HaruSite/v5.5/' + (options.page || 'index.html') + '?lang=pt', runScripts: 'outside-only' });
   const w = dom.window;
   w.matchMedia = () => ({ matches: false, addEventListener() {}, addListener() {} });
   w.scrollTo = () => {};
@@ -41,17 +41,18 @@ test('cart rejects inherited IDs, invalid and fractional quantities; merges dupl
   assert.equal(items(w)[0].qty, 9);
   w.close();
 });
-test('corrupt storage recovers; legacy cart migrates while checkout PII is removed', () => {
+test('corrupt storage recovers without reading or deleting v5 data', () => {
   const w = setup({ before(w) {
     w.localStorage.setItem('haru-cart', '[{"id":"p2","qty":2}]');
     w.localStorage.setItem('haru-checkout', '{"verified":true,"email":"private@example.test"}');
     w.localStorage.setItem('haru-order-draft', '{}');
     w.document.cookie = 'haru-checkout=secret; path=/';
   } });
-  assert.deepEqual(items(w), [{ id:'p2', qty:2 }]);
-  assert.equal(w.localStorage.getItem('haru-checkout'), null);
-  assert.equal(w.localStorage.getItem('haru-order-draft'), null);
-  assert.equal(w.document.cookie.includes('haru-checkout'), false);
+  assert.deepEqual(items(w), []);
+  assert.ok(w.localStorage.getItem('haru-checkout'));
+  assert.equal(w.localStorage.getItem('haru-order-draft'), '{}');
+  assert.equal(w.localStorage.getItem('haru-cart'), '[{"id":"p2","qty":2}]');
+  assert.equal(w.document.cookie.includes('haru-checkout'), true);
   w.localStorage.setItem(KEY, '{broken'); w.HaruCart.open();
   assert.deepEqual(items(w), []);
   w.close();

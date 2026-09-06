@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HARU v5.5 — Issues found and fixed</title>
+  <meta name="description" content="The fixes, tests and remaining limitations in HARU v5.5, compared with the original v5.">
+  <link rel="stylesheet" href="../css/fonts.css">
+  <style>
+    :root { color-scheme: light; font-family: Outfit, system-ui, sans-serif; color: #263525; background: #faf9f5; }
+    body { max-width: 58rem; margin: auto; padding: clamp(1.25rem, 5vw, 4rem); line-height: 1.65; }
+    h1, h2 { line-height: 1.2; } h1 { font-size: clamp(2.2rem, 6vw, 3.5rem); }
+    h2 { margin-top: 2.5rem; } a { color: #34522c; text-underline-offset: .2em; }
+    nav { display: flex; flex-wrap: wrap; gap: 1.5rem; } li { margin-block: .8rem; }
+    .intro { font-size: 1.15rem; } .note { border-left: 3px solid #526548; padding-left: 1rem; }
+    :focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <nav aria-label="Versions"><a href="../index.html">Open v5.5</a><a href="../../index.html">Open original v5</a></nav>
+  <main>
+    <p>HARU · Version 5.5 · 6 September 2026</p>
+    <h1>Issues found and fixed.</h1>
+    <p class="intro">v5.5 keeps the original catalogue, photography, themes and languages, with fixes to the bag, checkout behavior, privacy, accessibility and delivery lookup. The original v5 remains at its existing address.</p>
+    <h2>Checkout and privacy</h2>
+    <ul>
+      <li><strong>Fake email verification:</strong> any six digits previously passed. The simulated checkout is replaced with a clear notice that online purchases are unavailable.</li>
+      <li><strong>False order completion:</strong> payment failures could open the completion screen. v5.5 never claims payment or order success and keeps the bag intact.</li>
+      <li><strong>Unnecessary personal data:</strong> v5.5 no longer asks for or stores checkout names, full addresses, verification codes or order drafts.</li>
+      <li><strong>Data in page URLs:</strong> forms now stay disabled until JavaScript handlers are ready, preventing native GET submissions when scripts fail.</li>
+    </ul>
+    <h2>Bag reliability</h2>
+    <ul>
+      <li><strong>Malformed saved bags:</strong> unknown and inherited product IDs are rejected; quantities must be finite integers, duplicates are merged, and each product is limited to nine units.</li>
+      <li><strong>External mutation:</strong> the cart API returns copies, so callers cannot silently change internal quantities.</li>
+      <li><strong>Blocked or full storage:</strong> the bag stays usable in the current tab and explains when changes cannot be saved.</li>
+      <li><strong>Cross-tab state:</strong> ordinary changes synchronize between tabs. The v5.5 bag and device-only email list use their own storage keys; v5 data and cookies are left untouched.</li>
+    </ul>
+    <h2>Keyboard and navigation</h2>
+    <ul>
+      <li><strong>Modal focus:</strong> the bag has dialog semantics, isolates the background, keeps Tab focus inside, and restores focus when closed.</li>
+      <li><strong>Quantity editing:</strong> keyboard focus survives updates and removals. Buttons have translated action/product labels and totals are announced.</li>
+      <li><strong>Navigation:</strong> the mobile menu closes with Escape or an outside click; generated bag links preserve language and theme.</li>
+      <li><strong>Presentation:</strong> hidden panels stay hidden; focus outlines, reduced-motion rules and no-JavaScript guidance are improved. Unconfigured social links are removed.</li>
+    </ul>
+    <h2>Delivery lookup and email form</h2>
+    <ul>
+      <li><strong>Out-of-order CEP results:</strong> new searches cancel old requests; stale responses are ignored and editing the field clears old results.</li>
+      <li><strong>Requests that never finish:</strong> an eight-second timeout releases the loading state. Invalid state/city responses and network errors remain recoverable.</li>
+      <li><strong>Third-party script execution:</strong> the JSONP fallback is removed; address lookup uses JSON fetch only.</li>
+      <li><strong>Misleading delivery prices:</strong> fixed prices and dates are explicitly labeled illustrative, rather than carrier quotes.</li>
+      <li><strong>False newsletter success:</strong> the form clearly saves only on this device and reports storage failures; it does not claim a subscription.</li>
+    </ul>
+    <h2>Validation and remaining limitations</h2>
+    <p>14 DOM regression tests cover the v5.5 interactions and error cases. The build validates both versions' pages, local assets and fragment links. GitHub runs the tests and build before the workflow deployment.</p>
+    <p class="note">Real purchases still need an authentication, inventory, order and payment backend. The newsletter has no delivery service, shipping rates remain illustrative, and product certification/health claims still need supporting evidence. Simultaneous localStorage writes can still race. Browser rendering and real-device testing are not covered by the DOM tests.</p>
+    <p><a href="https://github.com/Aeromorto/HaruSite/blob/main/docs/REVIEW.md">Read the detailed engineering review</a> · <a href="https://github.com/Aeromorto/HaruSite/blob/main/CHANGELOG.md">Read the changelog</a></p>
+  </main>
+</body>
+</html>

@@ -1,7 +1,11 @@
-# Repository review and implementation notes
+# HARU v5.5 — Review and implementation notes
+
+v5 is restored at https://aeromorto.github.io/HaruSite/. The fixes below apply
+to v5.5 at https://aeromorto.github.io/HaruSite/v5.5/, whose source is in `v5.5/`.
+A visitor-friendly list is at https://aeromorto.github.io/HaruSite/v5.5/changes/.
 
 Reviewed 2026-09-06 against original commit `80591dc`. Scope: maintained root
-website, shared JavaScript/CSS, eight public pages, assets, prototype directories
+website, shared JavaScript/CSS, eight storefront pages, assets, prototype directories
 and publication setup. The historical prototypes remain archived source; they
 are not separate maintained storefronts.
 
@@ -11,11 +15,11 @@ are not separate maintained storefronts.
 | --- | --- | --- |
 | High | Any six digits passed simulated authentication. A stored `verified` flag skipped verification. | Remove the simulated checkout from the public flow. Auth methods return `NOT_CONNECTED`; no local flag grants authentication. |
 | High | Payment errors opened a completion screen; a generic successful adapter response cleared the bag before handling a redirect or confirming payment. | No payment or order completion is claimed. Checkout displays an unavailable notice and retains the bag. |
-| High | Checkout details, addresses and draft orders persisted in localStorage and, for checkout, cookies. | Stop collecting these details; remove legacy drafts and expire legacy cookies when the browser permits access. |
+| High | Checkout details, addresses and draft orders persisted in localStorage and, for checkout, cookies. | Stop collecting these details in v5.5. Since v5 is now hosted alongside it, v5.5 does not read/delete v5 drafts or cookies. |
 | High | Cart lookup accepted inherited properties such as `constructor`; fractional/nonfinite quantities and duplicate rows corrupted counts/totals. | Own-property ID checks, finite integer quantities, a nine-unit limit and duplicate merging on every load/update. |
 | Medium | Public `getItems()` exposed mutable row objects. | Return independent row copies. |
 | Medium | Storage failures could silently erase a bag on reopening or navigation. | Preserve current-tab state, display a persistence warning and avoid claiming that unsaved state survives navigation. |
-| Medium | A root-scoped cookie and unscoped cart key could leak state into other Pages paths or restore stale cart contents. | Path-scoped localStorage key, one-time valid legacy migration, no cart cookie writes. |
+| Medium | A root-scoped cookie and unscoped cart key could leak state into other Pages paths or restore stale cart contents. | Version-scoped cart and email-list keys; no reading/deleting v5 cart data and no v5.5 cart cookie writes. |
 | Medium | Cart behaved as a modal without dialog semantics, a focus trap, background isolation or return focus. Re-rendering rows lost keyboard focus. | Accessible modal semantics, `inert` background, Tab/Shift+Tab containment, Escape/close return focus and stable focus across row updates/removal. Stop/resume Lenis while open. |
 | Medium | Late CEP responses overwrote newer searches. Editing a CEP left old rates visible; fetch could wait indefinitely. | Abort superseded work, ignore stale completions, clear old results on edit, abort after eight seconds and restore loading state on all outcomes. |
 | Medium | A not-found/network result retried through an executable third-party JSONP script; unknown states silently selected southeast rates. | Fetch JSON only, preserve not-found errors, validate state/city and show recoverable network errors. |
@@ -29,7 +33,7 @@ are not separate maintained storefronts.
 
 `npm test` runs 14 regression tests using the actual page HTML and application
 scripts in jsdom. Tests cover malformed and duplicate carts, inherited IDs,
-quantity limits, defensive copies, migration/privacy cleanup, blocked/full
+quantity limits, defensive copies, version isolation/privacy, blocked/full
 storage, keyboard interactions, payment unavailability, tab synchronization,
 translations, newsletter failure, CEP response ordering, invalid responses,
 network failures and timeout recovery. Every maintained page initializes in both
@@ -38,7 +42,7 @@ Forms stay disabled until their JavaScript handlers are installed, preventing
 native GET submissions from leaking email/postal data into URLs when scripts fail.
 
 `npm run build` checks duplicate HTML IDs and every static local `href`/`src`,
-including cross-page fragments, then produces only public files and historical
+including cross-page fragments, then produces both v5 and v5.5 public files, the v5.5 changes page and historical
 page redirects. CI repeats the tests and build on Linux before publication.
 The local preview is checked over HTTP. Browser rendering, real-device touch,
 screen-reader and real-carrier/payment integration testing are not covered by
@@ -72,9 +76,11 @@ these automated tests.
    but exactly simultaneous writes can still race because localStorage has no
    atomic compare-and-swap. Storage denial/quota fallback survives only within
    the current tab. A server is needed for durable or cross-device carts.
-7. **Legacy migration limits.** Valid legacy localStorage bags migrate, but old
-   cookie-only bags are discarded rather than trusting ambiguous origin-wide
-   cookies. Browser-blocked storage cannot be cleaned until access is permitted.
+7. **Version isolation.** The v5.5 bag starts separately at its new path; it does
+   not migrate, delete or mutate v5 cart/checkout/order data or cookies. The v5.5
+   device-only email list is also separate. Theme/language preferences retain
+   their existing shared keys. The restored v5 intentionally retains the
+   original behavior and issues described above.
 8. **Visual/performance follow-up.** Validate both themes at 200% zoom, keyboard
    and screen-reader flows, mobile safe areas and touch scrolling on real devices.
    The original large JPEG hero images and vendor animation libraries are kept;
@@ -84,9 +90,9 @@ these automated tests.
 ## Deployment notes
 
 The repository is still configured to publish from `main` at `/` using legacy
-Pages. The new workflow successfully published `dist/` after tests and build
-passed, and HTTP checks verified the updated cart, historical redirects and
-absence of `package.json`. However, the current credentials could not update
+Pages. The workflow publishes both version directories from `dist/` after tests and build
+pass. Both legacy and workflow publication now use v5 at `/` and v5.5 at
+`/v5.5/`, so either publisher preserves the version URLs. However, the current credentials could not update
 the administrative Pages configuration (GitHub returned 404 for the update),
 so both publishers currently run. A later legacy deployment can replace the
 filtered output, and the legacy publisher is not gated by the new tests.

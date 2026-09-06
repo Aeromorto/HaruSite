@@ -6,14 +6,3 @@
 .lang-toggle__mark {
   overflow: visible;
 }
-
-/* Keep hidden panels hidden even when their layout uses flex or grid. */
-[hidden] { display: none !important; }
-.cart-drawer { overscroll-behavior: contain; padding-bottom: max(2rem, env(safe-area-inset-bottom)); }
-.cart-drawer button:focus-visible, .cart-drawer a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
-.cart-drawer [aria-disabled="true"] { opacity: .45; cursor: default; }
-.script-note { padding: 1rem; margin-top: 5rem; }
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto !important; }
-  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
-}

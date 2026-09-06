@@ -1,18 +1,26 @@
-# HARU
+# HARU — v5 and v5.5
 
-Static, bilingual (Portuguese/English) HARU storefront. The maintained website is
-at the repository root. The original design, product photographs, three-product
-catalogue, themes and scroll animations are retained.
+Both versions are hosted on GitHub Pages at separate URLs:
 
-**Live website:** https://aeromorto.github.io/HaruSite/
+| Version | Website | Source |
+| --- | --- | --- |
+| **v5 — original** | https://aeromorto.github.io/HaruSite/ | Root HTML, `css/`, `js/`, `images/`, `fonts/`; restored from commit `80591dc` |
+| **v5.5 — reviewed** | https://aeromorto.github.io/HaruSite/v5.5/ | `v5.5/` |
+| **v5.5 issues and fixes** | https://aeromorto.github.io/HaruSite/v5.5/changes/ | `v5.5/changes/index.html` |
 
-Online checkout is unavailable: this repository has no authentication, order,
-inventory, newsletter delivery or payment backend. The bag is a local product
-selection. Postal prices and delivery times are illustrative, not carrier quotes.
+v5 is preserved with its original behavior. v5.5 fixes cart validation, storage
+errors, keyboard accessibility, postal lookup races/timeouts, misleading checkout
+and newsletter feedback, and form privacy. It keeps the original design,
+photography, catalogue, languages and themes.
+
+v5.5 clearly disables online checkout because no authentication/order/payment
+backend exists. Its bag and device-only email list are separate from v5; visiting
+it does not remove or migrate v5 cart/checkout data. Themes/languages keep their
+existing shared preferences. Shipping numbers remain illustrative.
 
 ## Develop and validate
 
-Requires Node.js 22 or newer.
+Requires Node.js 22 or newer:
 
 ```sh
 npm ci --ignore-scripts
@@ -21,31 +29,28 @@ npm run build
 npm start
 ```
 
-Open http://127.0.0.1:8765/. The server binds only to the local computer and serves
-the built `dist/` directory. Rebuild after changing source. No runtime npm
-dependencies or API keys are required by the website. `jsdom` is used only by
-the regression tests and build validation.
+Preview v5 at http://127.0.0.1:8765/ and v5.5 at
+http://127.0.0.1:8765/v5.5/. The server binds only to this computer and serves
+`dist/`. Rebuild after editing. No runtime npm dependencies or API keys are needed.
+
+The regression tests target **v5.5**. The build validates the pages and links of
+both versions and copies each version's own assets. Do not edit the root when
+making a v5.5-only change.
 
 ## Publish
 
-GitHub Pages uses the `Validate and deploy HARU` Actions workflow. Pushes to
-`main` run locked dependency installation, regression tests and the static build
-before deploying `dist/`. Pull requests run validation without deploying.
-**One-time owner action:** In Settings → Pages → Build and deployment → Source,
-select **GitHub Actions**. The current credentials allowed code pushes and
-successful workflow deployment but could not change this administrative setting.
-Until it is changed, the existing branch-based publisher also runs and can
-overwrite a workflow deployment; tests cannot gate that legacy publisher.
+The `Validate and deploy HARU` workflow runs tests and builds both versions on
+pushes to `main`, then deploys `dist/`. Pull requests validate without deploying.
+Both legacy branch publishing and the new workflow preserve the version URLs.
 
-The workflow publishes only HTML, CSS, JavaScript, images and fonts. Development files,
-tests and historical prototypes stay in Git. Public `v2/`, `v3/` and `v4/` page
-URLs redirect to the maintained equivalents, preserving query strings and
-fragments. The original prototype source remains available in those Git folders.
+**Recommended owner setting:** Settings → Pages → Build and deployment → Source
+→ **GitHub Actions**. The existing credentials can push/deploy but could not
+change this administrative setting. Until the owner changes it, the legacy
+publisher also runs and is not gated by the regression tests. The workflow
+excludes development files from its public artifact; legacy publishing does not.
 
-## Review and change history
+## Documentation
 
-- [Detailed review, fixes, limitations and integration requirements](docs/REVIEW.md)
+- [Issues found and fixed in v5.5](https://aeromorto.github.io/HaruSite/v5.5/changes/)
+- [Detailed review and remaining limitations](docs/REVIEW.md)
 - [Changelog](CHANGELOG.md)
-
-For rollback, revert the relevant commit on `main`; the workflow validates and
-redeploys that source. Avoid restoring the old simulated checkout as a live store.

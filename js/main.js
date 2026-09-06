@@ -1,12 +1,6 @@
 (() => {
   const I18N = {
     pt: {
-      "product.cepLoading": "Consultando CEP…",
-      "letter.storageErr": "Não foi possível salvar neste aparelho. Nenhuma assinatura foi feita.",
-      "check.unavailable": "As compras online ainda não estão disponíveis. Nenhum pedido foi enviado ou pagamento realizado. Sua seleção continua na sacola.",
-      "cart.storage": "A sacola está disponível só nesta aba. O navegador não permitiu salvar as alterações.",
-      "cart.decrease": "Diminuir quantidade",
-      "cart.increase": "Aumentar quantidade",
       skip: "Ir para o conteúdo",
       "nav.shop": "Loja",
       "nav.brand": "A Marca",
@@ -156,7 +150,7 @@
       "product.sedex": "SEDEX",
       "product.daysRange": "{a} a {b} dias úteis",
       "product.shipNote":
-        "Simulação com valores e prazos ilustrativos, sem cotação dos Correios. O frete real será informado quando a loja abrir.",
+        "Estimativa para teste interno. O valor final entra quando o contrato dos Correios estiver ativo.",
       "product.more": "Também na coleção",
       "brand.kicker": "A marca",
       "brand.quote": "HARU é matéria natural.",
@@ -186,10 +180,10 @@
       "letter.kicker": "Cartas",
       "letter.title": "Pesquisas e o essencial, no e-mail.",
       "letter.text":
-        "A newsletter ainda não está disponível. Você pode guardar seu e-mail somente neste aparelho; isso não faz uma assinatura.",
+        "Estudos sobre microplásticos e avisos da coleção — só o que importa, quando houver novidade.",
       "letter.label": "Seu e-mail",
       "letter.placeholder": "seu@email.com",
-      "letter.submit": "Salvar neste aparelho",
+      "letter.submit": "Assinar",
       "letter.ok": "Pronto. Guardamos o e-mail neste aparelho — a lista viva chega quando a loja nascer.",
       "letter.dup": "Este e-mail já está na lista deste aparelho.",
       "letter.err": "Escreva um e-mail válido.",
@@ -275,10 +269,10 @@
         "HARU é uma marca de higiene em matéria natural — bambu e crina de cavalo. O contato é contato@haru.natural.",
       "privacy.h2b": "O que guardamos",
       "privacy.p2":
-        "As compras online estão indisponíveis. Esta versão não solicita nome, endereço completo ou código de acesso. O formulário de cartas guarda o e-mail apenas neste aparelho, sem fazer uma assinatura.",
+        "Para um pedido: e-mail, nome e o endereço completo do CEP. Não pedimos senha. O código de seis dígitos serve só para confirmar o e-mail.",
       "privacy.h2c": "Neste aparelho",
       "privacy.p3":
-        "O navegador pode guardar a sacola, o idioma, o tema e os e-mails salvos pelo formulário de cartas. A versão atual remove os antigos rascunhos locais de checkout e pedido ao abrir o site.",
+        "O navegador pode guardar o carrinho, o idioma, o tema e um rascunho do pedido neste aparelho. Isso fica no seu dispositivo, não num servidor nosso — até o checkout estar ligado de fato.",
       "privacy.h2d": "Com quem falamos",
       "privacy.p4":
         "O CEP é consultado em serviço público de endereço (ViaCEP). Não vendemos lista de e-mails. Quando o pagamento existir, o gateway verá o necessário para cobrar.",
@@ -300,7 +294,7 @@
         "As escovas são de bambu selecionado e crina de cavalos bem tratados, esterilizadas a vapor. Preços em reais. Fotos e textos podem mudar enquanto a loja se forma.",
       "terms.h2c": "Pedidos",
       "terms.p3":
-        "As compras online ainda não estão disponíveis. A sacola guarda uma seleção de produtos; não confirma pedido, reserva de estoque ou pagamento.",
+        "O pedido se faz sem senha: e-mail, código e CEP completo. O pagamento ainda não está ligado; o esqueleto do pedido pode ficar salvo neste aparelho até o gateway existir.",
       "terms.h2d": "Envio e troca",
       "terms.p4":
         "O frete calculado no site é estimativa. Prazos e valores finais entram com o contrato dos Correios. Trocas e arrependimento seguem a lei brasileira de defesa do consumidor.",
@@ -316,12 +310,6 @@
         "HARU. Higiene feita de matéria, não de plástico — bambu e crina de cavalo.",
     },
     en: {
-      "product.cepLoading": "Looking up postal code…",
-      "letter.storageErr": "Could not save on this device. You have not been subscribed.",
-      "check.unavailable": "Online purchases are not available yet. No order has been sent and no payment has been made. Your selection remains in your bag.",
-      "cart.storage": "Your bag is available only in this tab. The browser could not save your changes.",
-      "cart.decrease": "Decrease quantity",
-      "cart.increase": "Increase quantity",
       skip: "Skip to content",
       "nav.shop": "Shop",
       "nav.brand": "The Brand",
@@ -472,7 +460,7 @@
       "product.sedex": "SEDEX",
       "product.daysRange": "{a} to {b} business days",
       "product.shipNote":
-        "Illustrative prices and delivery times, without a carrier quote. Actual shipping will be available when the shop opens.",
+        "Internal test estimate. Final rates land when the Correios contract is live.",
       "product.more": "Also in the collection",
       "brand.kicker": "The brand",
       "brand.quote": "HARU is made from natural materials.",
@@ -502,10 +490,10 @@
       "letter.kicker": "Letters",
       "letter.title": "Research and the essential, by email.",
       "letter.text":
-        "The newsletter is not available yet. You can save your email on this device only; this does not subscribe you.",
+        "Notes on microplastics and word from the collection — only what matters, when there is news.",
       "letter.label": "Your email",
       "letter.placeholder": "you@email.com",
-      "letter.submit": "Save on this device",
+      "letter.submit": "Subscribe",
       "letter.ok": "Done. We saved the address on this device — the living list arrives when the shop opens.",
       "letter.dup": "This email is already on this device’s list.",
       "letter.err": "Please enter a valid email.",
@@ -591,10 +579,10 @@
         "HARU is a hygiene brand made from natural materials — bamboo and horsehair. Write to contato@haru.natural.",
       "privacy.h2b": "What we keep",
       "privacy.p2":
-        "Online purchases are unavailable. This version does not request your name, full address or sign-in code. The letters form saves an email only on this device and does not create a subscription.",
+        "For an order: email, name, and the full postal address. There is no password. The six-digit code only confirms the email.",
       "privacy.h2c": "On this device",
       "privacy.p3":
-        "The browser may store your bag, language, theme and emails saved through the letters form. This version removes old local checkout and order drafts when the site opens.",
+        "The browser may store the cart, language, theme, and an order draft on this device. That stays on your machine, not on our server — until checkout is actually live.",
       "privacy.h2d": "Who we talk to",
       "privacy.p4":
         "Postal codes are looked up through a public address service (ViaCEP). We do not sell email lists. When payment exists, the gateway will see what it needs to charge.",
@@ -615,7 +603,7 @@
         "The brushes are selected bamboo and hair from well-treated horses, steam-sterilized. Prices are in Brazilian reais. Photos and copy may change while the shop takes shape.",
       "terms.h2c": "Orders",
       "terms.p3":
-        "Online purchases are not available yet. The bag holds a product selection; it does not confirm an order, reserve stock or process payment.",
+        "An order needs no password: email, a code, and the full postal address. Payment is not connected yet; the order skeleton may be saved on this device until the gateway exists.",
       "terms.h2d": "Shipping and returns",
       "terms.p4":
         "Shipping shown on the site is an estimate. Final rates and times arrive with the postal contract. Returns follow Brazilian consumer law.",
@@ -860,17 +848,45 @@
     note.textContent = pack["product.shipNote"] || "";
   };
 
-  const lookupCep = async (cep, controller) => {
-    const timeout = setTimeout(() => controller.abort(), 8000);
-    try {
-      const response = await fetch("https://viacep.com.br/ws/" + cep + "/json/", { signal: controller.signal });
-      if (!response.ok) throw new Error("network");
-      const data = await response.json();
-      if (!data || data.erro) throw new Error("miss");
-      if (!Object.hasOwn(UF_ZONE, data.uf) || typeof data.localidade !== "string" || !data.localidade.trim()) throw new Error("network");
-      return data;
-    } finally { clearTimeout(timeout); }
-  };
+  const jsonpCep = (cep) =>
+    new Promise((resolve, reject) => {
+      const cb = "haruCep" + String(Date.now());
+      const script = document.createElement("script");
+      let done = false;
+      const finish = (fn, value) => {
+        if (done) return;
+        done = true;
+        clearTimeout(timer);
+        try {
+          delete window[cb];
+        } catch (_) {
+          window[cb] = undefined;
+        }
+        script.remove();
+        fn(value);
+      };
+      const timer = setTimeout(() => finish(reject, new Error("timeout")), 8000);
+      window[cb] = (data) => {
+        if (!data || data.erro) finish(reject, new Error("miss"));
+        else finish(resolve, data);
+      };
+      script.src =
+        "https://viacep.com.br/ws/" + cep + "/json/?callback=" + cb;
+      script.onerror = () => finish(reject, new Error("network"));
+      document.head.appendChild(script);
+    });
+
+  const lookupCep = (cep) =>
+    fetch("https://viacep.com.br/ws/" + cep + "/json/")
+      .then((res) => {
+        if (!res.ok) throw new Error("network");
+        return res.json();
+      })
+      .then((data) => {
+        if (!data || data.erro) throw new Error("miss");
+        return data;
+      })
+      .catch(() => jsonpCep(cep));
 
   const applyLang = () => {
     const pack = packOf();
@@ -964,7 +980,7 @@
 
   const withChoice = (href) => {
     if (!href) return href;
-    if (/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(href)) return href;
+    if (/^(https?:|mailto:|tel:)/i.test(href)) return href;
     if (href.charAt(0) === "#") return href;
 
     const hashIndex = href.indexOf("#");
@@ -1081,7 +1097,7 @@
       return;
     }
     try {
-      window.scrollTo({ top: 0, left: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     } catch (_) {
       window.scrollTo(0, 0);
     }
@@ -1094,16 +1110,6 @@
       event.preventDefault();
       scrollToHomeTop();
     });
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && root.classList.contains("nav-open")) {
-      setNavOpen(false);
-      navMenu?.focus();
-    }
-  });
-  document.addEventListener("click", (event) => {
-    if (root.classList.contains("nav-open") && !event.target.closest(".nav")) setNavOpen(false);
   });
 
   const desktopNav = window.matchMedia("(min-width: 901px)");
@@ -1263,7 +1269,7 @@
     try {
       const raw = localStorage.getItem("haru-letter");
       const parsed = raw ? JSON.parse(raw) : [];
-      return Array.isArray(parsed) ? parsed.filter((email) => typeof email === "string" && emailOk(email)) : [];
+      return Array.isArray(parsed) ? parsed : [];
     } catch (_) {
       return [];
     }
@@ -1272,7 +1278,6 @@
   const showLetter = (key) => {
     if (!letterNote) return;
     const pack = packOf();
-    letterNote.dataset.i18n = key;
     letterNote.hidden = false;
     letterNote.textContent = pack[key] || "";
   };
@@ -1297,26 +1302,18 @@
     try {
       localStorage.setItem("haru-letter", JSON.stringify(list));
     } catch (_) {
-      showLetter("letter.storageErr");
-      return;
+      /* ignore */
     }
     letterForm.classList.add("is-done");
     showLetter("letter.ok");
   });
   }
 
-  let cepRequest = 0;
-  let cepController = null;
   const cepForm = document.getElementById("cepForm");
   const cepInput = document.getElementById("cepInput");
 
   if (cepInput) {
     cepInput.addEventListener("input", function () {
-      cepRequest += 1;
-      cepController?.abort();
-      cepForm?.removeAttribute("aria-busy");
-      lastCep = null;
-      renderCep();
       const start = cepInput.selectionStart;
       const before = cepInput.value;
       cepInput.value = maskCep(cepInput.value);
@@ -1335,9 +1332,6 @@
   if (cepForm) {
   cepForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    const request = ++cepRequest;
-    cepController?.abort();
-    cepForm.removeAttribute("aria-busy");
     const cep = digitsCep(cepInput && cepInput.value);
     if (cep.length !== 8) {
       lastCep = { error: "product.cepErr" };
@@ -1347,13 +1341,8 @@
     }
     lastCep = null;
     renderCep();
-    cepController = new AbortController();
-    cepForm.setAttribute("aria-busy", "true");
-    lastCep = { error: "product.cepLoading" };
-    renderCep();
-    lookupCep(cep, cepController)
+    lookupCep(cep)
       .then((data) => {
-        if (request !== cepRequest) return;
         const uf = String(data.uf || "").toUpperCase();
         lastCep = {
           city: data.localidade || "",
@@ -1363,17 +1352,11 @@
         renderCep();
       })
       .catch((err) => {
-        if (request !== cepRequest) return;
         lastCep = {
           error: err && err.message === "miss" ? "product.cepMiss" : "product.cepNet",
         };
         renderCep();
-      })
-      .finally(() => { if (request === cepRequest) cepForm.removeAttribute("aria-busy"); });
+      });
   });
   }
-  // Forms become usable only after their local submit handlers are installed.
-  // Without JS, native GET submission must not put visitor data in URLs.
-  document.querySelectorAll("#letterForm input, #letterForm button, #cepForm input, #cepForm button")
-    .forEach((el) => { el.disabled = false; });
 })();
