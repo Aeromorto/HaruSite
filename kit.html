@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/web.css" />
   </head>
   <body data-page="product" data-product="p2" data-weight="2">
+    <noscript><p class="script-note">Ative o JavaScript para usar a sacola e consultar o CEP. / Enable JavaScript to use the bag and look up postal codes.</p></noscript>
     <a class="skip" href="#conteudo" data-i18n="skip">Ir para o conteúdo</a>
 
     <header class="nav" id="topo">
@@ -176,7 +177,7 @@
               </div>
               <p class="ship__place" id="cepPlace" hidden></p>
               <ul class="ship__opts" id="cepOpts" hidden></ul>
-              <p class="ship__note" id="cepNote" hidden></p>
+              <p class="ship__note" id="cepNote" role="status" aria-live="polite" hidden></p>
             </form>
           </section>
 
