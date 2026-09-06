@@ -20,7 +20,7 @@ are not separate maintained storefronts.
 | Medium | Late CEP responses overwrote newer searches. Editing a CEP left old rates visible; fetch could wait indefinitely. | Abort superseded work, ignore stale completions, clear old results on edit, abort after eight seconds and restore loading state on all outcomes. |
 | Medium | A not-found/network result retried through an executable third-party JSONP script; unknown states silently selected southeast rates. | Fetch JSON only, preserve not-found errors, validate state/city and show recoverable network errors. |
 | Medium | Newsletter reported success even when localStorage failed; “Subscribe” implied an actual subscription. | Explicit device-only saving before submission, honest write errors and translatable live feedback. |
-| Medium | Repository-root publication exposed old working prototypes and development files. | Publish the allowlisted build output, redirect historical URLs and keep prototypes only as source. |
+| Medium | Repository-root publication exposed old working prototypes and development files. | The new workflow publishes allowlisted output with historical redirects. An owner must disable the competing legacy publisher as described below. |
 | Low | New cart links did not preserve explicit language/theme under restricted storage. Quantity buttons had only symbol labels. | Include current choices in generated links and provide localized action/product labels. |
 | Low | Mobile menu lacked Escape/outside-close behavior; generic Instagram and missing WhatsApp destinations were visible. | Add closing behavior and remove unconfigured destinations. Existing email contact remains. |
 | Low | No automated validation, setup documentation or change record. | Add DOM regression tests, static asset/page/fragment checks, repeatable build/preview scripts, CI deployment and this documentation. |
@@ -81,9 +81,17 @@ these automated tests.
 
 ## Deployment notes
 
-The repository was previously published from `main` at `/` using legacy Pages.
-The new workflow publishes `dist/` only after tests and build succeed. Set Pages
-to GitHub Actions and retain HTTPS. Deployment follows the [official custom
+The repository is still configured to publish from `main` at `/` using legacy
+Pages. The new workflow successfully published `dist/` after tests and build
+passed, and HTTP checks verified the updated cart, historical redirects and
+absence of `package.json`. However, the current credentials could not update
+the administrative Pages configuration (GitHub returned 404 for the update),
+so both publishers currently run. A later legacy deployment can replace the
+filtered output, and the legacy publisher is not gated by the new tests.
+
+**Owner action:** Settings → Pages → Build and deployment → Source →
+**GitHub Actions**. Retain HTTPS. No additional application code or payment
+credentials are needed for this switch. Deployment follows the [official custom
 workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
 The static site intentionally has no paid service integration and no additional

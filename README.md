@@ -31,9 +31,13 @@ the regression tests and build validation.
 GitHub Pages uses the `Validate and deploy HARU` Actions workflow. Pushes to
 `main` run locked dependency installation, regression tests and the static build
 before deploying `dist/`. Pull requests run validation without deploying.
-The repository's Pages publishing source must be **GitHub Actions**.
+**One-time owner action:** In Settings → Pages → Build and deployment → Source,
+select **GitHub Actions**. The current credentials allowed code pushes and
+successful workflow deployment but could not change this administrative setting.
+Until it is changed, the existing branch-based publisher also runs and can
+overwrite a workflow deployment; tests cannot gate that legacy publisher.
 
-Only HTML, CSS, JavaScript, images and fonts are published. Development files,
+The workflow publishes only HTML, CSS, JavaScript, images and fonts. Development files,
 tests and historical prototypes stay in Git. Public `v2/`, `v3/` and `v4/` page
 URLs redirect to the maintained equivalents, preserving query strings and
 fragments. The original prototype source remains available in those Git folders.
