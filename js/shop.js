@@ -275,17 +275,19 @@
 
   const renderLines = () => {
     const list = qs("cartList");
-    const empty = qs("cartEmpty");
+    const vacant = qs("cartVacant");
     const foot = qs("cartFoot");
     const sum = qs("cartSum");
     if (!list) return;
     list.innerHTML = "";
     if (!cart.length) {
-      if (empty) empty.hidden = false;
+      if (vacant) vacant.hidden = false;
+      list.hidden = true;
       if (foot) foot.hidden = true;
       return;
     }
-    if (empty) empty.hidden = true;
+    if (vacant) vacant.hidden = true;
+    list.hidden = false;
     if (foot) foot.hidden = false;
     if (sum) sum.textContent = money(total());
 
@@ -391,7 +393,14 @@
       '<button type="button" class="cart-drawer__close" id="cartClose" data-i18n-aria="cart.close" aria-label="Fechar o carrinho">×</button>' +
       "</header>" +
       '<div id="shopCartView">' +
-      '<p class="cart-empty" id="cartEmpty" data-i18n="cart.empty">O carrinho está vazio.</p>' +
+      '<div class="cart-vacant" id="cartVacant">' +
+      '<figure class="cart-vacant__photo">' +
+      '<img src="images/product-escova.jpg" alt="" width="640" height="640" />' +
+      "</figure>" +
+      '<p class="cart-empty" id="cartEmpty" data-i18n="cart.empty">Ainda vazio.</p>' +
+      '<p class="cart-vacant__lead" data-i18n="cart.emptyLead">A coleção está à espera.</p>' +
+      '<a class="product__cta" id="cartShop" href="index.html#loja" data-i18n="cart.shop">Ver a coleção</a>' +
+      "</div>" +
       '<ul class="cart-list" id="cartList"></ul>' +
       '<div class="cart-foot" id="cartFoot" hidden>' +
       '<p class="cart-foot__sum"><span data-i18n="cart.subtotal">Subtotal</span> <strong id="cartSum"></strong></p>' +
@@ -545,6 +554,10 @@
     }
     if (overlay) overlay.addEventListener("click", () => setOpen(false));
     if (close) close.addEventListener("click", () => setOpen(false));
+    const shop = qs("cartShop");
+    if (shop) {
+      shop.addEventListener("click", () => setOpen(false));
+    }
 
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") setOpen(false);
