@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <script src="js/boot.js"></script>
+    <title>HARU — Escova de bambu</title>
+    <link rel="icon" href="images/logo-olive.png" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo-olive.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo-olive.png" />
+    <link rel="apple-touch-icon" href="images/logo-olive.png" />
+    <meta
+      name="description"
+      content="Escova de bambu HARU com cerdas de crina de cavalo. Sem nylon. Sem plástico."
+    />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/web.css" />
+  </head>
+  <body data-page="product" data-product="p1" data-weight="1">
+    <a class="skip" href="#conteudo" data-i18n="skip">Ir para o conteúdo</a>
+
+    <header class="nav" id="topo">
+      <a class="nav__mark" href="index.html">HARU</a>
+      <div class="nav__right">
+        <button
+          class="theme-toggle"
+          type="button"
+          id="themeToggle"
+          aria-pressed="false"
+          data-i18n-aria="theme.toKraft"
+          aria-label="Ativar modo anti-luz azul"
+        >
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M16.5 12.5A6.5 6.5 0 0 1 11 5.1 7 7 0 1 0 18.9 13a6.5 6.5 0 0 1-2.4-.5Z" />
+          </svg>
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 3v1.6M12 19.4V21M4.9 4.9l1.1 1.1M18 18l1.1 1.1M3 12h1.6M19.4 12H21M4.9 19.1 6 18M18 6l1.1-1.1" />
+          </svg>
+        </button>
+        <button
+          class="cart-toggle"
+          type="button"
+          id="cartToggle"
+          aria-expanded="false"
+          aria-controls="cartDrawer"
+          data-i18n-aria="cart.open"
+          aria-label="Abrir o carrinho"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 7h15l-1.4 8.2a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.6L5.2 4H3" />
+            <circle cx="9" cy="20" r="1.3" />
+            <circle cx="18" cy="20" r="1.3" />
+          </svg>
+          <span class="cart-toggle__count" id="cartCount" hidden>0</span>
+        </button>
+        <button
+          class="nav__menu"
+          type="button"
+          id="navMenu"
+          aria-expanded="false"
+          aria-controls="navLinks"
+          data-i18n-aria="nav.menu"
+          aria-label="Abrir o menu"
+        >
+          <span class="nav__menu-bar" aria-hidden="true"></span>
+          <span class="nav__menu-bar" aria-hidden="true"></span>
+        </button>
+        <ul class="nav__links" id="navLinks">
+          <li><a href="index.html#loja" data-i18n="nav.shop">Loja</a></li>
+          <li><a href="index.html#marca" data-i18n="nav.brand">A Marca</a></li>
+          <li><a href="microplasticos.html" data-i18n="nav.matter">Matéria</a></li>
+          <li><a href="uso.html" data-i18n="nav.use">O uso</a></li>
+          <li><a href="index.html#contato" data-i18n="nav.contact">Contato</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <article class="product">
+        <figure class="product__photo">
+          <img
+            src="images/product-escova.jpg"
+            data-i18n-alt="p1.alt"
+            alt="Escova de dentes de bambu com cerdas naturais"
+          />
+        </figure>
+
+        <div class="product__info">
+          <a class="product__back" href="index.html#loja" data-i18n="product.back"
+            >Voltar à coleção</a
+          >
+          <p class="kicker" data-i18n="product.kicker">Coleção</p>
+          <h1 class="product__name" data-i18n="p1.name">Escova de bambu</h1>
+          <p class="product__price">R$ 48</p>
+          <p class="product__lead" data-i18n="p1.desc">
+            Cabo de bambu selecionado, sem verniz plástico. Cerdas de crina de
+            cavalo, esterilizadas a vapor, de animais selecionados e tratados
+            com o devido cuidado.
+          </p>
+
+          <div class="product__actions">
+            <button
+              type="button"
+              class="product__cta product__cta--ghost"
+              data-add-cart="p1"
+              data-i18n="cart.add"
+            >
+              Adicionar ao carrinho
+            </button>
+            <button
+              type="button"
+              class="product__cta"
+              data-buy="p1"
+              data-i18n="product.order"
+            >
+              Finalizar a compra
+            </button>
+          </div>
+
+          <dl class="product__specs">
+            <div class="product__spec">
+              <dt data-i18n="spec.handle">Matéria</dt>
+              <dd data-i18n="p1.handle">Bambu selecionado, sem verniz plástico</dd>
+            </div>
+            <div class="product__spec">
+              <dt data-i18n="spec.bristle">Cerdas</dt>
+              <dd data-i18n="p1.bristle">Crina de cavalo, esterilizada a vapor</dd>
+            </div>
+            <div class="product__spec">
+              <dt data-i18n="spec.care">Uso</dt>
+              <dd data-i18n="p1.care">
+                Secar em pé, cerdas para cima. Não deixar de molho.
+              </dd>
+            </div>
+          </dl>
+          <p class="product__fine" data-i18n="trust.anvisa">Aprovado pela ANVISA.</p>
+
+          <section class="product__block" aria-labelledby="shipTitle">
+            <h2 class="product__block-title" id="shipTitle" data-i18n="product.ship">
+              Frete
+            </h2>
+            <form class="ship" id="cepForm" novalidate>
+              <label class="visually-hidden" for="cepInput" data-i18n="product.cep"
+                >CEP</label
+              >
+              <div class="ship__row">
+                <input
+                  id="cepInput"
+                  name="cep"
+                  type="text"
+                  inputmode="numeric"
+                  autocomplete="postal-code"
+                  maxlength="9"
+                  data-i18n-placeholder="product.cepPh"
+                  placeholder="00000-000"
+                />
+                <button type="submit" data-i18n="product.cepGo">Calcular</button>
+              </div>
+              <p class="ship__place" id="cepPlace" hidden></p>
+              <ul class="ship__opts" id="cepOpts" hidden></ul>
+              <p class="ship__note" id="cepNote" hidden></p>
+            </form>
+          </section>
+
+          <section class="product__block" aria-labelledby="payTitle">
+            <h2 class="product__block-title" id="payTitle" data-i18n="product.pay">
+              Pagamento
+            </h2>
+            <ul class="pays" data-i18n-aria="product.pay" aria-label="Pagamento">
+              <li>
+                <img
+                  class="pays__pix"
+                  src="images/pix.png"
+                  alt="PIX"
+                  width="174"
+                  height="64"
+                />
+              </li>
+              <li>
+                <svg class="pays__ico pays__ico--card" viewBox="0 0 24 16" aria-hidden="true">
+                  <rect
+                    x="1.15"
+                    y="1.15"
+                    width="21.7"
+                    height="13.7"
+                    rx="1.7"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.35"
+                  />
+                  <path fill="currentColor" d="M1.15 5.1h21.7v2.35H1.15z" />
+                  <path fill="currentColor" d="M4.1 10.7h4.6v1.35H4.1z" />
+                </svg>
+                <span data-i18n="product.cardPay">Cartão</span>
+              </li>
+              <li>
+                <img
+                  class="pays__apple"
+                  src="images/apple-pay.png"
+                  alt=""
+                  width="74"
+                  height="44"
+                />
+                <span data-i18n="product.applePay">Apple Pay</span>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </article>
+
+      <section class="also" aria-labelledby="alsoTitle">
+        <h2 class="also__title" id="alsoTitle" data-i18n="product.also">Na coleção</h2>
+        <div class="also__grid">
+          <a class="also__item" href="kit.html">
+            <img
+              src="images/product-kit.jpg"
+              data-i18n-alt="p2.alt"
+              alt="Duas escovas de bambu lado a lado"
+              width="480"
+              height="480"
+            />
+            <span data-i18n="p2.name">Kit de duas</span>
+          </a>
+          <a class="also__item" href="suporte.html">
+            <img
+              src="images/product-suporte.jpg"
+              data-i18n-alt="p3.alt"
+              alt="Suporte cúbico de pedra para escovas"
+              width="480"
+              height="480"
+            />
+            <span data-i18n="p3.name">Suporte de pedra</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a class="footer__brand" href="index.html">
+        <span class="footer__mark" aria-hidden="true">
+          <img src="images/logo-olive.png" alt="" width="52" height="62" />
+        </span>
+        HARU
+      </a>
+      <nav data-i18n-aria="footer.nav" aria-label="Rodapé">
+        <a href="index.html#loja" data-i18n="nav.shop">Loja</a>
+        <a href="index.html#marca" data-i18n="nav.brand">A Marca</a>
+        <a href="microplasticos.html" data-i18n="nav.matter">Matéria</a>
+        <a href="uso.html" data-i18n="nav.use">O uso</a>
+        <a href="index.html#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+      <div class="footer__end">
+        <button
+          class="lang-toggle"
+          type="button"
+          id="langToggle"
+          data-i18n-aria="lang.toEn"
+          aria-label="Ver o site em inglês"
+        >
+          <svg class="lang-toggle__mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="25.4" y="15.2" width="28.6" height="35.2" rx="5.2" fill="var(--white)"/>
+            <text x="37.4" y="45.6" fill="var(--olive-deep)" font-family="Noto Sans JP, Yu Gothic, Hiragino Sans, sans-serif" font-size="18.5" font-weight="500">ほ</text>
+            <path fill="var(--olive)" d="M16.5 8.9h20.4c3.5 0 6.3 2.8 6.3 6.3L28.1 52.2H16.5c-3.5 0-6.3-2.8-6.3-6.3V15.2c0-3.5 2.8-6.3 6.3-6.3z"/>
+            <path fill="var(--forest)" d="M32.1 43.2 28.1 52.2 38.6 56.4 41.4 47.1z"/>
+            <path fill="var(--ivory)" d="M16.9 21.5h4.1v7.5h7.3v-7.5h4.1V41.2h-4.1v-8.1h-7.3v8.1h-4.1z"/>
+          </svg>
+        </button>
+        <span class="footer__rule" aria-hidden="true"></span>
+        <p data-i18n="footer.copy">HARU. Higiene feita de matéria.</p>
+      </div>
+      <p class="legal">
+        <span data-i18n="legal.copy">© 2026 HARU. Todos os direitos reservados.</span>
+        <span class="legal__sep" aria-hidden="true">·</span>
+        <a href="privacidade.html" data-i18n="legal.privacy">Privacidade</a>
+        <span class="legal__sep" aria-hidden="true">·</span>
+        <a href="termos.html" data-i18n="legal.terms">Termos de uso</a>
+      </p>
+    </footer>
+
+    <script src="js/vendor/gsap.min.js"></script>
+    <script src="js/vendor/ScrollTrigger.min.js"></script>
+    <script src="js/vendor/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/pay-adapter.js"></script>
+    <script src="js/shop.js"></script>
+  </body>
+</html>

@@ -7,6 +7,8 @@
       "nav.matter": "Matéria",
       "nav.use": "O uso",
       "nav.contact": "Contato",
+      "nav.menu": "Abrir o menu",
+      "nav.close": "Fechar o menu",
       "hero.aria": "Apresentação da marca",
       "hero.imgA":
         "Floresta de bambu vista de baixo, troncos subindo em direção ao céu",
@@ -19,13 +21,134 @@
       "p1.name": "Escova de bambu",
       "p1.meta": "Cerdas de crina selecionada. Esterilizadas a vapor.",
       "p1.alt": "Escova de dentes de bambu com cerdas naturais",
+      "p1.desc":
+        "Cabo de bambu selecionado, sem verniz plástico. Cerdas de crina de cavalo — queratina, a mesma proteína do cabelo — de animais bem tratados. Esterilizadas a vapor. Sem nylon.",
+      "p1.handle": "Bambu selecionado, sem verniz plástico",
+      "p1.bristle": "Crina de cavalo, esterilizada a vapor",
+      "p1.care": "Secar em pé, cerdas para cima. Não deixar de molho.",
+      "p1.animals": "Bem tratados. Crina coletada com cuidado, sem ferir o animal.",
+      "p1.anvisa": "Aprovado pela ANVISA",
+      "p1.docTitle": "HARU — Escova de bambu",
+      "p1.docDesc":
+        "Escova de bambu HARU com cerdas de crina de cavalo. Sem nylon. Sem plástico.",
       "p2.name": "Kit de duas",
       "p2.meta": "O mesmo cuidado para dividir o hábito.",
       "p2.alt": "Duas escovas de bambu lado a lado",
+      "p2.desc":
+        "Duas escovas iguais: bambu selecionado e crina de cavalos bem tratados. O kit sai um pouco abaixo de comprar duas avulsas.",
+      "p2.desc2":
+        "Cerdas esterilizadas a vapor. Sem nylon. Aprovado pela ANVISA. Para a pia de dois, ou para ter uma de reserva.",
+      "p2.handle": "Duas unidades, bambu selecionado",
+      "p2.bristle": "Crina de cavalo, esterilizada a vapor",
+      "p2.care": "O mesmo uso da escova avulsa. Secar em pé, cada uma no ar.",
+      "p2.animals": "Bem tratados. Crina coletada com cuidado, sem ferir o animal.",
+      "p2.anvisa": "Aprovado pela ANVISA",
+      "p2.docTitle": "HARU — Kit de duas",
+      "p2.docDesc":
+        "Kit HARU de duas escovas de bambu com cerdas de crina de cavalo.",
       "p3.name": "Suporte de pedra",
       "p3.meta": "Diatomito. Seca ao ar.",
       "p3.alt": "Suporte cúbico de pedra para escovas",
+      "p3.desc":
+        "Cubo de diatomito — pedra porosa que absorve a água e deixa a escova secar no ar, cerdas para cima.",
+      "p3.desc2":
+        "Sem plástico na pia. A pedra seca sozinha; a escova dura mais quando não fica fechada num copo úmido.",
+      "p3.handle": "Diatomito, bloco único",
+      "p3.bristle": "Cabe uma escova em pé",
+      "p3.care": "Deixe secar ao ar. Não lave na máquina. Evite sabão em excesso.",
+      "p3.docTitle": "HARU — Suporte de pedra",
+      "p3.docDesc":
+        "Suporte de diatomito HARU. Seca a escova ao ar, sem plástico na pia.",
       "product.view": "Ver produto",
+      "product.back": "Voltar à coleção",
+      "product.kicker": "Coleção",
+      "spec.handle": "Matéria",
+      "spec.bristle": "Cerdas",
+      "spec.care": "Uso",
+      "spec.stand": "Forma",
+      "spec.animals": "Cavalos",
+      "spec.anvisa": "ANVISA",
+      "p3.specBristle": "Apoio",
+      "trust.horses":
+        "Cavalos bem tratados. A crina é coletada com cuidado, sem ferir o animal.",
+      "trust.bamboo": "Bambu selecionado, sem verniz plástico.",
+      "trust.steam": "Cerdas esterilizadas a vapor.",
+      "trust.line":
+        "Cavalos bem tratados. Bambu selecionado. Cerdas esterilizadas a vapor.",
+      "trust.anvisa": "Aprovado pela ANVISA.",
+      "product.pay": "Pagamento",
+      "product.payLead":
+        "PIX, cartão ou Apple Pay. A loja ainda está nascendo — o pedido agora se conclui por e-mail.",
+      "product.payLine": "PIX, cartão ou Apple Pay.",
+      "product.applePay": "Apple Pay",
+      "product.pix": "PIX",
+      "product.pixMeta": "Transferência imediata.",
+      "product.cardPay": "Cartão",
+      "product.cardMeta": "Crédito, em até 3x.",
+      "product.boleto": "Boleto",
+      "product.boletoMeta": "Compensação em alguns dias úteis.",
+      "product.order": "Finalizar a compra",
+      "cart.add": "Adicionar ao carrinho",
+      "cart.title": "Carrinho",
+      "cart.open": "Abrir o carrinho",
+      "cart.close": "Fechar o carrinho",
+      "cart.empty": "O carrinho está vazio.",
+      "cart.subtotal": "Subtotal",
+      "cart.checkout": "Continuar",
+      "cart.remove": "Tirar",
+      "check.lead": "Sem senha. Só o e-mail, o código e o CEP completo.",
+      "check.email": "E-mail",
+      "check.emailPh": "seu@email.com",
+      "check.sendCode": "Enviar código",
+      "check.code": "Código do e-mail",
+      "check.codePh": "000000",
+      "check.codeHint":
+        "Quando o servidor estiver ligado, o código chega no e-mail. Por agora, qualquer 6 dígitos avançam o esqueleto.",
+      "check.verify": "Confirmar código",
+      "check.address": "Entrega",
+      "check.name": "Nome",
+      "check.namePh": "Seu nome",
+      "check.street": "Logradouro",
+      "check.number": "Número",
+      "check.numberPh": "123",
+      "check.complement": "Complemento",
+      "check.complementPh": "Apto, bloco",
+      "check.district": "Bairro",
+      "check.city": "Cidade",
+      "check.uf": "UF",
+      "check.back": "Voltar",
+      "check.continue": "Continuar",
+      "check.pay": "Pagar",
+      "check.payHint":
+        "PIX, cartão ou Apple Pay. O gateway entra neste passo, em js/pay-adapter.js.",
+      "check.coupon": "Cupom",
+      "check.couponPh": "Código",
+      "check.couponGo": "Aplicar",
+      "check.couponOk": "Cupom aplicado.",
+      "check.couponErr": "Este cupom não vale.",
+      "check.discount": "Desconto",
+      "check.total": "Total",
+      "check.stub":
+        "O gateway ainda não está ligado. O esqueleto do pedido ficou salvo neste aparelho para o programador.",
+      "check.saved": "Pedido guardado neste aparelho.",
+      "check.emailErr": "Escreva um e-mail válido.",
+      "check.codeErr": "O código precisa ter 6 números.",
+      "check.addrErr": "Preencha nome, CEP, rua, número, cidade e UF.",
+      "product.ship": "Frete",
+      "product.shipLead": "Calcule o envio pelo CEP.",
+      "product.cep": "CEP",
+      "product.cepPh": "00000-000",
+      "product.cepGo": "Calcular",
+      "product.cepErr": "Escreva um CEP válido, com 8 números.",
+      "product.cepMiss": "Não encontramos esse CEP.",
+      "product.cepNet": "Não foi possível consultar o CEP agora. Tente de novo.",
+      "product.cepWhere": "Envio para {city} / {uf}.",
+      "product.pac": "PAC",
+      "product.sedex": "SEDEX",
+      "product.daysRange": "{a} a {b} dias úteis",
+      "product.shipNote":
+        "Estimativa para teste interno. O valor final entra quando o contrato dos Correios estiver ativo.",
+      "product.more": "Também na coleção",
       "brand.kicker": "A marca",
       "brand.quote": "HARU é matéria natural.",
       "brand.lead":
@@ -44,6 +167,8 @@
       "contact.title": "Fale com a HARU",
       "contact.text":
         "A loja ainda está nascendo. Se quiser a coleção, uma parceria ou só conversar sobre o hábito — escreva.",
+      "contact.ways": "Contatos",
+      "contact.wa": "WhatsApp",
       "matter.kicker": "O hábito",
       "matter.title": "Entenda como os microplásticos fazem mal à saúde.",
       "matter.lead":
@@ -126,6 +251,53 @@
         "Quando as cerdas já não limpam bem — em geral alguns meses. Depois pode ir para o composto: bambu e crina não são plástico.",
       "footer.nav": "Rodapé",
       "footer.copy": "HARU. Higiene feita de matéria.",
+      "legal.copy": "© 2026 HARU. Todos os direitos reservados.",
+      "legal.privacy": "Privacidade",
+      "legal.terms": "Termos de uso",
+      privacyDocTitle: "HARU — Política de privacidade",
+      privacyDocDesc:
+        "Como a HARU trata e-mail, CEP, carrinho e os dados deste aparelho.",
+      "privacy.kicker": "Legal",
+      "privacy.h1": "Privacidade.",
+      "privacy.lead":
+        "Texto genérico para o site. Serve para o essencial; um advogado pode revê-lo depois.",
+      "privacy.h2a": "Quem somos",
+      "privacy.p1":
+        "HARU é uma marca de higiene em matéria natural — bambu e crina de cavalo. O contato é contato@haru.natural.",
+      "privacy.h2b": "O que guardamos",
+      "privacy.p2":
+        "Para um pedido: e-mail, nome e o endereço completo do CEP. Não pedimos senha. O código de seis dígitos serve só para confirmar o e-mail.",
+      "privacy.h2c": "Neste aparelho",
+      "privacy.p3":
+        "O navegador pode guardar o carrinho, o idioma, o tema e um rascunho do pedido neste aparelho. Isso fica no seu dispositivo, não num servidor nosso — até o checkout estar ligado de fato.",
+      "privacy.h2d": "Com quem falamos",
+      "privacy.p4":
+        "O CEP é consultado em serviço público de endereço (ViaCEP). Não vendemos lista de e-mails. Quando o pagamento existir, o gateway verá o necessário para cobrar.",
+      "privacy.h2e": "Seus direitos",
+      "privacy.p5":
+        "Você pode pedir para ver, corrigir ou apagar o que tiver sido enviado. Escreva para contato@haru.natural. Para limpar o que está só neste aparelho, basta limpar os dados do site no navegador.",
+      termsDocTitle: "HARU — Termos de uso",
+      termsDocDesc:
+        "Uso do site, pedidos, preços e a coleção HARU.",
+      "terms.kicker": "Legal",
+      "terms.h1": "Termos de uso.",
+      "terms.lead":
+        "Texto genérico para o site. A loja ainda está nascendo; estes termos descrevem o essencial.",
+      "terms.h2a": "O site",
+      "terms.p1":
+        "Ao usar o site da HARU, você concorda com estes termos. O conteúdo — textos, fotos, marca — pertence à HARU. Não copie para vender como se fosse seu.",
+      "terms.h2b": "A coleção",
+      "terms.p2":
+        "As escovas são de bambu selecionado e crina de cavalos bem tratados, esterilizadas a vapor. Preços em reais. Fotos e textos podem mudar enquanto a loja se forma.",
+      "terms.h2c": "Pedidos",
+      "terms.p3":
+        "O pedido se faz sem senha: e-mail, código e CEP completo. O pagamento ainda não está ligado; o esqueleto do pedido pode ficar salvo neste aparelho até o gateway existir.",
+      "terms.h2d": "Envio e troca",
+      "terms.p4":
+        "O frete calculado no site é estimativa. Prazos e valores finais entram com o contrato dos Correios. Trocas e arrependimento seguem a lei brasileira de defesa do consumidor.",
+      "terms.h2e": "Contato",
+      "terms.p5":
+        "Dúvidas: contato@haru.natural. Instagram e WhatsApp estão na área de contato da página principal.",
       "lang.toEn": "Ver o site em inglês",
       "lang.toPt": "Ver o site em português",
       "theme.toKraft": "Ativar modo anti-luz azul",
@@ -141,6 +313,8 @@
       "nav.matter": "Matter",
       "nav.use": "Use",
       "nav.contact": "Contact",
+      "nav.menu": "Open menu",
+      "nav.close": "Close menu",
       "hero.aria": "Brand introduction",
       "hero.imgA":
         "Bamboo forest seen from below, trunks rising toward the sky",
@@ -154,13 +328,134 @@
       "p1.name": "Bamboo brush",
       "p1.meta": "Selected horsehair. Steam-sterilized.",
       "p1.alt": "Bamboo toothbrush with natural bristles",
+      "p1.desc":
+        "A selected bamboo handle, with no plastic varnish. Horsehair bristles — keratin, the same protein as hair — from well-treated animals. Steam-sterilized. No nylon.",
+      "p1.handle": "Selected bamboo, no plastic varnish",
+      "p1.bristle": "Horsehair, steam-sterilized",
+      "p1.care": "Stand it upright, bristles up. Don’t soak it.",
+      "p1.animals": "Well treated. Hair collected with care, without harming the animal.",
+      "p1.anvisa": "Approved by ANVISA",
+      "p1.docTitle": "HARU — Bamboo brush",
+      "p1.docDesc":
+        "HARU bamboo toothbrush with horsehair bristles. No nylon. No plastic.",
       "p2.name": "Set of two",
       "p2.meta": "The same care, meant to be shared.",
       "p2.alt": "Two bamboo toothbrushes side by side",
+      "p2.desc":
+        "Two matching brushes: selected bamboo and hair from well-treated horses. The set costs a little less than two bought apart.",
+      "p2.desc2":
+        "Steam-sterilized bristles. No nylon. Approved by ANVISA. For a sink of two, or to keep a spare.",
+      "p2.handle": "Two pieces, selected bamboo",
+      "p2.bristle": "Horsehair, steam-sterilized",
+      "p2.care": "Same as the single brush. Stand each one upright, in open air.",
+      "p2.animals": "Well treated. Hair collected with care, without harming the animal.",
+      "p2.anvisa": "Approved by ANVISA",
+      "p2.docTitle": "HARU — Set of two",
+      "p2.docDesc":
+        "HARU set of two bamboo toothbrushes with horsehair bristles.",
       "p3.name": "Stone stand",
       "p3.meta": "Diatomite. Air-dries.",
       "p3.alt": "Cubic stone stand for brushes",
+      "p3.desc":
+        "A diatomite cube — porous stone that takes up water and lets the brush dry in the air, bristles up.",
+      "p3.desc2":
+        "No plastic on the sink. The stone dries on its own; the brush lasts longer when it is not shut in a wet cup.",
+      "p3.handle": "Diatomite, a single block",
+      "p3.bristle": "Holds one brush upright",
+      "p3.care": "Let it air-dry. Don’t machine-wash. Go easy on soap.",
+      "p3.docTitle": "HARU — Stone stand",
+      "p3.docDesc":
+        "HARU diatomite stand. Air-dries the brush, with no plastic on the sink.",
       "product.view": "View product",
+      "product.back": "Back to the collection",
+      "product.kicker": "Collection",
+      "spec.handle": "Matter",
+      "spec.bristle": "Bristles",
+      "spec.care": "Use",
+      "spec.stand": "Form",
+      "spec.animals": "Horses",
+      "spec.anvisa": "ANVISA",
+      "p3.specBristle": "Hold",
+      "trust.horses":
+        "Horses are well treated. The hair is collected with care, without harming the animal.",
+      "trust.bamboo": "Selected bamboo, with no plastic varnish.",
+      "trust.steam": "Bristles steam-sterilized.",
+      "trust.line":
+        "Horses well treated. Selected bamboo. Bristles steam-sterilized.",
+      "trust.anvisa": "Approved by ANVISA.",
+      "product.pay": "Payment",
+      "product.payLead":
+        "PIX, card, or Apple Pay. The shop is just beginning — for now, the order is completed by email.",
+      "product.payLine": "PIX, card, or Apple Pay.",
+      "product.applePay": "Apple Pay",
+      "product.pix": "PIX",
+      "product.pixMeta": "Instant transfer.",
+      "product.cardPay": "Card",
+      "product.cardMeta": "Credit, in up to 3 installments.",
+      "product.boleto": "Boleto",
+      "product.boletoMeta": "Clears in a few business days.",
+      "product.order": "Complete purchase",
+      "cart.add": "Add to cart",
+      "cart.title": "Cart",
+      "cart.open": "Open cart",
+      "cart.close": "Close cart",
+      "cart.empty": "The cart is empty.",
+      "cart.subtotal": "Subtotal",
+      "cart.checkout": "Continue",
+      "cart.remove": "Remove",
+      "check.lead": "No password. Just email, the code, and the full postal address.",
+      "check.email": "Email",
+      "check.emailPh": "you@email.com",
+      "check.sendCode": "Send code",
+      "check.code": "Email code",
+      "check.codePh": "000000",
+      "check.codeHint":
+        "When the server is live, the code arrives by email. For now, any 6 digits move the skeleton forward.",
+      "check.verify": "Confirm code",
+      "check.address": "Delivery",
+      "check.name": "Name",
+      "check.namePh": "Your name",
+      "check.street": "Street",
+      "check.number": "Number",
+      "check.numberPh": "123",
+      "check.complement": "Complement",
+      "check.complementPh": "Apt, block",
+      "check.district": "District",
+      "check.city": "City",
+      "check.uf": "State",
+      "check.back": "Back",
+      "check.continue": "Continue",
+      "check.pay": "Pay",
+      "check.payHint":
+        "PIX, card, or Apple Pay. The gateway plugs in at this step, in js/pay-adapter.js.",
+      "check.coupon": "Coupon",
+      "check.couponPh": "Code",
+      "check.couponGo": "Apply",
+      "check.couponOk": "Coupon applied.",
+      "check.couponErr": "This coupon is not valid.",
+      "check.discount": "Discount",
+      "check.total": "Total",
+      "check.stub":
+        "The gateway is not connected yet. The order skeleton was saved on this device for the developer.",
+      "check.saved": "Order saved on this device.",
+      "check.emailErr": "Please enter a valid email.",
+      "check.codeErr": "The code must be 6 digits.",
+      "check.addrErr": "Fill in name, postal code, street, number, city, and state.",
+      "product.ship": "Shipping",
+      "product.shipLead": "Estimate delivery with your postal code.",
+      "product.cep": "Postal code",
+      "product.cepPh": "00000-000",
+      "product.cepGo": "Calculate",
+      "product.cepErr": "Enter a valid Brazilian CEP, 8 digits.",
+      "product.cepMiss": "We could not find that CEP.",
+      "product.cepNet": "The CEP lookup failed. Please try again.",
+      "product.cepWhere": "Shipping to {city} / {uf}.",
+      "product.pac": "PAC",
+      "product.sedex": "SEDEX",
+      "product.daysRange": "{a} to {b} business days",
+      "product.shipNote":
+        "Internal test estimate. Final rates land when the Correios contract is live.",
+      "product.more": "Also in the collection",
       "brand.kicker": "The brand",
       "brand.quote": "HARU is made from natural materials.",
       "brand.lead":
@@ -179,6 +474,8 @@
       "contact.title": "Write to HARU",
       "contact.text":
         "The shop is just beginning. For the collection, a partnership, or a conversation — write.",
+      "contact.ways": "Contact",
+      "contact.wa": "WhatsApp",
       "matter.kicker": "The habit",
       "matter.title": "How microplastics from nylon brushes harm the body.",
       "matter.lead":
@@ -261,6 +558,52 @@
         "When the bristles no longer clean well — usually after a few months. Then it can go to compost: bamboo and horsehair are not plastic.",
       "footer.nav": "Footer",
       "footer.copy": "HARU. Hygiene made from matter.",
+      "legal.copy": "© 2026 HARU. All rights reserved.",
+      "legal.privacy": "Privacy",
+      "legal.terms": "Terms of use",
+      privacyDocTitle: "HARU — Privacy policy",
+      privacyDocDesc:
+        "How HARU handles email, postal address, the cart, and data on this device.",
+      "privacy.kicker": "Legal",
+      "privacy.h1": "Privacy.",
+      "privacy.lead":
+        "Generic site copy. It covers the essentials; a lawyer can review it later.",
+      "privacy.h2a": "Who we are",
+      "privacy.p1":
+        "HARU is a hygiene brand made from natural materials — bamboo and horsehair. Write to contato@haru.natural.",
+      "privacy.h2b": "What we keep",
+      "privacy.p2":
+        "For an order: email, name, and the full postal address. There is no password. The six-digit code only confirms the email.",
+      "privacy.h2c": "On this device",
+      "privacy.p3":
+        "The browser may store the cart, language, theme, and an order draft on this device. That stays on your machine, not on our server — until checkout is actually live.",
+      "privacy.h2d": "Who we talk to",
+      "privacy.p4":
+        "Postal codes are looked up through a public address service (ViaCEP). We do not sell email lists. When payment exists, the gateway will see what it needs to charge.",
+      "privacy.h2e": "Your rights",
+      "privacy.p5":
+        "You can ask to see, correct, or delete what was sent. Write to contato@haru.natural. To clear what lives only on this device, clear the site data in your browser.",
+      termsDocTitle: "HARU — Terms of use",
+      termsDocDesc: "Use of the site, orders, prices, and the HARU collection.",
+      "terms.kicker": "Legal",
+      "terms.h1": "Terms of use.",
+      "terms.lead":
+        "Generic site copy. The shop is still beginning; these terms cover the essentials.",
+      "terms.h2a": "The site",
+      "terms.p1":
+        "By using the HARU site you agree to these terms. The content — text, photos, mark — belongs to HARU. Do not copy it to sell as your own.",
+      "terms.h2b": "The collection",
+      "terms.p2":
+        "The brushes are selected bamboo and hair from well-treated horses, steam-sterilized. Prices are in Brazilian reais. Photos and copy may change while the shop takes shape.",
+      "terms.h2c": "Orders",
+      "terms.p3":
+        "An order needs no password: email, a code, and the full postal address. Payment is not connected yet; the order skeleton may be saved on this device until the gateway exists.",
+      "terms.h2d": "Shipping and returns",
+      "terms.p4":
+        "Shipping shown on the site is an estimate. Final rates and times arrive with the postal contract. Returns follow Brazilian consumer law.",
+      "terms.h2e": "Contact",
+      "terms.p5":
+        "Questions: contato@haru.natural. Instagram and WhatsApp are in the contact block on the main page.",
       "lang.toEn": "Switch to English",
       "lang.toPt": "Switch to Portuguese",
       "theme.toKraft": "Switch to kraft mode",
@@ -274,7 +617,32 @@
   const root = document.documentElement;
   const themeToggle = document.getElementById("themeToggle");
   const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
-  let manualTheme = false;
+  const KEY_THEME = "haru-theme";
+  const KEY_LANG = "haru-lang";
+
+  const storeGet = (key) => {
+    try {
+      return localStorage.getItem(key);
+    } catch (_) {
+      return null;
+    }
+  };
+
+  const storeSet = (key, value) => {
+    try {
+      localStorage.setItem(key, value);
+    } catch (_) {
+      /* file:// or private mode */
+    }
+  };
+
+  const queryParam = (name) => {
+    try {
+      return new URL(location.href).searchParams.get(name);
+    } catch (_) {
+      return null;
+    }
+  };
 
   const langFromBrowser = () => {
     const list = [
@@ -292,30 +660,244 @@
   };
 
   const resolveLang = () => {
-    try {
-      const saved = localStorage.getItem("haru-lang");
-      if (saved === "en" || saved === "pt") return saved;
-    } catch (_) {
-      /* ignore */
+    const fromUrl = queryParam("lang");
+    if (fromUrl === "en" || fromUrl === "pt") {
+      storeSet(KEY_LANG, fromUrl);
+      return fromUrl;
     }
+    const saved = storeGet(KEY_LANG);
+    if (saved === "en" || saved === "pt") return saved;
     const preset = root.getAttribute("data-lang");
     if (preset === "en" || preset === "pt") return preset;
     return langFromBrowser();
   };
 
+  const themeFromDevice = () => (darkQuery.matches ? "kraft" : "clara");
+
+  const resolveTheme = () => {
+    const fromUrl = queryParam("theme");
+    if (fromUrl === "kraft" || fromUrl === "clara") {
+      storeSet(KEY_THEME, fromUrl);
+      return fromUrl;
+    }
+    const saved = storeGet(KEY_THEME);
+    if (saved === "kraft" || saved === "clara") return saved;
+    const preset = root.getAttribute("data-theme");
+    if (preset === "kraft" || preset === "clara") return preset;
+    return themeFromDevice();
+  };
+
   let lang = resolveLang();
+  let theme = resolveTheme();
+  let themeLocked =
+    queryParam("theme") === "kraft" ||
+    queryParam("theme") === "clara" ||
+    storeGet(KEY_THEME) === "kraft" ||
+    storeGet(KEY_THEME) === "clara";
+  let langLocked =
+    queryParam("lang") === "en" ||
+    queryParam("lang") === "pt" ||
+    storeGet(KEY_LANG) === "en" ||
+    storeGet(KEY_LANG) === "pt";
+  const userChoseTheme = () => themeLocked;
+  const userChoseLang = () => langLocked;
 
   const packOf = () => I18N[lang] || I18N.pt;
+  window.haruT = (key) => {
+    const pack = packOf();
+    return pack[key] != null ? pack[key] : "";
+  };
+
+  const fillTpl = (tpl, map) =>
+    String(tpl || "").replace(/\{(\w+)\}/g, (_, key) =>
+      map[key] != null ? String(map[key]) : ""
+    );
+
+  const moneyBr = (value) => {
+    const n = Math.round(Number(value) * 100) / 100;
+    const parts = n.toFixed(2).split(".");
+    return "R$ " + parts[0] + "," + parts[1];
+  };
+
+  const digitsCep = (value) => String(value || "").replace(/\D/g, "").slice(0, 8);
+
+  const maskCep = (value) => {
+    const d = digitsCep(value);
+    return d.length > 5 ? d.slice(0, 5) + "-" + d.slice(5) : d;
+  };
+
+  const UF_ZONE = {
+    SP: "se",
+    RJ: "se",
+    MG: "se",
+    ES: "se",
+    PR: "s",
+    SC: "s",
+    RS: "s",
+    DF: "co",
+    GO: "co",
+    MT: "co",
+    MS: "co",
+    BA: "ne",
+    SE: "ne",
+    AL: "ne",
+    PE: "ne",
+    PB: "ne",
+    RN: "ne",
+    CE: "ne",
+    PI: "ne",
+    MA: "ne",
+    AM: "n",
+    PA: "n",
+    AC: "n",
+    RO: "n",
+    RR: "n",
+    AP: "n",
+    TO: "n",
+  };
+
+  const ZONE_RATE = {
+    se: { pac: 14.9, sedex: 24.9, pacDays: [4, 7], sedexDays: [1, 3] },
+    s: { pac: 18.9, sedex: 29.9, pacDays: [5, 8], sedexDays: [2, 4] },
+    co: { pac: 22.9, sedex: 34.9, pacDays: [6, 10], sedexDays: [3, 5] },
+    ne: { pac: 27.9, sedex: 42.9, pacDays: [7, 12], sedexDays: [4, 6] },
+    n: { pac: 32.9, sedex: 49.9, pacDays: [8, 14], sedexDays: [5, 8] },
+  };
+
+  const weightFactor = () => {
+    const w = Number(document.body.getAttribute("data-weight") || "1");
+    if (w === 2) return 1.15;
+    if (w === 3) return 1.4;
+    return 1;
+  };
+
+  const ratesForUf = (uf) => {
+    const zone = UF_ZONE[uf] || "se";
+    const base = ZONE_RATE[zone];
+    const factor = weightFactor();
+    return [
+      {
+        key: "product.pac",
+        price: base.pac * factor,
+        min: base.pacDays[0],
+        max: base.pacDays[1],
+      },
+      {
+        key: "product.sedex",
+        price: base.sedex * factor,
+        min: base.sedexDays[0],
+        max: base.sedexDays[1],
+      },
+    ];
+  };
+
+  let lastCep = null;
+
+  const renderCep = () => {
+    const place = document.getElementById("cepPlace");
+    const opts = document.getElementById("cepOpts");
+    const note = document.getElementById("cepNote");
+    if (!place || !opts || !note) return;
+    const pack = packOf();
+    if (!lastCep) {
+      place.hidden = true;
+      opts.hidden = true;
+      opts.innerHTML = "";
+      note.hidden = true;
+      note.textContent = "";
+      return;
+    }
+    if (lastCep.error) {
+      place.hidden = true;
+      opts.hidden = true;
+      opts.innerHTML = "";
+      note.hidden = false;
+      note.textContent = pack[lastCep.error] || "";
+      return;
+    }
+    place.hidden = false;
+    place.textContent = fillTpl(pack["product.cepWhere"], {
+      city: lastCep.city,
+      uf: lastCep.uf,
+    });
+    opts.hidden = false;
+    opts.innerHTML = lastCep.rates
+      .map((row) => {
+        const days = fillTpl(pack["product.daysRange"], {
+          a: row.min,
+          b: row.max,
+        });
+        return (
+          '<li class="ship__opt"><span class="ship__svc">' +
+          (pack[row.key] || "") +
+          '</span><span class="ship__days">' +
+          days +
+          '</span><span class="ship__price">' +
+          moneyBr(row.price) +
+          "</span></li>"
+        );
+      })
+      .join("");
+    note.hidden = false;
+    note.textContent = pack["product.shipNote"] || "";
+  };
+
+  const jsonpCep = (cep) =>
+    new Promise((resolve, reject) => {
+      const cb = "haruCep" + String(Date.now());
+      const script = document.createElement("script");
+      let done = false;
+      const finish = (fn, value) => {
+        if (done) return;
+        done = true;
+        clearTimeout(timer);
+        try {
+          delete window[cb];
+        } catch (_) {
+          window[cb] = undefined;
+        }
+        script.remove();
+        fn(value);
+      };
+      const timer = setTimeout(() => finish(reject, new Error("timeout")), 8000);
+      window[cb] = (data) => {
+        if (!data || data.erro) finish(reject, new Error("miss"));
+        else finish(resolve, data);
+      };
+      script.src =
+        "https://viacep.com.br/ws/" + cep + "/json/?callback=" + cb;
+      script.onerror = () => finish(reject, new Error("network"));
+      document.head.appendChild(script);
+    });
+
+  const lookupCep = (cep) =>
+    fetch("https://viacep.com.br/ws/" + cep + "/json/")
+      .then((res) => {
+        if (!res.ok) throw new Error("network");
+        return res.json();
+      })
+      .then((data) => {
+        if (!data || data.erro) throw new Error("miss");
+        return data;
+      })
+      .catch(() => jsonpCep(cep));
 
   const applyLang = () => {
     const pack = packOf();
     root.lang = lang === "en" ? "en" : "pt-BR";
     root.setAttribute("data-lang", lang);
     const page = document.body.getAttribute("data-page");
+    const product = document.body.getAttribute("data-product");
     if (page === "essay" && pack.essayDocTitle) {
       document.title = pack.essayDocTitle;
     } else if (page === "use" && pack.useDocTitle) {
       document.title = pack.useDocTitle;
+    } else if (page === "privacy" && pack.privacyDocTitle) {
+      document.title = pack.privacyDocTitle;
+    } else if (page === "terms" && pack.termsDocTitle) {
+      document.title = pack.termsDocTitle;
+    } else if (page === "product" && product && pack[product + ".docTitle"]) {
+      document.title = pack[product + ".docTitle"];
     } else {
       document.title = pack.docTitle;
     }
@@ -327,7 +909,13 @@
           ? pack.essayDocDesc
           : page === "use" && pack.useDocDesc
             ? pack.useDocDesc
-            : pack.docDesc;
+            : page === "privacy" && pack.privacyDocDesc
+              ? pack.privacyDocDesc
+              : page === "terms" && pack.termsDocDesc
+                ? pack.termsDocDesc
+            : page === "product" && product && pack[product + ".docDesc"]
+              ? pack[product + ".docDesc"]
+              : pack.docDesc;
       meta.setAttribute("content", desc);
     }
 
@@ -352,6 +940,11 @@
       if (key === "lang.toEn" || key === "lang.toPt") {
         value = lang === "en" ? pack["lang.toPt"] : pack["lang.toEn"];
       }
+      if (key === "nav.menu") {
+        value = root.classList.contains("nav-open")
+          ? pack["nav.close"]
+          : pack["nav.menu"];
+      }
       if (value != null) el.setAttribute("aria-label", value);
     });
 
@@ -363,14 +956,15 @@
     });
 
     syncThemeLabel();
+    renderCep();
+    if (typeof window.haruShopRefresh === "function") window.haruShopRefresh();
+    persistChoice();
   };
-
-  const themeFromDevice = () => (darkQuery.matches ? "kraft" : "clara");
 
   const syncThemeLabel = () => {
     if (!themeToggle) return;
     const pack = packOf();
-    const kraft = root.getAttribute("data-theme") === "kraft";
+    const kraft = theme === "kraft";
     themeToggle.setAttribute("aria-pressed", kraft ? "true" : "false");
     themeToggle.setAttribute(
       "aria-label",
@@ -378,33 +972,152 @@
     );
   };
 
-  const setTheme = (theme) => {
-    root.setAttribute("data-theme", theme);
-    syncThemeLabel();
+  const withChoice = (href) => {
+    if (!href) return href;
+    if (/^(https?:|mailto:|tel:)/i.test(href)) return href;
+    if (href.charAt(0) === "#") return href;
+
+    const hashIndex = href.indexOf("#");
+    const hash = hashIndex >= 0 ? href.slice(hashIndex) : "";
+    const withoutHash = hashIndex >= 0 ? href.slice(0, hashIndex) : href;
+    const qIndex = withoutHash.indexOf("?");
+    const path = qIndex >= 0 ? withoutHash.slice(0, qIndex) : withoutHash;
+    const query = new URLSearchParams(
+      qIndex >= 0 ? withoutHash.slice(qIndex + 1) : ""
+    );
+    query.delete("theme");
+    query.delete("lang");
+    if (userChoseTheme()) query.set("theme", theme);
+    if (userChoseLang()) query.set("lang", lang);
+    const search = query.toString();
+    return search ? `${path}?${search}${hash}` : `${path}${hash}`;
   };
 
-  setTheme(themeFromDevice());
+  const persistChoice = () => {
+    if (userChoseTheme()) storeSet(KEY_THEME, theme);
+    if (userChoseLang()) storeSet(KEY_LANG, lang);
+
+    if (userChoseTheme() || userChoseLang()) {
+      try {
+        const url = new URL(location.href);
+        if (userChoseTheme()) url.searchParams.set("theme", theme);
+        if (userChoseLang()) url.searchParams.set("lang", lang);
+        const next = url.pathname + url.search + url.hash;
+        if (`${location.pathname}${location.search}${location.hash}` !== next) {
+          history.replaceState(null, "", next);
+        }
+      } catch (_) {
+        /* ignore */
+      }
+    }
+
+    document.querySelectorAll("a[href]").forEach((link) => {
+      const original =
+        link.getAttribute("data-href") || link.getAttribute("href");
+      if (!link.getAttribute("data-href")) {
+        link.setAttribute("data-href", original);
+      }
+      link.setAttribute("href", withChoice(original));
+    });
+  };
+
+  const setTheme = (next, { persist } = {}) => {
+    theme = next === "kraft" ? "kraft" : "clara";
+    root.setAttribute("data-theme", theme);
+    if (persist) {
+      themeLocked = true;
+      storeSet(KEY_THEME, theme);
+    }
+    syncThemeLabel();
+    persistChoice();
+  };
+
+  setTheme(theme);
   applyLang();
 
   document.querySelectorAll(".lang-toggle").forEach((btn) => {
     btn.addEventListener("click", () => {
       lang = lang === "pt" ? "en" : "pt";
-      try {
-        localStorage.setItem("haru-lang", lang);
-      } catch (_) {
-        /* ignore */
-      }
+      langLocked = true;
+      storeSet(KEY_LANG, lang);
       applyLang();
     });
   });
 
-  themeToggle?.addEventListener("click", () => {
-    manualTheme = true;
-    setTheme(root.getAttribute("data-theme") === "kraft" ? "clara" : "kraft");
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      setTheme(theme === "kraft" ? "clara" : "kraft", { persist: true });
+    });
+  }
+
+  const navMenu = document.getElementById("navMenu");
+  const setNavOpen = (open) => {
+    root.classList.toggle("nav-open", open);
+    if (navMenu) {
+      navMenu.setAttribute("aria-expanded", open ? "true" : "false");
+      const pack = packOf();
+      navMenu.setAttribute(
+        "aria-label",
+        open ? pack["nav.close"] : pack["nav.menu"]
+      );
+    }
+  };
+
+  if (navMenu) {
+    navMenu.addEventListener("click", () => {
+      setNavOpen(!root.classList.contains("nav-open"));
+    });
+  }
+
+  document.querySelectorAll(".nav__links a").forEach((link) => {
+    link.addEventListener("click", () => setNavOpen(false));
   });
 
+  document.addEventListener("click", (event) => {
+    const card = event.target.closest && event.target.closest(".card");
+    if (!card) return;
+    if (event.target.closest("a, button, input")) return;
+    const dest =
+      card.querySelector(".card__link[href], .card__media[href], .card__name a[href]");
+    if (dest && dest.getAttribute("href")) {
+      location.href = dest.getAttribute("href");
+    }
+  });
+
+  const scrollToHomeTop = () => {
+    const lenis = window.haruLenis;
+    if (lenis && typeof lenis.scrollTo === "function") {
+      lenis.scrollTo(0, { duration: 1.05 });
+      return;
+    }
+    try {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    } catch (_) {
+      window.scrollTo(0, 0);
+    }
+  };
+
+  document.querySelectorAll(".nav__mark, .footer__brand").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      setNavOpen(false);
+      if (document.body.getAttribute("data-page")) return;
+      event.preventDefault();
+      scrollToHomeTop();
+    });
+  });
+
+  const desktopNav = window.matchMedia("(min-width: 901px)");
+  const onDesktopNav = (event) => {
+    if (event.matches) setNavOpen(false);
+  };
+  if (desktopNav.addEventListener) {
+    desktopNav.addEventListener("change", onDesktopNav);
+  } else if (desktopNav.addListener) {
+    desktopNav.addListener(onDesktopNav);
+  }
+
   const onSchemeChange = (event) => {
-    if (manualTheme) return;
+    if (userChoseTheme()) return;
     setTheme(event.matches ? "kraft" : "clara");
   };
 
@@ -429,61 +1142,38 @@
   const brand = document.querySelector(".hero__brand");
   const hint = document.querySelector(".hero__hint");
 
-  const isTouch =
-    "ontouchend" in window ||
-    (navigator.maxTouchPoints && navigator.maxTouchPoints > 0);
-  const isIOS =
-    /iP(hone|ad|od)/.test(navigator.userAgent) ||
-    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-  const isAndroid = /Android/i.test(navigator.userAgent);
+  const finePointer = window.matchMedia(
+    "(hover: hover) and (pointer: fine)"
+  ).matches;
 
   gsap.registerPlugin(ScrollTrigger);
-  gsap.config({ force3D: true });
   gsap.ticker.lagSmoothing(0);
-  gsap.ticker.fps(0);
 
-  ScrollTrigger.config({
-    ignoreMobileResize: true,
-    autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
-  });
-
-  if (isIOS && !reduce) {
-    ScrollTrigger.normalizeScroll(true);
-  }
-
-  if (!reduce && !isTouch && typeof Lenis !== "undefined") {
+  if (!reduce && finePointer && typeof Lenis !== "undefined") {
     const lenis = new Lenis({
-      lerp: 0.1,
+      duration: 1.15,
       smoothWheel: true,
       anchors: true,
-      wheelMultiplier: 1,
-      overscroll: false,
-      autoRaf: false,
     });
 
+    window.haruLenis = lenis;
     lenis.on("scroll", ScrollTrigger.update);
     gsap.ticker.add((time) => lenis.raf(time * 1000));
   }
 
-  gsap.set([imgA, imgB, brand].filter(Boolean), { force3D: true });
-
   const mm = gsap.matchMedia();
 
   const buildHero = (scaleA, scaleB, distance) => {
-    gsap.set(imgA, { opacity: 1, scale: 1, force3D: true });
-    gsap.set(imgB, { opacity: 0, scale: 1, force3D: true });
+    gsap.set(imgB, { opacity: 0, scale: 1 });
 
     const tl = gsap.timeline({
-      defaults: { ease: "none", force3D: true },
       scrollTrigger: {
         trigger: hero,
         start: "top top",
         end: () => `+=${Math.round(window.innerHeight * distance)}`,
         pin: true,
-        pinType: isIOS || isAndroid || isTouch ? "transform" : "fixed",
-        scrub: true,
+        scrub: 0.6,
         anticipatePin: 1,
-        fastScrollEnd: true,
         invalidateOnRefresh: true,
       },
     });
@@ -491,56 +1181,45 @@
     tl.fromTo(
       imgA,
       { scale: 1, opacity: 1 },
-      { scale: scaleA, opacity: 1, duration: 0.58 },
+      { scale: scaleA, opacity: 1, duration: 0.58, ease: "none" },
       0
     )
-      .to(brand, { opacity: 0, y: -40, duration: 0.22 }, 0.1)
-      .to(hint, { opacity: 0, duration: 0.12 }, 0.06)
+      .to(brand, { opacity: 0, y: -40, duration: 0.22, ease: "none" }, 0.1)
+      .to(hint, { opacity: 0, duration: 0.12, ease: "none" }, 0.06)
       .fromTo(
         imgB,
         { opacity: 0, scale: 1 },
-        { opacity: 1, scale: scaleB, duration: 0.3 },
+        { opacity: 1, scale: scaleB, duration: 0.3, ease: "none" },
         0.55
       )
-      .to(imgA, { opacity: 0, duration: 0.3 }, 0.55);
+      .to(imgA, { opacity: 0, duration: 0.3, ease: "none" }, 0.55);
 
     return () => {
-      tl.scrollTrigger?.kill();
+      if (tl.scrollTrigger) tl.scrollTrigger.kill();
       tl.kill();
       gsap.set([imgA, imgB, brand, hint], { clearProps: "all" });
     };
   };
 
-  const waitDecode = (img) => {
-    if (!img) return Promise.resolve();
-    if (typeof img.decode === "function") {
-      return img.decode().catch(() => {});
-    }
-    if (img.complete) return Promise.resolve();
-    return new Promise((resolve) => {
-      img.addEventListener("load", resolve, { once: true });
-      img.addEventListener("error", resolve, { once: true });
-    });
-  };
-
   const runMotion = () => {
     if (reduce) return;
 
+    root.classList.add("js-motion");
+
     if (hero && imgA && imgB) {
-      mm.add("(min-width: 768px)", () => buildHero(2.05, 1.16, 0.8));
-      mm.add("(max-width: 767px)", () => buildHero(1.45, 1.1, 0.57));
+      mm.add("(min-width: 768px)", () => buildHero(2.05, 1.16, 1.2));
+      mm.add("(max-width: 767px)", () => buildHero(1.45, 1.1, 0.85));
     }
 
     gsap.utils.toArray(".reveal").forEach((el) => {
       gsap.to(el, {
         opacity: 1,
         y: 0,
-        duration: isTouch ? 0.55 : 0.8,
+        duration: 1.1,
         ease: "power2.out",
-        force3D: true,
         scrollTrigger: {
           trigger: el,
-          start: "top 88%",
+          start: "top 86%",
         },
       });
     });
@@ -548,11 +1227,30 @@
     ScrollTrigger.refresh();
   };
 
-  Promise.all([waitDecode(imgA), waitDecode(imgB)]).then(runMotion);
+  try {
+    runMotion();
+    window.addEventListener(
+      "load",
+      function () {
+        try {
+          ScrollTrigger.refresh();
+        } catch (_) {
+          /* ignore */
+        }
+      },
+      { once: true }
+    );
+  } catch (_) {
+    root.classList.remove("js-motion");
+  }
   };
 
   window.haruStartMotion = startMotion;
-  startMotion();
+  try {
+    startMotion();
+  } catch (_) {
+    root.classList.remove("js-motion");
+  }
 
   const letterForm = document.getElementById("letterForm");
   const letterNote = document.getElementById("letterNote");
@@ -578,12 +1276,15 @@
     letterNote.textContent = pack[key] || "";
   };
 
-  letterForm?.addEventListener("submit", (event) => {
+  if (letterForm) {
+  letterForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    const value = String(letterEmail?.value || "").trim().toLowerCase();
+    const value = String((letterEmail && letterEmail.value) || "")
+      .trim()
+      .toLowerCase();
     if (!emailOk(value)) {
       showLetter("letter.err");
-      letterEmail?.focus();
+      if (letterEmail) letterEmail.focus();
       return;
     }
     const list = readList();
@@ -600,4 +1301,56 @@
     letterForm.classList.add("is-done");
     showLetter("letter.ok");
   });
+  }
+
+  const cepForm = document.getElementById("cepForm");
+  const cepInput = document.getElementById("cepInput");
+
+  if (cepInput) {
+    cepInput.addEventListener("input", function () {
+      const start = cepInput.selectionStart;
+      const before = cepInput.value;
+      cepInput.value = maskCep(cepInput.value);
+      if (start != null && document.activeElement === cepInput) {
+        const diff = cepInput.value.length - before.length;
+        const pos = Math.max(0, start + diff);
+        try {
+          cepInput.setSelectionRange(pos, pos);
+        } catch (_) {
+          /* ignore */
+        }
+      }
+    });
+  }
+
+  if (cepForm) {
+  cepForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const cep = digitsCep(cepInput && cepInput.value);
+    if (cep.length !== 8) {
+      lastCep = { error: "product.cepErr" };
+      renderCep();
+      if (cepInput) cepInput.focus();
+      return;
+    }
+    lastCep = null;
+    renderCep();
+    lookupCep(cep)
+      .then((data) => {
+        const uf = String(data.uf || "").toUpperCase();
+        lastCep = {
+          city: data.localidade || "",
+          uf,
+          rates: ratesForUf(uf),
+        };
+        renderCep();
+      })
+      .catch((err) => {
+        lastCep = {
+          error: err && err.message === "miss" ? "product.cepMiss" : "product.cepNet",
+        };
+        renderCep();
+      });
+  });
+  }
 })();
