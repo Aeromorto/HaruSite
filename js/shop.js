@@ -389,16 +389,13 @@
       '<div class="cart-overlay" id="cartOverlay" hidden></div>' +
       '<aside class="cart-drawer" id="cartDrawer" hidden tabindex="-1" aria-labelledby="cartTitle">' +
       '<header class="cart-drawer__head">' +
-      '<h2 id="cartTitle" data-i18n="cart.title">Carrinho</h2>' +
-      '<button type="button" class="cart-drawer__close" id="cartClose" data-i18n-aria="cart.close" aria-label="Fechar o carrinho">×</button>' +
+      '<h2 id="cartTitle" data-i18n="cart.title">Sacola</h2>' +
+      '<button type="button" class="cart-drawer__close" id="cartClose" data-i18n-aria="cart.close" aria-label="Fechar a sacola">×</button>' +
       "</header>" +
       '<div id="shopCartView">' +
       '<div class="cart-vacant" id="cartVacant">' +
-      '<figure class="cart-vacant__photo">' +
-      '<img src="images/product-escova.jpg" alt="" width="640" height="640" />' +
-      "</figure>" +
-      '<p class="cart-empty" id="cartEmpty" data-i18n="cart.empty">Ainda vazio.</p>' +
-      '<p class="cart-vacant__lead" data-i18n="cart.emptyLead">A coleção está à espera.</p>' +
+      '<p class="cart-empty" id="cartEmpty" data-i18n="cart.empty">Ainda vazia.</p>' +
+      '<p class="cart-vacant__lead" data-i18n="cart.emptyLead">O essencial cabe em pouco. A coleção espera.</p>' +
       '<a class="product__cta" id="cartShop" href="index.html#loja" data-i18n="cart.shop">Ver a coleção</a>' +
       "</div>" +
       '<ul class="cart-list" id="cartList"></ul>' +
@@ -477,7 +474,7 @@
       '<p class="check-step__title" data-i18n="check.saved">Pedido guardado neste aparelho</p>' +
       '<p class="product__block-lead" data-i18n="check.stub">O gateway ainda não está ligado. O esqueleto do pedido ficou salvo para o programador.</p>' +
       "</fieldset>" +
-      '<button type="button" class="cart-back" id="checkBack" data-i18n="check.back">Voltar ao carrinho</button>' +
+      '<button type="button" class="cart-back" id="checkBack" data-i18n="check.back">Voltar à sacola</button>' +
       "</form>" +
       "</div>" +
       "</aside>";
