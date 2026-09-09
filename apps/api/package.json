@@ -1,0 +1,34 @@
+{
+  "name": "@haru/api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run build && concurrently -k \"tsc --watch --preserveWatchOutput\" \"node --watch --env-file-if-exists=../../.env dist/main.js\"",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "start": "node --env-file-if-exists=../../.env dist/main.js",
+    "db:migrate": "node --env-file-if-exists=../../.env scripts/migrate.cjs",
+    "test": "npm run build && node --env-file-if-exists=../../.env --test test/*.test.cjs"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0",
+    "@nestjs/platform-express": "^11.0.0",
+    "@nestjs/throttler": "^6.4.0",
+    "class-validator": "^0.14.0",
+    "class-transformer": "^0.5.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.0",
+    "pg": "^8.16.0",
+    "cookie-parser": "^1.4.7",
+    "helmet": "^8.1.0",
+    "@haru/contracts": "*"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.15.0",
+    "@types/express": "^5.0.0",
+    "@types/cookie-parser": "^1.4.0",
+    "@nestjs/testing": "^11.0.0",
+    "supertest": "^7.1.0"
+  }
+}

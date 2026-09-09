@@ -1,17 +1,30 @@
-name: Validate and deploy HARU
+name: Validate Haru migration
 on:
   push:
-    branches: [main]
+    branches: [migration/stack]
   pull_request:
   workflow_dispatch:
 permissions:
   contents: read
-concurrency:
-  group: pages-${{ github.ref }}
-  cancel-in-progress: false
 jobs:
   validate:
+    if: github.repository == 'uzoom333/HaruSite-migration'
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: haru
+          POSTGRES_PASSWORD: haru_test
+          POSTGRES_DB: haru_test
+        ports: [5432:5432]
+        options: >-
+          --health-cmd "pg_isready -U haru -d haru_test"
+          --health-interval 5s --health-timeout 3s --health-retries 10
+    env:
+      DATABASE_URL: postgresql://haru:haru_test@127.0.0.1:5432/haru_test
+      TEST_DATABASE_URL: postgresql://haru:haru_test@127.0.0.1:5432/haru_test
+      COOKIE_SECURE: 'false'
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v4
@@ -21,21 +34,13 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npm test
       - run: npm run build
-      - uses: actions/upload-pages-artifact@v4
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+      - run: npm run typecheck
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          path: dist
-  deploy:
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-    needs: validate
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          name: browser-results
+          path: test-results/
+# Next.js + NestJS precisam de runtime Node e banco; GitHub Pages não executa esta stack.
+# Este workflow valida apenas o fork. Nenhum deploy ou push para o original é realizado.
