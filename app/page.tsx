@@ -4,6 +4,7 @@ import Link from "next/link";
 import Hero from "./_components/hero/hero";
 import Footer from "./_components/footer/footer";
 import ProductsGallery from "./_components/productsGallery/productsGallery";
+import { asset } from "./_lib/assets";
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
           </p>
           <Image
             alt="Imagem de um cavalo"
-            src={"/background/marca-crina.jpg"}
+            src={asset("/background/marca-crina.jpg")}
             width={1080}
             height={720}
             className="p-2"
@@ -99,7 +100,7 @@ export default function Home() {
           </div>
           <Image
             alt="Imagem de fundo com cavalos felizes"
-            src={"/background/contact-horses.jpg"}
+            src={asset("/background/contact-horses.jpg")}
             width={1920}
             height={1200}
             className="absolute inset-0 z-0 object-cover w-full h-full"

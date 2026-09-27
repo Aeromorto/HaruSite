@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { ChevronLeft, CreditCard } from "lucide-react";
+import { Apple, ChevronLeft, CreditCard, QrCode } from "lucide-react";
 import { useCart } from "../cart/cartContext";
 import type { ProductShape } from "@/app/_data/products";
 
@@ -120,27 +120,16 @@ export default function ProductPage({ product, collection }: ProductPageProps) {
         <div className="flex flex-col gap-3 border-t pt-4">
           <p className="text-sm font-light">PAGAMENTO</p>
           <ul className="flex items-center gap-5">
-            <li>
-              <Image
-                src="/logos/pix.png"
-                alt="PIX"
-                width={87}
-                height={32}
-                className="h-8 w-auto"
-              />
+            <li className="flex items-center gap-1 text-sm">
+              <QrCode size={18} />
+              <span>PIX</span>
             </li>
             <li className="flex items-center gap-1 text-sm">
               <CreditCard size={18} />
               <span>Cartão</span>
             </li>
             <li className="flex items-center gap-1 text-sm">
-              <Image
-                src="/logos/apple-pay.png"
-                alt=""
-                width={37}
-                height={22}
-                className="h-6 w-auto"
-              />
+              <Apple size={18} />
               <span>Apple Pay</span>
             </li>
           </ul>

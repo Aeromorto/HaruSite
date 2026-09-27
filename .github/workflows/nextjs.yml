@@ -54,13 +54,13 @@ jobs:
           node-version: "24"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v5
-        with:
-          # Automatically inject basePath in your Next.js configuration file and disable
-          # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
-          #
-          # You may remove this line if you want to manage the configuration yourself.
-          static_site_generator: next
+        # `static_site_generator: next` is intentionally omitted: it only knows
+        # how to patch next.config.js|cjs|mjs, so with next.config.ts it would
+        # generate a next.config.js that shadows it and silently take over the
+        # configuration. The base path is passed to the build as an env var
+        # instead (see the "Build with Next.js" step and next.config.ts).
       - name: Restore cache
         uses: actions/cache@v4
         with:
@@ -75,6 +75,9 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        env:
+          # e.g. /HaruSite, or empty when a custom domain serves the site from the root
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Metadata } from "next";
+import { asset } from "@/app/_lib/assets";
 
 export const metadata: Metadata = {
   title: "HARU — O que a escova de nylon deixa no corpo",
@@ -25,7 +26,7 @@ export default function Microplastic() {
       <section className="grid sm:grid-cols-2 items-center grid-cols-1 gap-10">
         <Image
           alt="imagem de uma escova de dentes de plástico"
-          src={"/background/essay-corpo.jpg"}
+          src={asset("/background/essay-corpo.jpg")}
           width={1280}
           height={720}
           className="min-w-auto"
@@ -89,7 +90,7 @@ export default function Microplastic() {
         </div>
         <Image
           alt="imagem de uma escova de dentes de plástico"
-          src={"/background/essay-planeta.jpg"}
+          src={asset("/background/essay-planeta.jpg")}
           width={1280}
           height={720}
           className="min-w-auto order-1 sm:order-2"
@@ -98,7 +99,7 @@ export default function Microplastic() {
       <section className="grid grid-cols-1 sm:grid-cols-2 items-center gap-10">
         <Image
           alt="imagem de uma escova de dentes de plástico"
-          src={"/background/essay-crina.jpg"}
+          src={asset("/background/essay-crina.jpg")}
           width={1280}
           height={720}
           className="min-w-auto"

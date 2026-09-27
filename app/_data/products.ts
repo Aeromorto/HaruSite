@@ -1,3 +1,5 @@
+import { asset } from "@/app/_lib/assets";
+
 export interface ProductSpec {
   label: string;
   value: string;
@@ -32,10 +34,10 @@ export const PRODUCTS: ProductShape[] = [
       { label: "Uso", value: "Secar em pé, cerdas para cima. Não deixar de molho." },
     ],
     gallery: [
-      "/background/product-escova.jpg",
-      "/background/product-escova-2.jpg",
-      "/background/product-escova-3.jpg",
-      "/background/product-escova-4.jpg",
+      asset("/background/product-escova.jpg"),
+      asset("/background/product-escova-2.jpg"),
+      asset("/background/product-escova-3.jpg"),
+      asset("/background/product-escova-4.jpg"),
     ],
     alt: "Escova de dentes de bambu com cerdas naturais",
     docTitle: "HARU — Escova de bambu",
@@ -56,10 +58,10 @@ export const PRODUCTS: ProductShape[] = [
       { label: "Uso", value: "Secar em pé, cada uma no ar. Não deixar de molho." },
     ],
     gallery: [
-      "/background/product-kit.jpg",
-      "/background/product-kit-2.jpg",
-      "/background/product-kit-3.jpg",
-      "/background/product-kit-4.jpg",
+      asset("/background/product-kit.jpg"),
+      asset("/background/product-kit-2.jpg"),
+      asset("/background/product-kit-3.jpg"),
+      asset("/background/product-kit-4.jpg"),
     ],
     alt: "Duas escovas de bambu lado a lado",
     docTitle: "HARU — Kit de duas",
@@ -80,10 +82,9 @@ export const PRODUCTS: ProductShape[] = [
       { label: "Uso", value: "Deixe secar ao ar. Não lave na máquina. Evite sabão em excesso." },
     ],
     gallery: [
-      "/background/product-suporte.jpg",
-      "/background/product-suporte-2.jpg",
-      "/background/product-suporte-3.jpg",
-      "/background/product-suporte-4.jpg",
+      asset("/background/product-suporte.jpg"),
+      asset("/background/product-suporte-2.jpg"),
+      asset("/background/product-suporte-3.jpg"),
     ],
     alt: "Suporte cúbico de pedra para escovas",
     docTitle: "HARU — Suporte de pedra",

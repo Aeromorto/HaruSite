@@ -1,6 +1,7 @@
 import Image from "next/image";
 import HeaderNavButtons from "../header/headerNavButtons";
 import Link from "next/link";
+import { asset } from "@/app/_lib/assets";
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-3 items-center">
         <div className="flex gap-2 justify-center lg:justify-start items-center">
           <Image
-            src="/logos/logo-olive.png"
+            src={asset("/logos/logo-olive.png")}
             alt="Logo da HARU"
             width={544}
             height={642}

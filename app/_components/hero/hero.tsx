@@ -13,6 +13,7 @@ import {
   type CSSProperties,
 } from "react";
 import type Lenis from "lenis";
+import { asset } from "@/app/_lib/assets";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -169,7 +170,7 @@ function Hero() {
           style={{ transformOrigin: "50% 38%" } as CSSProperties}
         >
           <Image
-            src="/background/hero-bamboo.jpg"
+            src={asset("/background/hero-bamboo.jpg")}
             alt="Floresta de bambu vista de baixo, troncos subindo em direção ao céu"
             width={1920}
             height={1280}
@@ -186,7 +187,7 @@ function Hero() {
           style={{ transformOrigin: "50% 38%" } as CSSProperties}
         >
           <Image
-            src="/background/hero-2.jpg"
+            src={asset("/background/hero-2.jpg")}
             alt="Troncos de bambu mais próximos, com luz filtrando pela copa"
             width={1920}
             height={1280}
@@ -207,7 +208,7 @@ function Hero() {
             style={{ "--d": "150ms" } as CSSProperties}
           >
             <Image
-              src="/logos/logo-light.png"
+              src={asset("/logos/logo-light.png")}
               alt="Logo da Haru, sendo um desenho minimalista de uma silhueta de um cavalo"
               width={587}
               height={695}
