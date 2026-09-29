@@ -89,8 +89,7 @@
       "cart.title": "Cesta",
       "cart.open": "Abrir a cesta",
       "cart.close": "Fechar a cesta",
-      "cart.empty": "Ainda vazia.",
-      "cart.emptyLead": "O essencial cabe em pouco. A coleção espera.",
+      "cart.empty": "Vazia.",
       "cart.shop": "Ver a coleção",
       "cart.subtotal": "Subtotal",
       "cart.checkout": "Continuar",
@@ -396,8 +395,7 @@
       "cart.title": "Basket",
       "cart.open": "Open the basket",
       "cart.close": "Close the basket",
-      "cart.empty": "Empty, for now.",
-      "cart.emptyLead": "Little is needed. The collection is waiting.",
+      "cart.empty": "Empty.",
       "cart.shop": "See the collection",
       "cart.subtotal": "Subtotal",
       "cart.checkout": "Continue",
@@ -1182,6 +1180,26 @@
 
   window.haruScrollToHash = scrollToHash;
 
+  const heroClick = document.querySelector(".hero");
+  if (heroClick && document.getElementById("loja")) {
+    heroClick.addEventListener("click", (event) => {
+      if (event.target.closest && event.target.closest("a")) return;
+      try {
+        if (typeof ScrollTrigger !== "undefined" && ScrollTrigger.refresh) {
+          ScrollTrigger.refresh();
+        }
+      } catch (_) {
+        /* ignore */
+      }
+      scrollToHash("#loja", false);
+      try {
+        history.pushState(null, "", "#loja");
+      } catch (_) {
+        /* ignore */
+      }
+    });
+  }
+
   document.addEventListener("click", (event) => {
     const card = event.target.closest && event.target.closest(".card");
     if (!card) return;
@@ -1373,34 +1391,119 @@
   }
 
   const bindGalleries = () => {
-    const mq = window.matchMedia("(max-width: 899px)");
+    const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
     document.querySelectorAll("[data-gallery]").forEach((gallery) => {
-      const shots = gallery.querySelectorAll(".product__shot");
-      if (shots.length < 2) return;
-      const bar =
-        gallery.parentElement &&
-        gallery.parentElement.querySelector(".product__progress span");
-      const update = () => {
-        if (!bar) return;
-        const n = shots.length;
-        const thumb = 1 / n;
-        bar.style.width = thumb * 100 + "%";
-        if (!mq.matches) {
-          bar.style.transform = "translateX(0)";
-          return;
-        }
-        const max = gallery.scrollWidth - gallery.clientWidth;
-        const t = max <= 1 ? 0 : Math.min(1, Math.max(0, gallery.scrollLeft / max));
-        bar.style.transform = "translateX(" + t * (n - 1) * 100 + "%)";
+      const frame = gallery.querySelector(".product__frame");
+      const photo = gallery.querySelector(".product__photo");
+      const thumbs = Array.from(gallery.querySelectorAll(".product__thumb"));
+      if (!frame || !photo || thumbs.length < 2) return;
+      let index = 0;
+      let token = 0;
+      const srcOf = (thumb) => {
+        const img = thumb.querySelector("img");
+        return img ? img.getAttribute("src") : "";
       };
-      gallery.addEventListener("scroll", update, { passive: true });
-      window.addEventListener("resize", update);
-      if (mq.addEventListener) mq.addEventListener("change", update);
-      else if (mq.addListener) mq.addListener(update);
-      update();
+      const show = (next) => {
+        const count = thumbs.length;
+        const i = ((next % count) + count) % count;
+        if (i === index) return;
+        index = i;
+        const mine = ++token;
+        thumbs.forEach((thumb, n) => {
+          const on = n === i;
+          thumb.classList.toggle("is-on", on);
+          if (on) thumb.setAttribute("aria-current", "true");
+          else thumb.removeAttribute("aria-current");
+        });
+        photo.classList.add("is-fading");
+        window.setTimeout(() => {
+          if (mine !== token) return;
+          photo.setAttribute("src", srcOf(thumbs[i]));
+          const reveal = () => {
+            if (mine !== token) return;
+            photo.classList.remove("is-fading");
+          };
+          if (typeof photo.decode === "function") {
+            photo.decode().then(reveal).catch(reveal);
+          } else {
+            reveal();
+          }
+        }, 240);
+      };
+      thumbs.forEach((thumb, i) => {
+        thumb.addEventListener("click", () => show(i));
+      });
+      gallery.addEventListener("keydown", (event) => {
+        if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+        event.preventDefault();
+        const step = event.key === "ArrowRight" ? 1 : -1;
+        const count = thumbs.length;
+        const i = (((index + step) % count) + count) % count;
+        show(index + step);
+        thumbs[i].focus();
+      });
+      if (fine) {
+        frame.addEventListener("mousemove", (event) => {
+          const rect = frame.getBoundingClientRect();
+          if (!rect.width || !rect.height) return;
+          const x = ((event.clientX - rect.left) / rect.width) * 100;
+          const y = ((event.clientY - rect.top) / rect.height) * 100;
+          photo.style.transformOrigin = x + "% " + y + "%";
+          photo.classList.add("is-zoomed");
+        });
+        frame.addEventListener("mouseleave", () => {
+          photo.classList.remove("is-zoomed");
+          photo.style.transformOrigin = "50% 50%";
+        });
+      }
+      let startX = 0;
+      let startY = 0;
+      frame.addEventListener(
+        "touchstart",
+        (event) => {
+          const touch = event.changedTouches[0];
+          startX = touch.clientX;
+          startY = touch.clientY;
+        },
+        { passive: true }
+      );
+      frame.addEventListener(
+        "touchend",
+        (event) => {
+          const touch = event.changedTouches[0];
+          const dx = touch.clientX - startX;
+          const dy = touch.clientY - startY;
+          if (Math.abs(dx) < 42 || Math.abs(dx) < Math.abs(dy)) return;
+          show(index + (dx < 0 ? 1 : -1));
+        },
+        { passive: true }
+      );
     });
   };
   bindGalleries();
+
+  const bindScrub = () => {
+    const fine = window.matchMedia("(hover: hover) and (pointer: fine)");
+    if (!fine.matches) return;
+    document.querySelectorAll("[data-scrub]").forEach((media) => {
+      const imgs = Array.from(media.querySelectorAll("img"));
+      if (imgs.length < 2) return;
+      let current = 0;
+      const setOn = (i) => {
+        if (i === current) return;
+        current = i;
+        imgs.forEach((img, n) => img.classList.toggle("is-on", n === i));
+      };
+      media.addEventListener("mousemove", (event) => {
+        const rect = media.getBoundingClientRect();
+        if (!rect.width) return;
+        const x = Math.min(0.999, Math.max(0, (event.clientX - rect.left) / rect.width));
+        setOn(Math.min(imgs.length - 1, Math.floor(x * imgs.length)));
+      });
+      media.addEventListener("mouseleave", () => setOn(0));
+    });
+  };
+  bindScrub();
 
   const letterForm = document.getElementById("letterForm");
   const letterNote = document.getElementById("letterNote");

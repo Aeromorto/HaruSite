@@ -1,8 +1,16 @@
 # Changelog
 
+- **v6.0:** Current static site at the repository root.
+- **v5.8:** Previous root, kept at `/HaruSite/v5.8/`.
 - **v5:** Original commit `80591dc`, restored at `/HaruSite/`.
 - **v5.5:** Reviewed version, hosted separately at `/HaruSite/v5.5/`.
 - [Human-readable issue list](https://aeromorto.github.io/HaruSite/v5.5/changes/)
+
+## 6.0.0 — 2026-09-29
+
+- Keep the basket across every page of this version until the visitor removes an item.
+- Adding another product keeps the ones already in the basket and adds its price to the subtotal.
+- Archive the previous root as `v5.8/` without removing v2, v3, v4, v5, v5.5, or the Next.js app.
 
 ## 5.5.0 — 2026-09-06
 

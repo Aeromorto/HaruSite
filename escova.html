@@ -35,11 +35,14 @@
           aria-label="Ativar modo anti-luz azul"
         >
           <svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M16.5 12.5A6.5 6.5 0 0 1 11 5.1 7 7 0 1 0 18.9 13a6.5 6.5 0 0 1-2.4-.5Z" />
+            <circle class="theme-toggle__moon-halo" cx="12" cy="12" r="8.4" />
+            <path class="theme-toggle__moon-body" d="M16.5 12.5A6.5 6.5 0 0 1 11 5.1 7 7 0 1 0 18.9 13a6.5 6.5 0 0 1-2.4-.5Z" />
           </svg>
           <svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="4" />
-            <path d="M12 3v1.6M12 19.4V21M4.9 4.9l1.1 1.1M18 18l1.1 1.1M3 12h1.6M19.4 12H21M4.9 19.1 6 18M18 6l1.1-1.1" />
+            <circle class="theme-toggle__sun-disc" cx="12" cy="12" r="4" />
+            <g class="theme-toggle__sun-rays">
+              <path d="M12 3v1.6M12 19.4V21M4.9 4.9l1.1 1.1M18 18l1.1 1.1M3 12h1.6M19.4 12H21M4.9 19.1 6 18M18 6l1.1-1.1" />
+            </g>
           </svg>
         </button>
         <button
@@ -52,6 +55,11 @@
           aria-label="Abrir a cesta"
         >
           <svg viewBox="0 0 24 24" aria-hidden="true">
+            <g class="cart-toggle__drops">
+              <circle cx="9.7" cy="5.05" r="0.55" />
+              <circle cx="12.15" cy="4.15" r="0.46" />
+              <circle cx="14.35" cy="5.35" r="0.4" />
+            </g>
             <path d="M8.85 8.2V6.2A3.15 3.15 0 0 1 12 3.1 3.15 3.15 0 0 1 15.15 6.2V8.2" />
             <ellipse cx="12" cy="8.35" rx="7.35" ry="1.9" />
             <path d="M4.9 8.55c.55 3.55 1.15 9.35 7.1 9.35s6.55-5.8 7.1-9.35" />
@@ -86,25 +94,30 @@
     <main id="conteudo">
       <article class="product">
         <div class="product__stage">
-        <div class="product__gallery" data-gallery>
-          <figure class="product__shot">
-            <img
-              src="images/product-escova.jpg"
-              data-i18n-alt="p1.alt"
-              alt="Escova de dentes de bambu com cerdas naturais"
-            />
-          </figure>
-          <figure class="product__shot">
-            <img src="images/product-escova-2.jpg" alt="" />
-          </figure>
-          <figure class="product__shot">
-            <img src="images/product-escova-3.jpg" alt="" />
-          </figure>
-          <figure class="product__shot">
-            <img src="images/product-escova-4.jpg" alt="" />
-          </figure>
-        </div>
-          <div class="product__progress" aria-hidden="true"><span></span></div>
+          <div class="product__gallery" data-gallery>
+            <figure class="product__frame">
+              <img
+                class="product__photo"
+                src="images/product-escova.jpg"
+                data-i18n-alt="p1.alt"
+                alt="Escova de dentes de bambu com cerdas naturais"
+              />
+            </figure>
+            <div class="product__thumbs">
+              <button type="button" class="product__thumb is-on" aria-current="true" aria-label="Foto 1">
+                <img src="images/product-escova.jpg" alt="" />
+              </button>
+              <button type="button" class="product__thumb" aria-label="Foto 2">
+                <img src="images/product-escova-2.jpg" alt="" />
+              </button>
+              <button type="button" class="product__thumb" aria-label="Foto 3">
+                <img src="images/product-escova-3.jpg" alt="" />
+              </button>
+              <button type="button" class="product__thumb" aria-label="Foto 4">
+                <img src="images/product-escova-4.jpg" alt="" />
+              </button>
+            </div>
+          </div>
         </div>
 
         <div class="product__info">
@@ -189,12 +202,18 @@
             </h2>
             <ul class="pays" data-i18n-aria="product.pay" aria-label="Pagamento">
               <li>
+                <svg class="pays__qr" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="3" width="7" height="7" rx="1.2" />
+                  <rect x="14" y="3" width="7" height="7" rx="1.2" />
+                  <rect x="3" y="14" width="7" height="7" rx="1.2" />
+                  <path d="M14 14h2.2v2.2M21 14v2.5h-2.2M14 21h2.5M18.2 17.8H21V21h-2.8" />
+                </svg>
                 <img
                   class="pays__pix"
-                  src="images/pix.png"
-                  alt="PIX"
-                  width="174"
-                  height="64"
+                  src="images/pix-word.png"
+                  alt="Pix"
+                  width="214"
+                  height="122"
                 />
               </li>
               <li>
@@ -233,24 +252,36 @@
         <h2 class="also__title" id="alsoTitle" data-i18n="product.also">Na coleção</h2>
         <div class="also__grid">
           <a class="also__item" href="kit.html">
-            <img
-              src="images/product-kit.jpg"
-              data-i18n-alt="p2.alt"
-              alt="Duas escovas de bambu lado a lado"
-              width="480"
-              height="480"
-            />
-            <span data-i18n="p2.name">Kit de duas</span>
+            <span class="also__photo">
+              <img
+                src="images/product-kit.jpg"
+                data-i18n-alt="p2.alt"
+                alt="Duas escovas de bambu lado a lado"
+                width="480"
+                height="480"
+              />
+            </span>
+            <span class="also__copy">
+              <span class="also__name" data-i18n="p2.name">Kit de duas</span>
+              <span class="also__price">R$ 86</span>
+              <span class="also__view" data-i18n="product.view">Ver produto</span>
+            </span>
           </a>
           <a class="also__item" href="suporte.html">
-            <img
-              src="images/product-suporte.jpg"
-              data-i18n-alt="p3.alt"
-              alt="Suporte cúbico de pedra para escovas"
-              width="480"
-              height="480"
-            />
-            <span data-i18n="p3.name">Suporte de pedra</span>
+            <span class="also__photo">
+              <img
+                src="images/product-suporte.jpg"
+                data-i18n-alt="p3.alt"
+                alt="Suporte cúbico de pedra para escovas"
+                width="480"
+                height="480"
+              />
+            </span>
+            <span class="also__copy">
+              <span class="also__name" data-i18n="p3.name">Suporte de pedra</span>
+              <span class="also__price">R$ 62</span>
+              <span class="also__view" data-i18n="product.view">Ver produto</span>
+            </span>
           </a>
         </div>
       </section>

@@ -95,7 +95,7 @@ npm run start -w @haru/web
 
 ## Legado e publicação
 
-Os HTML/CSS/JS antigos permanecem na raiz e em `v5.5/` para comparação. **Edite `apps/` para trabalhar na nova stack.** `npm run build:legacy` e `npm run start:legacy` permitem consultar as versões antigas na porta 8765.
+A versão atual do site estático, na raiz, é a **V6.0**. A raiz anterior ficou em `v5.8/`. `v2/`, `v3/`, `v4/`, `v5/` e `v5.5/` continuam no repositório, assim como a aplicação em `apps/`. **Edite `apps/` para trabalhar na nova stack.** `npm run build:legacy` e `npm run start:legacy` permitem consultar as versões antigas na porta 8765.
 
 A nova aplicação precisa de dois processos Node e PostgreSQL. GitHub Pages não executa essa arquitetura. O workflow desta branch valida a migração; não publica o site nem altera o original. O código pode ser acompanhado no fork público; um preview público da aplicação ainda não foi provisionado.
 

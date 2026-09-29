@@ -1,6 +1,20 @@
 (() => {
-  const KEY_CART = "haru-cart";
   const KEY_CHECK = "haru-checkout";
+  const KEY_LEGACY = "haru-cart";
+  const BRIDGE_MARK = "@@HARU@@";
+
+  const siteDir = () => {
+    try {
+      return new URL(".", location.href).pathname || "/";
+    } catch (_) {
+      return "/";
+    }
+  };
+
+  // One basket for every page in this folder. The path keeps older
+  // published versions from reading or erasing it.
+  const KEY_CART = "haru-cart:" + siteDir();
+  const KEY_AT = KEY_CART + ":at";
 
   const CATALOG = {
     p1: {
@@ -57,21 +71,25 @@
         key +
         "=" +
         encodeURIComponent(raw) +
-        "; path=/; max-age=2592000; SameSite=Lax";
+        "; path=" +
+        (siteDir() || "/") +
+        "; max-age=2592000; SameSite=Lax";
       return true;
     } catch (_) {
       return false;
     }
   };
 
-  const readJson = (key, fallback) => {
-    let raw = null;
+  const readStorageRaw = (key) => {
     try {
-      raw = localStorage.getItem(key);
+      return localStorage.getItem(key);
     } catch (_) {
-      raw = null;
+      return null;
     }
-    if (!raw) raw = readCookie(key);
+  };
+
+  const readJson = (key, fallback) => {
+    const raw = readStorageRaw(key) || readCookie(key);
     if (!raw) return fallback;
     try {
       const parsed = JSON.parse(raw);
@@ -96,25 +114,124 @@
 
   const normalizeCart = (rawCart) => {
     if (!Array.isArray(rawCart)) return [];
-    return rawCart
-      .filter((row) => row && CATALOG[row.id] && Number(row.qty) > 0)
-      .map((row) => ({
-        id: row.id,
-        qty: Math.min(9, Math.max(1, Number(row.qty) || 1)),
-      }));
+    const rows = Object.create(null);
+    rawCart.forEach((row) => {
+      if (!row || !CATALOG[row.id]) return;
+      const qty = Math.min(9, Math.max(0, Math.floor(Number(row.qty) || 0)));
+      if (!qty) return;
+      rows[row.id] = Math.min(9, (rows[row.id] || 0) + qty);
+    });
+    return Object.keys(rows).map((id) => ({ id: id, qty: rows[id] }));
   };
 
-  let cart = normalizeCart(readJson(KEY_CART, []));
+  const unpackCart = (raw) => {
+    if (!raw) return null;
+    try {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed)) return { t: 0, items: normalizeCart(parsed) };
+      if (parsed && Array.isArray(parsed.items)) {
+        return {
+          t: Number(parsed.t) || 0,
+          items: normalizeCart(parsed.items),
+        };
+      }
+    } catch (_) {
+      /* ignore */
+    }
+    return null;
+  };
+
+  // file:// gives each HTML file its own localStorage, so the basket
+  // disappeared on the next page. window.name survives that same-tab hop.
+  const readBridge = () => {
+    try {
+      const name = String(window.name || "");
+      const at = name.indexOf(BRIDGE_MARK);
+      if (at < 0) return null;
+      return decodeURIComponent(name.slice(at + BRIDGE_MARK.length));
+    } catch (_) {
+      return null;
+    }
+  };
+
+  const writeBridge = (raw) => {
+    try {
+      const name = String(window.name || "");
+      const at = name.indexOf(BRIDGE_MARK);
+      const head = at >= 0 ? name.slice(0, at) : name;
+      window.name = head + BRIDGE_MARK + encodeURIComponent(raw);
+      return true;
+    } catch (_) {
+      return false;
+    }
+  };
+
+  const pickCart = () => {
+    const found = [];
+    const localPacked = unpackCart(readStorageRaw(KEY_CART));
+    if (localPacked) {
+      const at = Number(readStorageRaw(KEY_AT)) || 0;
+      if (at) localPacked.t = Math.max(localPacked.t, at);
+      found.push(localPacked);
+    }
+    const cookiePacked = unpackCart(readCookie("haru-cesta"));
+    if (cookiePacked) found.push(cookiePacked);
+    const legacyPacked =
+      unpackCart(readStorageRaw(KEY_LEGACY)) || unpackCart(readCookie(KEY_LEGACY));
+    if (legacyPacked && legacyPacked.items.length) found.push(legacyPacked);
+    const bridgePacked = unpackCart(readBridge());
+    if (bridgePacked) found.push(bridgePacked);
+    if (!found.length) return { items: [], t: 0, saw: false };
+    found.sort((a, b) => a.t - b.t);
+    let best = found[found.length - 1];
+    if (!best.t) {
+      for (let i = found.length - 1; i >= 0; i -= 1) {
+        if (found[i].items.length) {
+          best = found[i];
+          break;
+        }
+      }
+    }
+    return { items: best.items, t: best.t || 0, saw: true };
+  };
+
+  let memoryOnly = false;
+  let cartStamp = 0;
+  let cart = [];
   let check = readJson(KEY_CHECK, {}) || {};
   if (typeof check !== "object") check = {};
+  {
+    const picked = pickCart();
+    cart = picked.items;
+    cartStamp = picked.t || 0;
+  }
 
   const loadCart = () => {
-    cart = normalizeCart(readJson(KEY_CART, []));
+    if (memoryOnly) return;
+    const picked = pickCart();
+    cart = picked.items;
+    cartStamp = picked.t || 0;
     const next = readJson(KEY_CHECK, {}) || {};
     if (typeof next === "object") check = next;
   };
 
-  const persistCart = () => writeJson(KEY_CART, cart);
+  const persistCart = () => {
+    const stampedAt = Date.now();
+    cartStamp = stampedAt;
+    const itemsRaw = JSON.stringify(cart);
+    const stamped = JSON.stringify({ t: stampedAt, items: cart });
+    let ok = false;
+    try {
+      localStorage.setItem(KEY_CART, itemsRaw);
+      localStorage.setItem(KEY_AT, String(stampedAt));
+      ok = true;
+    } catch (_) {
+      /* file:// isolado ou modo privado */
+    }
+    if (writeCookie("haru-cesta", stamped)) ok = true;
+    if (writeBridge(stamped)) ok = true;
+    memoryOnly = !ok;
+  };
   const persistCheck = () => writeJson(KEY_CHECK, check);
 
   const count = () =>
@@ -165,6 +282,7 @@
   const addItem = (id, qty) => {
     const item = CATALOG[id];
     if (!item) return;
+    loadCart();
     const add = Math.min(9, Math.max(1, Number(qty) || 1));
     let found = false;
     for (let i = 0; i < cart.length; i += 1) {
@@ -180,6 +298,7 @@
   };
 
   const setQty = (id, qty) => {
+    loadCart();
     const next = Math.max(0, Math.min(9, Number(qty) || 0));
     if (next === 0) {
       cart = cart.filter((row) => row.id !== id);
@@ -389,15 +508,14 @@
     const wrap = document.createElement("div");
     wrap.innerHTML =
       '<div class="cart-overlay" id="cartOverlay" hidden></div>' +
-      '<aside class="cart-drawer" id="cartDrawer" hidden tabindex="-1" aria-labelledby="cartTitle">' +
+      '<aside class="cart-drawer" id="cartDrawer" data-lenis-prevent hidden tabindex="-1" aria-labelledby="cartTitle">' +
       '<header class="cart-drawer__head">' +
       '<h2 id="cartTitle" data-i18n="cart.title">Cesta</h2>' +
       '<button type="button" class="cart-drawer__close" id="cartClose" data-i18n-aria="cart.close" aria-label="Fechar a cesta">×</button>' +
       "</header>" +
       '<div id="shopCartView">' +
       '<div class="cart-vacant" id="cartVacant">' +
-      '<p class="cart-empty" id="cartEmpty" data-i18n="cart.empty">Ainda vazia.</p>' +
-      '<p class="cart-vacant__lead" data-i18n="cart.emptyLead">O essencial cabe em pouco. A coleção espera.</p>' +
+      '<p class="cart-empty" id="cartEmpty" data-i18n="cart.empty">Vazia.</p>' +
       '<a class="product__cta" id="cartShop" href="index.html#loja" data-i18n="cart.shop">Ver a coleção</a>' +
       "</div>" +
       '<ul class="cart-list" id="cartList"></ul>' +
@@ -459,7 +577,8 @@
       "</div>" +
       '<ul class="pays" data-i18n-aria="product.pay" aria-label="Pagamento">' +
       "<li>" +
-      '<img class="pays__pix" src="images/pix.png" alt="PIX" width="174" height="64" />' +
+      '<svg class="pays__qr" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.2"/><rect x="14" y="3" width="7" height="7" rx="1.2"/><rect x="3" y="14" width="7" height="7" rx="1.2"/><path d="M14 14h2.2v2.2M21 14v2.5h-2.2M14 21h2.5M18.2 17.8H21V21h-2.8"/></svg>' +
+      '<img class="pays__pix" src="images/pix-word.png" alt="Pix" width="214" height="122" />' +
       "</li>" +
       "<li>" +
       '<svg class="pays__ico pays__ico--card" viewBox="0 0 24 16" aria-hidden="true"><rect x="1.15" y="1.15" width="21.7" height="13.7" rx="1.7" fill="none" stroke="currentColor" stroke-width="1.35"/><path fill="currentColor" d="M1.15 5.1h21.7v2.35H1.15z"/><path fill="currentColor" d="M4.1 10.7h4.6v1.35H4.1z"/></svg>' +
@@ -561,6 +680,30 @@
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") setOpen(false);
     });
+
+    document.addEventListener(
+      "click",
+      (event) => {
+        const link = event.target.closest && event.target.closest("a[href]");
+        if (!link) return;
+        let url;
+        try {
+          url = new URL(link.href, location.href);
+        } catch (_) {
+          return;
+        }
+        if (url.protocol !== "http:" && url.protocol !== "https:") return;
+        if (url.host === location.host) return;
+        try {
+          const name = String(window.name || "");
+          const at = name.indexOf(BRIDGE_MARK);
+          if (at >= 0) window.name = name.slice(0, at);
+        } catch (_) {
+          /* ignore */
+        }
+      },
+      true
+    );
 
     const list = qs("cartList");
     if (list) {
@@ -789,6 +932,7 @@
       } else if (buy) {
         event.preventDefault();
         const id = buy.getAttribute("data-buy");
+        loadCart();
         const has = cart.filter((row) => row.id === id)[0];
         if (!has) addItem(id, 1);
         else refresh();
@@ -799,11 +943,18 @@
 
   injectDrawer();
   bind();
-  persistCart();
+  if (cart.length || cartStamp > 0) persistCart();
   refresh();
 
   window.addEventListener("storage", (event) => {
-    if (event.key && event.key !== KEY_CART && event.key !== KEY_CHECK) return;
+    if (
+      event.key &&
+      event.key !== KEY_CART &&
+      event.key !== KEY_AT &&
+      event.key !== KEY_CHECK
+    ) {
+      return;
+    }
     loadCart();
     refresh();
   });
