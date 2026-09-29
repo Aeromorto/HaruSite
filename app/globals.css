@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: var(--h-ivory);
+  --color-cream: var(--h-cream);
+  --color-olive: var(--h-olive);
+  --color-olive-deep: var(--h-olive-deep);
+  --color-forest: var(--h-forest);
+  --color-text: var(--h-text);
+  --color-muted: var(--h-muted);
+}
+
+@plugin "daisyui" {
+  themes: light --default;
+}
+
+@import '@fontsource-variable/cormorant-garamond';
+@import '@fontsource-variable/outfit';
+@import '@fontsource-variable/newsreader';
+
+:root {
+  --h-ivory: #f6f1e8;
+  --h-cream: #e8dfd0;
+  --h-olive: #5c6b47;
+  --h-olive-deep: #2f3b28;
+  --h-forest: #1a2418;
+  --h-text: #2c3328;
+  --h-muted: #6b7264;
+}
+
+html[data-theme="kraft"] {
+  --h-ivory: #eee0c4;
+  --h-cream: #decca8;
+  --h-olive: #6a5736;
+  --h-olive-deep: #3c3122;
+  --h-forest: #2a2318;
+  --h-text: #3a3122;
+  --h-muted: #6e5e45;
+}
+
+html[data-theme="clara"] {
+  --h-ivory: #f6f1e8;
+  --h-cream: #e8dfd0;
+  --h-olive: #5c6b47;
+  --h-olive-deep: #2f3b28;
+  --h-forest: #1a2418;
+  --h-text: #2c3328;
+  --h-muted: #6b7264;
+}
+
+body {
+  font-family: 'Outfit Variable', sans-serif;
+  color: var(--h-text);
+  background-color: var(--h-ivory);
+}
+
+.theme-toggle__sun {
+  display: none;
+}
+
+html[data-theme="kraft"] .theme-toggle__sun {
+  display: inline;
+}
+
+html[data-theme="kraft"] .theme-toggle__moon {
+  display: none;
+}
+
+@keyframes hero-fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.hero-fade {
+  animation: hero-fade 16s ease-in-out infinite;
+}
+
+/* ——— Lenis (smooth scroll) ——— */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* ——— Transição de entrada do hero ——— */
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-enter-bg {
+  animation: hero-zoom 1.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-enter {
+  opacity: 0;
+  animation: hero-rise 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+.hero-enter-fade {
+  opacity: 0;
+  animation: hero-fade-in 1.2s ease-out both;
+  animation-delay: var(--d, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter-bg,
+  .hero-enter,
+  .hero-enter-fade {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}
+/* ——— Pin do hero via CSS sticky (sem pin-spacer do ScrollTrigger) ——— */
+/* Altura do track = 100vh do hero + distância do pin (0.85 tela mobile,
+   1.2 tela desktop), substituindo o espaço que o pin-spacer criava. */
+.hero-track {
+  height: 185vh;
+}
+
+@media (min-width: 768px) {
+  .hero-track {
+    height: 220vh;
+  }
+}
+
+/* Touch (pointer: coarse) e prefers-reduced-motion: o hero volta a rolar
+   normalmente (mesmo comportamento de quando o JS pula o efeito). */
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  .hero-track {
+    height: 100vh !important;
+  }
+  .hero-pin {
+    position: static !important;
+  }
+}
