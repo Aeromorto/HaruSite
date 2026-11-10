@@ -44,6 +44,20 @@
       "p2.docTitle": "HARU — Kit de duas",
       "p2.docDesc":
         "Kit HARU de duas escovas de bambu com cerdas de crina de cavalo.",
+      "p4.name": "Kit da casa",
+      "p4.meta": "Para a família, e para mais de uma ocasião.",
+      "p4.alt": "Quatro escovas de bambu HARU, iguais.",
+      "p4.desc":
+        "Quatro escovas iguais: cabo de bambu selecionado, sem verniz plástico, e cerdas de crina de cavalo esterilizadas a vapor, de animais selecionados e tratados com o devido cuidado. Para a casa, ou para levar a mais de uma ocasião. O kit sai um pouco abaixo de comprar quatro avulsas.",
+      "p4.desc2":
+        "Para a pia da família, ou para ter reserva.",
+      "p4.handle": "Quatro unidades, bambu selecionado",
+      "p4.bristle": "Crina de cavalo, esterilizada a vapor",
+      "p4.care": "Secar em pé, cada uma no ar. Não deixar de molho.",
+      "p4.animals": "Bem tratados. Crina coletada com cuidado, sem ferir o animal.",
+      "p4.docTitle": "HARU — Kit da casa",
+      "p4.docDesc":
+        "Kit HARU de quatro escovas de bambu com cerdas de crina de cavalo.",
       "p3.name": "Suporte de pedra",
       "p3.meta": "Diatomito. Seca ao ar.",
       "p3.alt": "Suporte cúbico de pedra para escovas",
@@ -168,6 +182,7 @@
       "contact.ways": "Contatos",
       "contact.email": "E-mail",
       "contact.emailAria": "E-mail: contato@haru.natural",
+      "contact.ig": "Instagram, @harunaturais",
       "contact.wa": "WhatsApp",
       "matter.kicker": "O hábito",
       "matter.title": "Entenda como os microplásticos fazem mal à saúde.",
@@ -198,7 +213,11 @@
         "Estudos de escovação simulada, com espectroscopia Raman, encontraram microplásticos soltos em todas as marcas testadas. Em um trabalho de 2025, a média chegou a cerca de 39 partículas por dia, entre 8 e 1995 micrômetros — fragmentos, fibras, filmes. Outra leitura, de 2023, estimou milhares de detritos plásticos no uso cotidiano. A boca é mucosa. Partículas pequenas não precisam ser engolidas para entrar.",
       "essay.01.p3":
         "Micro e nanoplásticos já foram medidos no sangue e, em 2024, no New England Journal of Medicine, dentro de placas de artéria carótida — associados a mais infarto, AVC e morte no acompanhamento. A escova não é a única fonte. É, porém, uma via oral, repetida, por décadas. Nylon também retém químicos do creme, como o triclosan, e os devolve depois. O hábito que deveria limpar deixa matéria que o corpo não pede.",
-      "essay.01.alt":
+      "essay.01.alt": "Placa de laboratório com fragmentos de microplástico",
+      "essay.01.alt2": "Ilustração de cerdas de nylon soltando partículas na boca",
+      "essay.01.alt3":
+        "Cerdas de uma escova sobre os dentes, com partículas soltas na gengiva",
+      "essay.01.alt4":
         "Copo d’água ao lado de uma escova de nylon, com fios plásticos visíveis na água",
       "essay.02.kicker": "02 — A Terra",
       "essay.02.title": "Depois do corpo, o planeta.",
@@ -208,8 +227,10 @@
         "A recomendação odontológica é trocar o objeto a cada três ou quatro meses. Só nos Estados Unidos, isso passa de um bilhão de escovas por ano. No mundo, se o mesmo ritmo valesse para todos, seriam cerca de 23 bilhões. Uma vida inteira deixa algumas centenas de unidades. Quase nenhuma se recicla de verdade: cabo, borracha e cerda são plásticos misturados, difíceis de separar.",
       "essay.02.p3":
         "O que não vai para o aterro vai para o rio, o mar, o peixe, o sal. O mesmo tipo de partícula que se solta na boca é o que permanece na Terra. O hábito pessoal e o rastro planetário são o mesmo material.",
-      "essay.02.alt":
-        "Escova de plástico abandonada na areia molhada, na linha da maré",
+      "essay.02.alt": "Pilha de escovas de plástico usadas, amontoadas ao sol",
+      "essay.02.alt2": "Escova gasta largada na areia, entre algas",
+      "essay.02.alt3": "Monte de escovas de plástico num aterro",
+      "essay.02.alt4": "Escovas de plástico fincadas na areia, à beira da água",
       "essay.03.kicker": "03 — A crina",
       "essay.03.title": "Por que crina, e não plástico.",
       "essay.03.p1":
@@ -221,9 +242,14 @@
       "essay.03.p4":
         "Trocar plástico por crina não é nostalgia. É recusar uma via cotidiana de polímero na mucosa — e um objeto que, depois de usado, continua no planeta. Matéria no lugar de resina. Esse é o essencial.",
       "essay.03.alt": "Close da crina de um cavalo, fios de queratina à luz",
+      "essay.03.alt2": "Crina castanha aparada, rente ao pelo do cavalo",
+      "essay.03.alt3": "Close de crina mesclada, fios claros e escuros",
+      "essay.03.alt4": "Crina clara de um cavalo, em close",
       "essay.notes":
         "Notas. Escovação simulada e Raman (2023–2025) mediram soltura de microplásticos em escovas comerciais, inclusive nylon e PBT. Microplásticos no sangue (Leslie et al., 2022) e em placa carotídea (Marfella et al., NEJM, 2024) documentam a presença no corpo; a escova é uma via oral cotidiana, não a única. Uma escova de plástico fragmenta em séculos, não se biodegrada. A crina é queratina; o cabo HARU é bambu.",
       "essay.cta": "Ver a coleção",
+      "essay.reel.prev": "Imagem anterior",
+      "essay.reel.next": "Imagem seguinte",
       useDocTitle: "HARU — Notas de uso",
       useDocDesc:
         "Composição, secagem e o soltar natural das cerdas — a escova HARU sem cola sintética.",
@@ -235,7 +261,7 @@
         "Cabo de bambu, sem verniz plástico. Cerdas de crina de cavalo — queratina, a mesma proteína do cabelo — esterilizadas a vapor. Sem nylon.",
       "use.q2": "Como secar?",
       "use.a2p1":
-        "Enxágue, sacuda e deixe secar em pé, cerdas para cima. Não deixe de molho nem fechada num copo úmido. O suporte de pedra ajuda a secar.",
+        "Enxágue, sacuda e deixe secar em pé, cerdas para cima. Não deixe de molho nem fechada num copo úmido.",
       "use.q3": "As cerdas se soltam?",
       "use.a3p1":
         "É normal. Não usamos cola sintética: o fio é preso no bambu por pressão. Alguns fios podem sair na escovação. Se cair muita de uma vez, a escova provavelmente ficou tempo demais na água.",
@@ -244,7 +270,7 @@
         "Sim, todo dia. Só não deixe de molho. Não ferva, não ponha na máquina e não deixe no sol forte por horas.",
       "use.q5": "Onde guardar?",
       "use.a5p1":
-        "Em pé, cerdas para cima, no ar. O suporte de pedra é o melhor lugar.",
+        "Em pé, cerdas para cima, no ar.",
       "use.q6": "Quando trocar?",
       "use.a6p1":
         "Quando as cerdas já não limpam bem — em geral alguns meses. Depois pode ir para o composto: bambu e crina não são plástico.",
@@ -350,6 +376,20 @@
       "p2.docTitle": "HARU — Set of two",
       "p2.docDesc":
         "HARU set of two bamboo toothbrushes with horsehair bristles.",
+      "p4.name": "Set for the house",
+      "p4.meta": "For the family, and for more than one occasion.",
+      "p4.alt": "Four matching HARU bamboo toothbrushes.",
+      "p4.desc":
+        "Four matching brushes: selected bamboo handle, with no plastic varnish, and steam-sterilized horsehair bristles from selected animals treated with due care. For the household, or to take to more than one occasion. A little less than four bought apart.",
+      "p4.desc2":
+        "For a family sink, or to keep spares.",
+      "p4.handle": "Four pieces, selected bamboo",
+      "p4.bristle": "Horsehair, steam-sterilized",
+      "p4.care": "Stand each one upright, in open air. Don’t soak them.",
+      "p4.animals": "Well treated. Hair collected with care, without harming the animal.",
+      "p4.docTitle": "HARU — Set for the house",
+      "p4.docDesc":
+        "HARU set of four bamboo toothbrushes with horsehair bristles.",
       "p3.name": "Stone stand",
       "p3.meta": "Diatomite. Air-dries.",
       "p3.alt": "Cubic stone stand for brushes",
@@ -474,6 +514,7 @@
       "contact.ways": "Contact",
       "contact.email": "Email",
       "contact.emailAria": "Email: contato@haru.natural",
+      "contact.ig": "Instagram, @harunaturais",
       "contact.wa": "WhatsApp",
       "matter.kicker": "The habit",
       "matter.title": "How microplastics from nylon brushes harm the body.",
@@ -504,7 +545,10 @@
         "Simulated brushing studies using Raman spectroscopy found microplastics released from every brand tested. A 2025 paper averaged about 39 particles a day, from 8 to 1995 micrometres — fragments, fibers, films. A 2023 reading estimated thousands of plastic debris in daily use. The mouth is mucosa. Small particles do not have to be swallowed to enter.",
       "essay.01.p3":
         "Micro- and nanoplastics have been measured in blood and, in 2024 in the New England Journal of Medicine, inside carotid artery plaque — associated with more heart attack, stroke, and death in follow-up. The toothbrush is not the only source. It is, however, an oral route, repeated for decades. Nylon also holds chemicals from toothpaste, such as triclosan, and gives them back later. The habit meant to clean leaves matter the body did not ask for.",
-      "essay.01.alt":
+      "essay.01.alt": "Laboratory dish of microplastic fragments",
+      "essay.01.alt2": "Illustration of nylon bristles shedding particles in the mouth",
+      "essay.01.alt3": "Brush bristles on teeth, with particles loose on the gum",
+      "essay.01.alt4":
         "A glass of water beside a nylon toothbrush, with plastic filaments visible in the water",
       "essay.02.kicker": "02 — The Earth",
       "essay.02.title": "After the body, the planet.",
@@ -514,8 +558,10 @@
         "Dental guidance is to replace the object every three or four months. In the United States alone that is more than a billion brushes a year. Worldwide, at the same pace, about 23 billion. A lifetime leaves a few hundred units. Almost none are truly recycled: handle, rubber, and bristle are mixed plastics, hard to separate.",
       "essay.02.p3":
         "What does not go to landfill goes to the river, the sea, the fish, the salt. The same kind of particle that sheds in the mouth is the one that remains on Earth. The personal habit and the planetary trace are the same material.",
-      "essay.02.alt":
-        "A plastic toothbrush left on wet sand at the tide line",
+      "essay.02.alt": "A pile of used plastic toothbrushes in the sun",
+      "essay.02.alt2": "A worn toothbrush left on the sand among seaweed",
+      "essay.02.alt3": "A heap of plastic toothbrushes in a landfill",
+      "essay.02.alt4": "Plastic toothbrushes planted in the sand at the water’s edge",
       "essay.03.kicker": "03 — Horsehair",
       "essay.03.title": "Why horsehair, not plastic.",
       "essay.03.p1":
@@ -527,9 +573,14 @@
       "essay.03.p4":
         "Switching from plastic to horsehair is not nostalgia. It is refusing a daily polymer path through the mucosa — and an object that, once used, stays on the planet. Matter instead of resin. That is the essential.",
       "essay.03.alt": "Close-up of a horse’s mane, keratin fibers in the light",
+      "essay.03.alt2": "A chestnut mane, trimmed close to the coat",
+      "essay.03.alt3": "Close-up of a mixed mane, light and dark hairs",
+      "essay.03.alt4": "Close-up of a pale horse’s mane",
       "essay.notes":
         "Notes. Simulated brushing and Raman (2023–2025) measured microplastic release from commercial brushes, including nylon and PBT. Microplastics in blood (Leslie et al., 2022) and in carotid plaque (Marfella et al., NEJM, 2024) document presence in the body; the toothbrush is a daily oral route, not the only one. A plastic brush fragments over centuries; it does not biodegrade. Horsehair is keratin; the HARU handle is bamboo.",
       "essay.cta": "See the collection",
+      "essay.reel.prev": "Previous image",
+      "essay.reel.next": "Next image",
       useDocTitle: "HARU — Notes on use",
       useDocDesc:
         "Composition, drying, and the natural loosening of bristles — the HARU brush without synthetic glue.",
@@ -541,7 +592,7 @@
         "A bamboo handle, with no plastic varnish. Horsehair bristles — keratin, the same protein as hair — steam-sterilized. No nylon.",
       "use.q2": "How do I dry it?",
       "use.a2p1":
-        "Rinse, shake, and stand it upright, bristles up. Don’t soak it or leave it in a closed wet cup. The stone stand helps it dry.",
+        "Rinse, shake, and stand it upright, bristles up. Don’t soak it or leave it in a closed wet cup.",
       "use.q3": "Do the bristles come loose?",
       "use.a3p1":
         "Yes, a little — that’s normal. There is no synthetic glue: the hair is set in the bamboo by pressure. A few strands may come out while you brush. If many fall at once, it probably sat in water too long.",
@@ -550,7 +601,7 @@
         "Yes, every day. Just don’t leave it soaking. Don’t boil it, don’t put it in the dishwasher, and don’t leave it in hard sun for hours.",
       "use.q5": "Where should I keep it?",
       "use.a5p1":
-        "Upright, bristles up, in open air. The stone stand is the best place.",
+        "Upright, bristles up, in open air.",
       "use.q6": "When should I replace it?",
       "use.a6p1":
         "When the bristles no longer clean well — usually after a few months. Then it can go to compost: bamboo and horsehair are not plastic.",
@@ -765,6 +816,7 @@
   const weightFactor = () => {
     const w = Number(document.body.getAttribute("data-weight") || "1");
     if (w === 2) return 1.15;
+    if (w === 4) return 1.28;
     if (w === 3) return 1.4;
     return 1;
   };
@@ -1606,4 +1658,171 @@
       });
   });
   }
+
+  const bindEssayReels = () => {
+    const reels = Array.from(document.querySelectorAll("[data-essay-reel]"));
+    if (!reels.length) return;
+    const dwell = 2500;
+    let active = null;
+    let timer = 0;
+    let ticking = false;
+
+    const stop = () => {
+      if (timer) {
+        clearInterval(timer);
+        timer = 0;
+      }
+    };
+
+    const show = (reel, index) => {
+      const imgs = reel._imgs;
+      const n = (index + imgs.length) % imgs.length;
+      reel._i = n;
+      imgs.forEach((img, k) => {
+        const on = k === n;
+        img.classList.toggle("is-on", on);
+        if (on) img.removeAttribute("aria-hidden");
+        else img.setAttribute("aria-hidden", "true");
+      });
+      reel._dots.forEach((dot, k) => {
+        dot.classList.toggle("is-on", k === n);
+        if (k === n) dot.setAttribute("aria-current", "true");
+        else dot.removeAttribute("aria-current");
+      });
+    };
+
+    const step = (reel, dir) => show(reel, reel._i + dir);
+
+    const start = () => {
+      stop();
+      if (!active || active.dataset.held === "1" || document.hidden) return;
+      timer = setInterval(() => step(active, 1), dwell);
+    };
+
+    reels.forEach((reel) => {
+      const imgs = Array.from(reel.querySelectorAll(".essay-reel__stage img"));
+      if (imgs.length < 2) return;
+      imgs.forEach((img) => {
+        img.loading = "eager";
+      });
+      reel._imgs = imgs;
+      reel._i = Math.max(0, imgs.findIndex((img) => img.classList.contains("is-on")));
+      const dots = reel.querySelector(".essay-reel__dots");
+      reel._dots = imgs.map((_, k) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "essay-reel__dot";
+        button.setAttribute("aria-label", String(k + 1));
+        button.addEventListener("click", () => {
+          show(reel, k);
+          start();
+        });
+        if (dots) dots.appendChild(button);
+        return button;
+      });
+      show(reel, reel._i);
+
+      const prev = reel.querySelector("[data-reel-prev]");
+      const next = reel.querySelector("[data-reel-next]");
+      const go = (dir, event) => {
+        if (event) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        step(reel, dir);
+        start();
+      };
+      if (prev) prev.addEventListener("click", (event) => go(-1, event));
+      if (next) next.addEventListener("click", (event) => go(1, event));
+      reel.addEventListener("click", (event) => {
+        if (event.target.closest("[data-reel-prev], [data-reel-next], .essay-reel__dot")) return;
+        const rect = reel.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        if (x < rect.width * 0.36) go(-1);
+        else if (x > rect.width * 0.64) go(1);
+      });
+
+      const hold = (on) => {
+        reel.dataset.held = on ? "1" : "0";
+        reel.classList.toggle("is-held", on);
+        start();
+      };
+      reel.addEventListener("mouseenter", () => hold(true));
+      reel.addEventListener("mouseleave", () => hold(false));
+      reel.addEventListener("focusin", () => hold(true));
+      reel.addEventListener("focusout", (event) => {
+        if (!reel.contains(event.relatedTarget)) hold(false);
+      });
+      reel.addEventListener("keydown", (event) => {
+        if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+        event.preventDefault();
+        step(reel, event.key === "ArrowRight" ? 1 : -1);
+        start();
+      });
+
+      let startX = 0;
+      let startY = 0;
+      reel.addEventListener(
+        "touchstart",
+        (event) => {
+          const touch = event.changedTouches[0];
+          startX = touch.clientX;
+          startY = touch.clientY;
+          hold(true);
+        },
+        { passive: true }
+      );
+      reel.addEventListener(
+        "touchend",
+        (event) => {
+          const touch = event.changedTouches[0];
+          const dx = touch.clientX - startX;
+          const dy = touch.clientY - startY;
+          if (Math.abs(dx) > 42 && Math.abs(dx) > Math.abs(dy)) {
+            step(reel, dx < 0 ? 1 : -1);
+          }
+          hold(false);
+        },
+        { passive: true }
+      );
+    });
+
+    const sections = reels.map((reel) => reel.closest(".essay-block") || reel);
+    const pick = () => {
+      const mid = window.innerHeight * 0.46;
+      let best = null;
+      let bestDist = Infinity;
+      sections.forEach((section, i) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.bottom < 72 || rect.top > window.innerHeight - 36) return;
+        const center = (rect.top + rect.bottom) / 2;
+        const dist = Math.abs(center - mid);
+        if (dist < bestDist) {
+          bestDist = dist;
+          best = reels[i];
+        }
+      });
+      if (best !== active) {
+        active = best;
+        start();
+      }
+    };
+    const schedule = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        ticking = false;
+        pick();
+      });
+    };
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    if (window.haruLenis && typeof window.haruLenis.on === "function") {
+      window.haruLenis.on("scroll", schedule);
+    }
+    document.addEventListener("visibilitychange", start);
+    schedule();
+    window.setInterval(schedule, 600);
+  };
+  bindEssayReels();
 })();

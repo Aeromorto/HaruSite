@@ -31,12 +31,12 @@
       image: "images/product-kit.jpg",
       nameKey: "p2.name",
     },
-    p3: {
-      id: "p3",
-      href: "suporte.html",
-      price: 62,
-      image: "images/product-suporte.jpg",
-      nameKey: "p3.name",
+    p4: {
+      id: "p4",
+      href: "kit-quatro.html",
+      price: 168,
+      image: "images/product-casa-1.jpg",
+      nameKey: "p4.name",
     },
   };
 

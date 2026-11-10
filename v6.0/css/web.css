@@ -1,0 +1,8 @@
+.hero__logo--kraft {
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.25)) sepia(0.42)
+    saturate(0.78) brightness(0.96);
+}
+
+.lang-toggle__mark {
+  overflow: visible;
+}

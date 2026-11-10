@@ -552,7 +552,7 @@ html.is-android .contact__cta {
 
 .hero__logo-wrap {
   position: relative;
-  width: min(9.5rem, 32vw);
+  width: min(10.45rem, 35.2vw);
   margin-bottom: 1.6rem;
 }
 
@@ -1535,7 +1535,7 @@ html.js-motion .reveal {
 
 @media (max-width: 700px) {
   .hero__logo-wrap {
-    width: 7.2rem;
+    width: 7.92rem;
   }
 
   :root {

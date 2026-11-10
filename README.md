@@ -1,6 +1,6 @@
 # HARU
 
-A versão atual do site estático está na raiz deste repositório: **V6.0**.
+A versão atual do site estático está na raiz deste repositório: **V6.2**.
 
 É o site em HTML, CSS e JavaScript. A cesta guarda os produtos em todas as páginas, até que a pessoa os remova.
 

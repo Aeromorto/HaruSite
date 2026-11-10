@@ -1,10 +1,19 @@
 # Changelog
 
-- **v6.0:** Current static site at the repository root.
-- **v5.8:** Previous root, kept at `/HaruSite/v5.8/`.
+- **v6.2:** Current static site at the repository root.
+- **v6.0:** Previous root, kept at `/HaruSite/v6.0/`.
+- **v5.8:** Earlier root, kept at `/HaruSite/v5.8/`.
 - **v5:** Original commit `80591dc`, restored at `/HaruSite/`.
 - **v5.5:** Reviewed version, hosted separately at `/HaruSite/v5.5/`.
 - [Human-readable issue list](https://aeromorto.github.io/HaruSite/v5.5/changes/)
+
+## 6.2.0 — 2026-11-10
+
+- The shop sells brushes only. The stone stand leaves the collection, and Kit da casa takes its place: four brushes, R$ 168.
+- Matéria photos crossfade every 2.5 seconds. On “O corpo”, the first frame is the laboratory dish. Hovering the frame pauses it, and the arrows, the sides, and the dots step through the set.
+- The contact Instagram button opens @harunaturais.
+- The hero mark above the word HARU is 10% larger.
+- Archive the previous root as `v6.0/` without removing v2, v3, v4, v5, v5.5, v5.8, or the Next.js app.
 
 ## 6.0.0 — 2026-09-29
 

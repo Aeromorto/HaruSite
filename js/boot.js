@@ -107,6 +107,8 @@
       document.title = "HARU — Terms of use";
     } else if (path.indexOf("escova") >= 0) {
       document.title = "HARU — Bamboo brush";
+    } else if (path.indexOf("kit-quatro") >= 0) {
+      document.title = "HARU — Set for the house";
     } else if (path.indexOf("kit") >= 0) {
       document.title = "HARU — Set of two";
     } else if (path.indexOf("suporte") >= 0) {
